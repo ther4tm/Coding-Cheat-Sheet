@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./htmlcheatsheet.html">HTML</a></li>
+                    <li><a href="./csscheatsheet.html">CSS</a></li>
+                    <li><a href="./commandlinecheatsheet.html">Command Line</a></li>
+                    <li><a href="./javascriptcheatsheet.html">JavaScript</a></li>
+                    <li><a href="./reactcheatsheet.html">React</a></li>
+                    <li><a href="./markdowncheatsheet.html">Markdown</a></li>
+                    <li><a href="./styleguide.html">Style Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>CSS Cheat Sheet</h1>
+            <p>Below is a brief list of fundamental CSS tags and a brief description of what they do and any notes on correct syntax.</p>
+            <div id="syntax_conventions">
+                <h2>Syntax conventions</h2>
+                <p>This section describes tags that are used as tools within the CSS.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">/*</span>, <span class="attribute">*/</span></td>
+                            <td>Comment</td>
+                            <td>Text placed between these tags is treated as a comment. It is a way for notes to be added to the code that does not affect the page in any way.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="selectors">
+                <h2>Selectors</h2>
+                <p>To enable attributes to be applied to specific elements the relevant parts of the code need to be targetted. CSS has a number of ways to select specific items within the code through a combination of the methods below.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">*</span></td>
+                            <td>Universal Selector</td>
+                            <td>This is the most wide ranging method of selection. It is essentially the select all parameter. This is usually at the start of the stylesheet as the specificity of the code becomes more complex the further you go into the document.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">elementname</span></td>
+                            <td>Type Selector</td>
+                            <td>This targets HTML type tags. For example <span class="code">p</span> would target all paragraph (<span class="code">&lt;p&gt;</span>) tags.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.classname</span></td>
+                            <td>Class Selector</td>
+                            <td>This targets classes that have been defined within the HTML code. Classes are sections of code that are likely to be used multiple times which may require a blanket rule set that differs from the root level element. They can be defined as a supplemental attribute to an element. This allows a greater level of specificity when targetting elements within the page. For example as above, <span class="code">p</span> would target all paragraph (<span class="code">&lt;p&gt;</span>) tags however, by writing a class based rule you can further define additional attributes or override the original rules.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">#idname</span></td>
+                            <td>ID Selector</td>
+                            <td>This targets elements that have been further defined with an <span class="attribute">id</span> attribute. An <span class="attribute">id</span> is intended to be used in a more sporadic and less frequent way than classes. They can be nested within a class to give further specificity when writing rules.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">*[attr=value]</span></td>
+                            <td>Attribute Selector</td>
+                            <td>This targets very specific elements within the code. The syntax is written so that it selects a specific value of a specific attribute of the preceeding element and applies the rules to that item. Within this there is syntax to further specify how and when the attributes are relevant. For example <span class="code">a[href="https://example.org"]</span> will select and apply rules to all links that contain "https://example.org".</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="visual_rules">
+                <h2>Visual Rules</h2>
+                <p>These attributes define how elements of HTML are displayed graphically such as the typeface, the colours and font weights.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">font-family</span></td>
+                            <td>Font Family</td>
+                            <td>This defines the typeface to be used for the selected element. This can often contain multiple families written in series, this is done as a fallback option in case the browser doesn't have access to the first choice, it then defaults to the next choice.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">font-size</span></td>
+                            <td>Font Size</td>
+                            <td>This defines the sized of the font to be used for the selected element. This can be defined in many different ways for example keywords can be used such as <span class="attribute">medium</span> or <span class="attribute">small</span> but also percentages or length based sizes can be given such as <span class="attribute">80%</span> or <span class="attribute">12px</span>. </td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">font-weight</span></td>
+                            <td>Font Weight</td>
+                            <td>This defines the weight of the typeface to be used for the selected element. This can be defined using keywords such as <span class="attribute">bold</span>, it can also be defined using numbers such as <span class="attribute">600</span>. The default values are <span class="attribute">medium</span> and <span class="attribute">400</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">text-align</span></td>
+                            <td>Text Align</td>
+                            <td>This defines how the text of the selected element will be aligned. This defined as either <span class="attribute">left</span>, <span class="attribute">center</span> or <span class="attribute">right</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">color</span></td>
+                            <td>Text Colour</td>
+                            <td>This defines the colour of the text to be used for the selected element. This can be defined in numerous ways. Keywords can be used that describe pre-set colours such as <span class="attribute">aqua</span>. RGB values can be used and are noted in the syntax as <span class="attribute">rgb(253, 30, 56)</span>. Hexadecimal can also be used to define the colour, the syntax for this is <span class="attribute">#ff0000</span>. Opacity can also be controlled, for example the syntax to give 50% opacity using rgb is <span class="attribute">rgb(253, 30, 56, 0.5)</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">background-color</span></td>
+                            <td>Text Background Colour</td>
+                            <td>This defines the colour of the background to the text for the selected element. This can also be defined in numerous ways. Keywords can be used that describe pre-set colours such as <span class="attribute">aqua</span>. RGB values can be used and are noted in the syntax as <span class="attribute">rgb(253, 30, 56)</span>. Hexadecimal can also be used to define the colour, the syntax for this is <span class="attribute">#ff0000</span>. Opacity can also be controlled, for example the syntax to give 50% opacity using rgb is <span class="attribute">rgb(253, 30, 56, 0.5)</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">opacity</span></td>
+                            <td>Opacity</td>
+                            <td>This defines the opacity to be used for the selected element. This can target numerous things including text and its parameters range from <span class="attribute">0</span> to <span class="attribute">1</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">background-image</span></td>
+                            <td>Background Image</td>
+                            <td>This defines the background image to be used for the selected element. This can be an image, multiple layered images or browsers can render gradients with defined colours, patterns and spacing. When defining an image it always best practice to define a <span class="attribute">background-color</span> aswell just in case the image fails to load or is unavailable.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">!important</span></td>
+                            <td>Important Override</td>
+                            <td>The <span class="attribute">!important</span> override attribute is an attribute that once applied overrides pretty much every other rule. It should almost never be used because of how it ignores even the most specific rules written in the CSS.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">border-collapse</span></td>
+                            <td>Border Collapse</td>
+                            <td>This defines whether borders in a <span class="code">&lt;table&gt;</span> share borders or have separate borders.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="box_model">
+                <h2>The Box Model</h2>
+                <p>The box model is a set of defining rules on how content takes up space on a page. The linked <a href="https://content.codecademy.com/courses/freelance-1/unit-4/diagram-boxmodel.svg?_gl=1*cexpe4*_ga*MDA0Njg4NjQyNy4xNjk1NzM3Njg1*_ga_3LRZM6TM9L*MTcxMjY1MjM5NS4xMDQuMC4xNzEyNjUyMzk1LjAuMC4w" target="_blank">image</a> shows a visual representation of this.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">width</span></td>
+                            <td>Content Width</td>
+                            <td>This defines the width of the content area.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">height</span></td>
+                            <td>Content Height</td>
+                            <td>This defines the height of the content area.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">padding</span></td>
+                            <td>Content Padding</td>
+                            <td>This defines the padding around the content area. The syntax for this can be written in longhand by creating each side's own rule such as <span class="attribute">padding-top: 2px;</span>, it can be written in shorthand to define each side individually without the need for multiple lines of code such as <span class="attribute">padding: 0px, 0px, 0px, 0px;</span>, or it can be condensed further to provide a relationship on opposing sides such as <span class="attribute">padding: 0px, 2px;</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">border</span></td>
+                            <td>Content Border</td>
+                            <td>This defines the border surrounding the content and padding. This has 3 definable properties that can be noted individually or noted in the shorthand <span class="attribute">border</span> attribute, these are <span class="attribute">border-style</span>, <span class="attribute">border-color</span> and <span class="attribute">border-width</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">margin</span></td>
+                            <td>Content Margin</td>
+                            <td>This defines the size of the margins applied to the content. the syntax works in the same way as <span class="attribute">padding</span>. Margins also make use of the keyword <span class="attribute">auto</span>, this allows for items to be centred.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">box-sizing</span></td>
+                            <td>Box Sizing</td>
+                            <td>This defines how a block element's size is determined. There are 2 variables <span class="attribute">content-box</span> and <span class="attribute">border-box</span>. A <span class="attribute">content-box</span> defines the height and width of the content and adds the size of padding and borders on top of the defined height and width. This is the default setting within CSS. A <span class="attribute">border-box</span> tells the browser to include the padding and border size in the defined height and width, making the content size shrink in relation to the other variables.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">min-width</span>, <span class="attribute">max-width</span></td>
+                            <td>Minimum and Maximum Width</td>
+                            <td>This defines the minimum and maximum width of the content area. This helps to keep the content within legible when using flexible layouts.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">min-height</span>, <span class="attribute">max-height</span></td>
+                            <td>Minimum and Maximum Height</td>
+                            <td>This defines the minimum and maximum height of the content area. This helps to keep the content within legible when using flexible layouts.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">overflow</span></td>
+                            <td>Content Overflow</td>
+                            <td>This defines how the browser handles the content of a box when the content is too large for the containing element. When content does overflow it can be <span class="attribute">visible</span> (the default), <span class="attribute">hidden</span> (which hides any content that doesn't fit) or <span class="attribute">scroll</span> which provides a scroll bar to allow the user to scroll down or sideways to view the remaining content.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="display_and_positioning">
+                <h2>Display and Positioning</h2>
+                <p>This section looks at tags that define where content takes up space on a page. These tags look at taking the boxes defined by the box model and then positioning them within the page.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5"><span class="attribute">position</span></td>
+                            <td rowspan="5">Position</td>
+                            <td><span class="attribute">static</span> - This is the default property for all content. The element stays in the flow of the document, in the position its is located within the markup.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">relative</span> - The element stays in the flow of the document however, its position can then be offset and repositioned based on <span class="attribute">top</span>, <span class="attribute">right</span>, <span class="attribute">bottom</span> and/or <span class="attribute">left</span> attributes. These offsets do not affect the positioning of other elements within the flow of the document. The <span class="attribute">z-index</span> however, will affect whether it is displayed above or below the other elements in the document.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">absolute</span> - The element is removed from the flow of the document and its <span class="attribute">top</span>, <span class="attribute">right</span>, <span class="attribute">bottom</span> and/or <span class="attribute">left</span> attributes will then determine its position as well as its <span class="attribute">z-index</span> in relation to its most recent <span class="attribute">relative</span> positioned parent container element. If an absolute positioned element has no <span class="attribute">relative</span> positioned ancestors, it uses the document body, and moves along with page scrolling. Elements positioned in this way can overlap other objects if not carefully considered in relation to other margins or padding. This can also be a desired effect.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">fixed</span> - The element is removed from the flow of the document and is positioned relative to the document body based on its <span class="attribute">top</span>, <span class="attribute">right</span>, <span class="attribute">bottom</span> and/or <span class="attribute">left</span> attributes.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">sticky</span> - This is a hybrid method of positioning. The element is treated in the same way as a relative element up until the user scrolls past the element's relatively positioned placement, at which point it turns into a fixed method of positioning and moves with the page </td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">z-index</span></td>
+                            <td>Z Index</td>
+                            <td>This defines the stack order of an element. The default is 0, however, this property can be adjusted to alter the order elements are displayed on the page in the event of overlapping.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><span class="attribute">display</span></td>
+                            <td rowspan="3">Display</td>
+                            <td><span class="attribute">inline</span> - Inline elements use as little spaces as possible and can appear one after the other. They cannot have manually defined height or widths.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">block</span> - Block elements take up the entire width of their containing element. They can have manually adjusted heights.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">inline-block</span> - Inline blocks take up as little spaces as possible by default but can have both height and widths manually defined. They can be set to appear one after the other within their parent container.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">float</span></td>
+                            <td>Float</td>
+                            <td>This can tell a block element to be located either all the way to the left, all the way to the right. The default is none.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">clear</span></td>
+                            <td>Clear</td>
+                            <td>This specifies if an element that is placed after a floated element should be moved down and placed underneath on the page or not. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="signifiers">
+                <h2>Signifiers</h2>
+                <p>This section looks at attributes that help to define aspects of the user's interactive experience.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">cursor</span></td>
+                            <td>Cursor</td>
+                            <td>This specifies supplemental states applied to the cursor, usually if hovering over a specific element on the page. These additional states help to provide the user with additional information such as telling them that they can pan on this section of the page or they can click the mouse to zoom in for a closer look.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">transition</span></td>
+                            <td>Transition</td>
+                            <td>This property allows the CSS to define how interactive elements change states. For example if a button is hovered over or pressed then the transition property will define the timings of the change in states allowing for less jerky visual changes. The syntax is written as <span class="attribute">transition</span>: <span class="attribute">transition-property</span> <span class="attribute">transition-duration</span> <span class="attribute">transition-timing-function</span>. If there are several items that should be targeted such as the colour as well as the font size then these should be written in the same syntax in series separated by a comma. For example <span class="attribute">transition</span>: <span class="attribute">font-size</span> <span class="attribute">.1s</span> <span class="attribute">ease-in</span>, <span class="attribute">color</span> <span class="attribute">.1s</span> <span class="attribute">ease-in</span>;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="flexbox">
+                <h2>Flexbox</h2>
+                <p>This section looks at tags associated with the flexbox method of display and positioning on a page.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">flex</span></td>
+                            <td>Block level Flex container</td>
+                            <td>This specifies that a div will be displayed as a block level container (the same as its default) however, items inside will now be flex items that can grow and shrink based on defined parameters in the code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">inline-flex</span></td>
+                            <td>Inline Flex container</td>
+                            <td>This specifies that a div will be displayed inline. Items inside these divs will also be flex items that can grow and shrink based on defined parameters in the code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">justify-content</span></td>
+                            <td>Justify Content</td>
+                            <td>This specifies how flex items will be justified as entire blocks of content within the containing div. The default behaviour is to justify along the horizontal axis (Main axis). As with text, you can justify the content to the left, right and center of the container. There is also functionality to allow for spacing, these are <span class="attribute">space-around</span>, <span class="attribute">space-between</span> and <span class="attribute">space-evenly</span>. Finally you can also justify the content to stretch and fill the container using <span class="attribute">stretch</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">justify-items</span></td>
+                            <td>Justify Items</td>
+                            <td>This specifies how flex items will be justified as individual blocks of child content within the grid. The best way to visualise how this differs from <span class="attribute">justify-content</span> is demonstrated on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">align-content</span></td>
+                            <td>Align Content</td>
+                            <td>This specifies how flex items will be aligned as entire blocks of content within the containing div. The default behaviour is to align along the vertical axis (Cross axis). This behaves in essentially the same way as the <span class="attribute">justify-content</span> attribute but along the opposing axis.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">align-items</span></td>
+                            <td>Align Items</td>
+                            <td>This specifies how flex items will be aligned as individual blocks of child content within the grid. The best way to visualise how this differs from <span class="attribute">align-content</span> is demonstrated on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex-grow</span></td>
+                            <td>Flex Grow</td>
+                            <td>This specifies the ratio at which flex items will expand along the main axis in relation to the browser window when made larger or smaller. The syntax is written as an integer with no additional units required. For example <span class="attribute">flex-grow: 1;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex-shrink</span></td>
+                            <td>Flex Shrink</td>
+                            <td>This specifies the ratio at which flex items will shrink along the main axis in relation to the browser window when made larger or smaller. The syntax is written as an integer with no additional units required. For example <span class="attribute">flex-shrink: 1;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex-basis</span></td>
+                            <td>Flex Basis</td>
+                            <td>This specifies the initial size of a flex item that has the additional <span class="attribute">flex-grow</span> and/or <span class="attribute">flex-shrink</span> attributes assigned to it so the browser knows the default size to which the shrink or grow ratios are then applied to.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex</span></td>
+                            <td>Flex</td>
+                            <td>This is the short hand way of writing the <span class="attribute">flex-grow</span>, <span class="attribute">flex-shrink</span> and <span class="attribute">flex-basis</span> parameters in one simplified declartion within the code. One important note to this is that the syntax allows for the <span class="attribute">flex-shrink</span> section to be missed out in the short hand however you cannot use this declartion to miss the grow and only declare the shrink and basis portions.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex-wrap</span></td>
+                            <td>Flex Wrap</td>
+                            <td>This specifies whether flex items are forced onto a single line or whether they can cascade onto multiple lines. The size of the containing div will dictate the level of wrapping if allowed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex-direction</span></td>
+                            <td>Flex Direction</td>
+                            <td>This specifies whether flex items are displayed as rows (default behaviour) or columns. The syntax allows for the reversal of both so items are displayed in a row or column with the ordering of the items to be displayed reversed. This is useful for sorting things in ascending or descending order for example.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">flex-flow</span></td>
+                            <td>Flex Flow</td>
+                            <td>This is the short hand way of writing both the <span class="attribute">flex-wrap</span> and <span class="attribute">flex-direction</span> parameters in one simplified declartion within the code.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="css-grid">
+                <h2>CSS Grid</h2>
+                <p>This section looks at attributes that create and define grids wthin CSS.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">grid</span></td>
+                            <td>Grid</td>
+                            <td>This attribute is a property of <span class="attribute">display</span>. This tells the browser to treat the attributed element as a grid. The syntax is <span class="attribute">display: grid;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-template-rows</span></td>
+                            <td>Grid Template Rows</td>
+                            <td>This attribute defines the properties of the rows of a CSS grid. The syntax can be written as absolute measurements such as <span class="attribute">100px</span> or it can be written as a fraction of the grid's predefined height property, an example of this would be <span class="attribute">grid-template-rows: 1fr 1fr;</span>. This would give 2 equally sized rows.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-template-columns</span></td>
+                            <td>Grid Template Columns</td>
+                            <td>This attribute defines the properties of the columns of a CSS grid. The syntax can be written as absolute measurements such as <span class="attribute">100px</span> or it can be written as a fraction of the grid's predefined width property, an example of this would be <span class="attribute">grid-template-columns: 1fr 1fr;</span>. This would give 2 equally sized columns.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-template</span></td>
+                            <td>Grid Template</td>
+                            <td>This is the short hand way of writing <span class="attribute">grid-template-rows</span> and <span class="attribute">grid-template-columns</span> in one declaration. An example of correct syntax is <span class="attribute">grid-template: 1fr 1fr / 1fr 1fr;</span>. The / within the syntax separates the attributes defining the <span class="attribute">grid-template-rows</span> from the <span class="attribute">grid-template-columns</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">repeat()</span></td>
+                            <td>Repeat Function</td>
+                            <td>This is a function that can be used within the definition of the grid to create simpler code. For example when defining a grid with 3 columns of equal width, you could write <span class="attribute">grid-template-columns: 100px 100px 100px;</span>. This can be redefined using the repeat function so the code would be <span class="attribute">grid-template-columns: repeat(3, 100px);</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">minmax()</span></td>
+                            <td>MinMax Function</td>
+                            <td>This is a function that can define the  minimum and maximum values of a grid element. This is particularly useful if an element in the grid is stretching as a result of it being a flex item and you do not wish for it to get smaller or larger than a certain size.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">row-gap</span></td>
+                            <td>Row Gap</td>
+                            <td>This defines the space between each row item within a grid. It only adds space internally to the grid.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">column-gap</span></td>
+                            <td>Column Gap</td>
+                            <td>This defines the space between each column item within a grid. As with the row gap, it only adds space internally to the grid.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">gap</span></td>
+                            <td>Gap</td>
+                            <td>This is the short hand way of writing <span class="attribute">row-gap</span> and <span class="attribute">column-gap</span> in one declaration.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-row-start</span></td>
+                            <td>Grid Row Start</td>
+                            <td>This tells the browser at which row gridline an element should begin within a grid.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-row-end</span></td>
+                            <td>Grid Row End</td>
+                            <td>This tells the browser on which row gridline an element should end within a grid. This number is always referring to the gridlines of the grid therefore to create an element that spans 2 rows that begins on gridline 1, the <span class="attribute">grid-row-end</span> declaration should be <span class="attribute">grid-row-end: 3;</span>.</td>
+                        </tr>
+                            <td><span class="attribute">grid-column-start</span></td>
+                            <td>Grid Column Start</td>
+                            <td>This tells the browser at which column gridline an element should begin within a grid.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-column-end</span></td>
+                            <td>Grid Column End</td>
+                            <td>This tells the browser on which column gridline an element should end within a grid. This number is always referring to the gridlines of the grid therefore to create an element that spans 2 columns that begins on gridline 1, the <span class="attribute">grid-column-end</span> declaration should be <span class="attribute">grid-column-end: 3;</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-area</span></td>
+                            <td>Grid Area</td>
+                            <td>This is the shorthand way of writing <span class="attribute">grid-row-start</span>, <span class="attribute">grid-row-end</span>, <span class="attribute">grid-column-start</span> and <span class="attribute">grid-column-end</span>. The syntax for this however is quite confusing as it takes in both start points and then both end points all separated by /. For example the correct syntax would be <span class="attribute">grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-template-areas</span></td>
+                            <td>Grid Template Areas</td>
+                            <td>Grid  template areas is a method of laying out a grid based on the names defined in the code. The syntax is best described and visualised on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">justify-self</span></td>
+                            <td>Justify Self</td>
+                            <td>This works in pretty much the same way as <span class="attribute">justify-items</span> however this can be used as a more specific override for a particular item if needed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">align-self</span></td>
+                            <td>Align Self</td>
+                            <td>This works in pretty much the same way as <span class="attribute">align-items</span> however this can be used as a more specific override for a particular item if needed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-auto-rows</span></td>
+                            <td>Grid Auto Rows</td>
+                            <td>This defines the height of any overflow rows of a grid. If the declaration of the grid in the CSS doesn't account for the entire content, this attribute defines the height of the overflowing rows. This is particularly useful where large amounts of content can be added to the page with functionality built into the site such as a 'display all' feature.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-auto-columns</span></td>
+                            <td>Grid Auto Columns</td>
+                            <td>This defines the width of any overflow columns of a grid. If the declaration of the grid in the CSS doesn't account for the entire content, this attribute defines the width of the overflowing columns.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">grid-auto-flow</span></td>
+                            <td>Grid Auto Flow</td>
+                            <td>This defines how the items of a grid are placed if the grid is auto placed rather the explicitly defined. The default is <span class="attribute">row</span> but this can be altered to <span class="attribute">column</span> and/or <span class="attribute">dense</span>. A good visual description of the options for the syntax can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>For additional tags and examples see the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">MDN Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>

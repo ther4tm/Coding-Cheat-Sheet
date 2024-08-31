@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./htmlcheatsheet.html">HTML</a></li>
+                    <li><a href="./csscheatsheet.html">CSS</a></li>
+                    <li><a href="./commandlinecheatsheet.html">Command Line</a></li>
+                    <li><a href="./javascriptcheatsheet.html">JavaScript</a></li>
+                    <li><a href="./reactcheatsheet.html">React</a></li>
+                    <li><a href="./markdowncheatsheet.html">Markdown</a></li>
+                    <li><a href="./styleguide.html">Style Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>JavaScript Cheat Sheet</h1>
+            <p>Below is a brief list of fundamental Javascript tags and a brief description of what they do and any notes on correct syntax.</p>
+            <div id="fundamentals">
+                <h2>Fundamentals & Operators</h2>
+                <p>This section describes some fundamental properties of JavaScript.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">console.log()</span></td>
+                            <td>Data print</td>
+                            <td>This combined object and method allows for data to be printed to the console. Anything within the parentheses will be printed to the console.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">//</span></td>
+                            <td>Single line Comment</td>
+                            <td>Data placed after this tag, and restrained to a single line, is treated as a comment. This is usually to provide commentary on a following line or section of code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">/*</span>, <span class="attribute">*/</span></td>
+                            <td>Multi line Comment</td>
+                            <td>Data placed between these tags is treated as a comment. It is a way for notes to be added to the code that does not affect the page in any way. It can also be used to comment out sections of code that are not required or are being edited at present.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">+</span>, <span class="attribute">-</span>, <span class="attribute">*</span> & <span class="attribute">/</span>.</td>
+                            <td>Arithmetic Operators</td>
+                            <td>These are basic arithmetic operators used to carry out calculations.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">%</span></td>
+                            <td>Modulo Operator</td>
+                            <td>This operator finds the difference between 2 numbers. It divides the number on the left by the number on the right.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">**</span></td>
+                            <td>Exponential Power Operator</td>
+                            <td>This operator finds the result of the first value raise to the power of the second value.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">++</span></td>
+                            <td>Increase by 1 Operator</td>
+                            <td>This adds 1 to the preceeding value. <br /> An example of the syntax is <span class="attribute">11 ++;</span>. The result would be 12.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">--</span></td>
+                            <td>Decrease by 1 Operator</td>
+                            <td>This subtracts 1 from the preceeding value. <br /> An example of the syntax is <span class="attribute">11 --;</span>. The result would be 10.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">==</span>, <span class="attribute">===</span>, <span class="attribute">!=</span>, <span class="attribute">!==</span>, <span class="attribute">&gt;</span>, <span class="attribute">&lt;</span>, <span class="attribute">&gt;=</span>, <span class="attribute">&lt;=</span> & <span class="attribute">/</span>.</td>
+                            <td>Comparison Operators</td>
+                            <td>These operators are used to carry out comparisons and return boolean results. <br /> An example of the syntax would be <span class="attribute">console.log(2 == 2);</span>. The result would return the boolean value of true.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">Math</span></td>
+                            <td>Built in Objects</td>
+                            <td>Objects can be thought of as a category to which methods are called. The method will provide the functionality but the object will provide the context for the method to do what it needs to do. <br /> <span class="attribute">Math</span> is an example of a prebuilt object that has predetermined functionality, <span class="attribute">console</span> is another example. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN Website</a> has a comprehensive list of all standard objects.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.toUpperCase()</span></td>
+                            <td>Built in Methods</td>
+                            <td>Methods provide functionality to code. There are methods that can be applied to objects but methods can also be applied to data. For example <span class="attribute">.toUpperCase()</span> can be applied to a string. <span class="attribute">.log()</span> is another example but it is applied to the <span class="attribute">console</span> object to provide the desired functionality. <br /> The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN Website</a> has a comprehensive list of all standard methods.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">typeof</span></td>
+                            <td>Data Type Identifier</td>
+                            <td>This keyword identifies the data type of a value and returns it as a string. <br /> An example of the syntax in use would be - <span class="attribute">console.log(typeof 42);</span>. The result printed in the console would be number, because 42 is a number.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">'?text=text&text=text'</span><br/>or<br/><span class="attribute">`?text=${text}`</span></td>
+                            <td>Query String</td>
+                            <td>A query string is part of the full query, or URL, which allows us to send information using parameters as key-value pairs.<br/>A query string typically follows a <span class="attribute">?</span> in the URL.<br/>The key-value pair parameters are sent in the form key=value, and each pair is separated by an <span class="attribute">&</span> symbol.<br/>Template literals can be used provided it is surround with backticks (<span class="attribute">`</span>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="debugging">
+                <h2>Debugging & Errors</h2>
+                <p>Below is a list of the error types to help with debugging code.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">ReferenceError</span></td>
+                            <td>Reference Error</td>
+                            <td>This error is due to the code referring to something that does not exist. This can also be when a variable is defined in the incorrect scope.<br/>For example a variable is defined within a function and then something else is trying to reference it, a <span class="attribute">ReferenceError</span> will be thrown because the variable is not within the global scope and therefore for all intents and purposes does not exist outside of the function it was originally created in.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">SyntaxError</span></td>
+                            <td>Syntax Error</td>
+                            <td>This error is due to the code being written incorrectly. Either a piece of the code has been written wrong, a semi colon is missing or has been included by mistake, somewhere along the long there will a typo or something similar that is causing the problem.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">TypeError</span></td>
+                            <td>Type Error</td>
+                            <td>This error is the result of something within the code being used on the wrong type. For example, if a variable that has been created using the <span class="attribute">const</span> keyword is then attempted to be reassigned later on in the code, a <span class="attribute">TypeError</span> will be thrown because the <span class="attribute">const</span> keyword prevents it from be altered in this way.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">Error()</span></td>
+                            <td>Error function</td>
+                            <td>The <span class="attribute">Error()</span> function is an in-built object within Javascript that allows for the programme to display custom error messages for the user.<br/>This is usually due to the desired error message not being covered by the standard error's built into Javascript.<br/><br/>The <span class="attribute">Error()</span> function takes an argument of a string which becomes the value of the error’s message property.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">console.log(Error('Your password is incorrect.'));</span><br/><br/>In the example above we create an <span class="attribute">Error</span> and log it to the console with the text stating the password is incorrect.<br/><br/>An important point to note here is that the creation of an error message in this way does not stop the programme from running. It is merely a message to indicate an error.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">throw</span></td>
+                            <td>Throw</td>
+                            <td>The <span class="attribute">throw</span> keyword is used for 'throwing' an error. Throwing an error will stop the programme from running as opposed to simply displaying an error message. Any additional code after the error is encountered will not be executed.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">throw Error('The password is incorrect.');</span><br/><br/>Notice here that we <span class="attribute">throw</span> an error and use the <span class="attribute">Error()</span> function in combination to halt the programme from running and display a relevant message informing the user of the problem.<br/></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">try...catch</span></td>
+                            <td>Try, Catch Statement</td>
+                            <td>The <span class="attribute">try...catch</span> keywords allow for errors to be thrown and the error messages to be displayed whilst also running the rest of the programme.<br/>This can be useful when external data is used within a programme.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">try {<br/>throw Error('This is an error.')<br/>} catch (e) {<br/>console.log(e);<br/>};</span><br/><br/>Notice how after the <span class="attribute">catch</span> keyword we have the <span class="attribute">e</span> keyword within parentheses. The <span class="attribute">e</span> represents the thrown error.<br/>Therefore once the error triggers, the remainder of the code after this will continue to execute. An error will be thrown and the text 'This is an error.' will be logged to the console as defined in our <span class="attribute">catch</span> block.<br/><br/>In the above example we are forcing an error  by using the keywords <span class="attribute">throw Error</span>. This doesnt represent what we would actually write within a programme, as it doesnt really serve a function.<br/>An alternate syntax that is closer to a working example is shown below;<br/><br/><span class="attribute">function capAllElements(arr){<br/>try {<br/>arr.forEach((el, index, array) => {<br/>array[index] = el.toUpperCase();<br/>});<br/>} catch (e) {<br/>console.log(e);<br/>}<br/>}</span><br/><br/>This will throw a <span class="attribute">TypeError</span> but the <span class="attribute">Try...Catch</span> statement will allow the programme to continue running whilst also displaying the error.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="variables">
+                <h2>Variables</h2>
+                <p>This section describes variables and some closely associated properties.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">var</span></td>
+                            <td>Variable</td>
+                            <td>This is now the legacy version of how to define a variable. <br /> The syntax of how to define a variable this way is <span class="attribute">var</span> <span class="attribute">nameOfVariable</span> = <span class="attribute">property</span>;</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">let</span></td>
+                            <td>Adjustable Variable</td>
+                            <td>This defines a variable that can be redefined. <br /> The syntax of how to define a variable this way is <span class="attribute">let</span> <span class="attribute">nameOfVariable</span> = <span class="attribute">property</span>;</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const</span></td>
+                            <td>Constant Variable</td>
+                            <td>This defines a variable that cannot be redefined. <br /> The syntax of how to define a variable this way is <span class="attribute">const</span> <span class="attribute">nameOfVariable</span> = <span class="attribute">property</span>;</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">+=</span>, <span class="attribute">-=</span>, <span class="attribute">*=</span>, <span class="attribute">/=</span>, <span class="attribute">%=</span> & <span class="attribute">**=</span></td>
+                            <td>Arithmetic Assignment Operators</td>
+                            <td>These operators carry out arithmetic on a variable and, provided the variable is adjustable, assigns the result to the variable. <br /> For example if a variable (<span class="attribute">num</span>) is assigned a value of 1 and we run the additive operator using the syntax <span class="attribute">num += 1;</span>. The <span class="attribute">num</span> variable would now have the value of 2.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">${}</span></td>
+                            <td>Template Literal</td>
+                            <td>A template literal can be best thought of as a placeholder for a variable to be inserted into a string. When using template literals backticks (<span class="attribute">`</span>) should be use to enclose the string rather than the usual apostophe (<span class="attribute">'</span>). <br /> An example of correct syntax would be <span class="attribute">console.log(`My name is ${myName}.`);</span>. this allows for an, as yet, undefined name to be inserted into a predefined string.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="conditionals">
+                <h2>Conditionals</h2>
+                <p>This section describes conditional statements and some closely associated properties.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">if</span></td>
+                            <td>If Statement</td>
+                            <td>This checks a condition and executes a task if the condition returns a result of <span class="attribute">true</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">if...else</span></td>
+                            <td>If...Else Statement</td>
+                            <td>This builds on the <span class="attribute">if</span> statement and checks a condition, executes a task if the condition returns a result of <span class="attribute">true</span> however, if the result is <span class="attribute">false</span> then this can allow for an alternate task to be carried out.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">else if</span></td>
+                            <td>Else If Statement</td>
+                            <td>This builds even further on the <span class="attribute">if...else</span> statement. Instead of a binary response from the <span class="attribute">if...else</span> statement, this allows for a range of outcomes and adds the possibility to create responses for any result.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">&&</span></td>
+                            <td>And Logical Operator</td>
+                            <td>This checks if both expressions provided in a statement are truthy.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">||</span></td>
+                            <td>Or Logical Operator</td>
+                            <td>This checks one of 2 expressions provided in a statement are truthy.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">!</span></td>
+                            <td>Bang Logical Operator</td>
+                            <td>This switches the truthiness or falsiness of a value. <br /> An example of the syntax would be that <span class="attribute">!true</span> would actually provide a false result and <span class="attribute">!false</span> would provide a true result.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">?</span></td>
+                            <td>Ternary Operator</td>
+                            <td>This is a shorthand way of writing <span class="attribute">if...else</span> statements. <br /> An example of the shorthand syntax is <span class="attribute">condition ? exprIfTrue : exprIfFalse;</span>. <br /> It always checks the left hand side expression first, if this is true the expression is executed and the right hand side is ignored, if false then the left hand side will be executed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">switch</span></td>
+                            <td>Switch Statement</td>
+                            <td>This is a shorthand way of writing <span class="attribute">else if</span> statements. <br /> An example of the shorthand syntax is found on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="functions">
+                <h2>Functions</h2>
+                <p>This section describes functions and some closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">function</span></td>
+                            <td>Function declaration</td>
+                            <td>A function can be declared with a name in a similar way to a variable. It is declared and the body within the curly braces is what the function actually does.<br/> An example of correct syntax would be: <br/><span class="attribute">function thisIsAFunction() { <br/>console.log('string');<br/> }</span>. <br/> When called, this function would print the word "string" to the console.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function();</span></td>
+                            <td>Calling a Function</td>
+                            <td>To run the function it needs to be called. You do this by entering the name of the function followed by parentheses and a semi colon.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function(parameter1, parameter2);</span></td>
+                            <td>Defining a Function with parameters</td>
+                            <td>To define a function with input parameters it needs to be told what the parameters are. The placeholder parameters are located within the parentheses.<br/> An example of correct syntax would be: <br/><span class="attribute">function calculateArea(width, height) { <br/>console.log(width * height);<br/> }</span>. <br/> When the function is called with the parameters filled in such as <span class="attribute">calculateArea(2, 3);</span>, the result of 6 would be printed to the console.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function(parameter1 = 'stranger');</span></td>
+                            <td>Defining a Function with default parameters</td>
+                            <td>To define a function with default parameters, in the event of it being called without an input, it needs to be told what the default parameters are. In the same way as defining a function with parameters, the placeholder parameters are located and defined within the parentheses.<br/> An example of correct syntax would be: <br/><span class="attribute">function greeting(name = 'stranger') { <br/>console.log(`Hello ${name}!`);<br/> }</span>. <br/> When the function is called without the parameters filled in, it would print the string "Hello stranger!" to the console. However if called with an input, the input would override the default. For example calling <span class="attribute">greeting('Tom');</span> would print the string "Hello Tom!" to the console.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">return</span></td>
+                            <td>Return</td>
+                            <td>The return keyword allows for a function to execute its body and then return a result.<br/>A key thing to note with the return keyword is that when it is invoked in a function it immediately stops the function and returns whatever condition it is returning. So for example in if else statements, if the first part of the statement is found to be true then it will not run any more of the code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const variable = function() {expression}</span></td>
+                            <td>Defining a Function Expression</td>
+                            <td>A function expression is best thought of as a throwaway function. It is created to do a single task and then immediately forgotten. Function declarations however, are defined and intended to be used multiple times.<br/> An example of correct syntax would be: <br/><span class="attribute">const calculateArea = function(width, height) { <br/>const area = width * height;<br/> return area; <br/>}</span> <br/> The variable <span class="attribute">calculateArea</span> should be called with parentheses filled in, much in the same way as a function. This allows for the variable to execute the function and pass through the parameters to the function and then return whatever the function is trying to do, in this case calculate the area of the parameters.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const variable = (param1, param2) =&gt; {expression}</span></td>
+                            <td>Arrow Function</td>
+                            <td>This is a shorthand way to write a function expression, also known as an arrow function. It works the same way as a function expression however the need to write the function keyword is removed and a "Fat Arrow" is placed after the parentheses that usually follow the function keyword.<br/> The parentheses can also be left empty to create a zero parameter function expression.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const variable = parameter =&gt; expression;</span></td>
+                            <td>Concise Body Arrow Function</td>
+                            <td>This is a shorthand way to write an arrow function. <br/> Functions that take only a single parameter do not need that parameter to be enclosed in parentheses. However, if a function takes zero or multiple parameters, parentheses are required. <br/> A function body composed of a single-line block does not need curly braces. Without the curly braces, whatever that line evaluates will be automatically returned. The contents of the block should immediately follow the arrow => and the return keyword can be removed. This is referred to as implicit return.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function</span> continued</td>
+                            <td>Higher Order Functions</td>
+                            <td>Higher order functions are functions that accept other functions as parameters to passed in as arguments. One reason for doing this is to check on the results of another function for example, another reason might be to keep the code more modular and reduce the need for doubling up on very similar code blocks.<br/>Below is an example of the syntax;<br/>First we delcare the function we want checking in the higher order function.<br/><span class="attribute">const addTwo = num => {<br/>return num + 2;<br/>};</span><br/>Below we have the higher order function, notice how it has 2 parameters which within the code block are the function we want checking and the parameter of that function.<br/><span class="attribute">const checkConsistentOutput = (func, val) => {<br/>const checkA = val + 2;<br/>const checkB = func(val);<br/>if (checkA === checkB) {<br/>return func(val);<br/>} else {<br/>return 'inconsistent results';<br/>}<br/>};</span><br/>You can see that the code block accepts the other function, it then runs the code body (which is to check the results for consistency in this example) then if this returns the expected result it then returns the input function and its parameter. This will in turn run the function that was just checked otherwise the in-built error message will be returned.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="arrays">
+                <h2>Arrays</h2>
+                <p>This section describes arrays and some closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">[1, 'two', true]</span></td>
+                            <td>Array</td>
+                            <td>An array is best thought of as a list of data. It is contained within square brackets and can contain many types of data such as number, strings and boolean values. <br/>Each item inside of an array is at a numbered position, or index, starting at 0.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">myArray[1]</span></td>
+                            <td>Selecting items in an Array</td>
+                            <td>Because an array is a list of data, we use square brackets after an array call to select specific items in that list.<br/>For example if we have an array with the items <span class="attribute">['green', 'red', 'blue']</span>, if we called <span class="attribute">myArray[1]</span>, this would select <span class="attribute">'red'</span> as it is at index 1 of the <span class="attribute">myArray</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.length</span></td>
+                            <td>Length of an Array</td>
+                            <td>The <span class="attribute">.length</span> method returns the number of items in an array.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.push()</span></td>
+                            <td>Add item to end of an Array</td>
+                            <td>The <span class="attribute">.push()</span> method adds whatever data contained with the parentheses as an additional item to the appended array.<br/>For example <span class="attribute">myArray.push('pink')</span> would add the string 'pink' as an additional item to <span class="attribute">myArray</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.pop()</span></td>
+                            <td>Remove item to end of an Array</td>
+                            <td>The <span class="attribute">.pop()</span> method removes the last item from an array.<br/>There are a large number of additional methods available that do various different things with arrays. These can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">myArray[0][1]</span></td>
+                            <td>Selecting items in nested Arrays</td>
+                            <td>Arrays can be nested within one another. To select an item within a nested array the syntax requires the array item to be selected inside of one set of square brackets and then the subsequent item to be selected in an additional set of square brackets.<br/>For example if we had an array that was defined as such: <span class="attribute">myArray = [1, [2, 4]]</span> then we would select the number 2 using the syntax <span class="attribute">myArray[1][0]</span>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="loops">
+                <h2>Loops</h2>
+                <p>This section describes loops and some closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">for</span></td>
+                            <td>For Loop</td>
+                            <td>A <span class="attribute">for</span> loop has 3 key expressions as part of the declaration and will run whatever is then contained within the code block (the section of code in the curly braces).<br/>The first expression is an initialization that starts the loop and can also be used to declare the iterator variable. The second expression is a stopping condition, the iterator variable is evaluated against this and if the condition evaluates to <span class="attribute">true</span> the code block will run, if it evaluates to <span class="attribute">false</span> the code will stop. The third expression is an iteration statement, this is used to update the iterator variable on each loop.<br/>An example of syntax for a counter loop that prints to the console would be <br/><span class="attribute">for (let counter = 5; counter < 11; counter++) {<br/>console.log(counter);<br/>}</span><br/>An important thing to note about <span class="attribute">for</span> loops is that they are suited to looping when there is a predetermined amount of cycles to loop through. When the length is unquanitifiable in some way then the <span class="attribute">while</span> looping method is more appropriate.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">for</span> continued</td>
+                            <td>Looping through Arrays</td>
+                            <td>A <span class="attribute">for</span> loop can also be used to loop through an array. In order to do this we need to target the index of each item in the array for the loop to cycle through. Once we do this we can write a piece of code that will print each of these to the console. An example of how we can do this would be<br/><span class="attribute">for (let i = 0; i < vacationSpots.length; i++){<br/>console.log(`I would love to visit ${vacationSpots[i]}`);<br/>}</span><br/>In this example we create a variable representing the index of the array, we then declare the amount of cycles in the loop to be less than the length of the array using the <span class="attribute">.length</span> method on the array variable (due to the zero indexing within Javascript we know that by using the <span class="attribute">.length</span> method we will always create a cycle that stops at the end of the array because the loop will never run longer than the length of the array's contents). Finally we execute the code block which, in this case, prints the currently selected sections of data from the array before it then runs the loop again, all the time adding 1 to the index it is selecting and then printing for as long as the loop condition returns a <span class="attribute">true</span> condition.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">for</span> continued</td>
+                            <td>Nested Loops</td>
+                            <td>Loops can be nested within one another. An example of this is below.<br/><span class="attribute">for (let i = 0; i < bobsFollowers.length; i++) {<br/>for (let j = 0; j < tinasFollowers.length; j++) {<br/>if (bobsFollowers[i] === tinasFollowers[j]) {<br/>mutualFollowers.push(bobsFollowers[i]);<br/>}<br/>}<br/>}<br/></span><br/>In this example we start off with the longer array, the code blocks executes the nested loop which checks its entire array against the first piece of the original array. Once it runs through its own code block, as defined by the conditions of the loop, then it hands back to the original loop and does it all over again for second item in the array. So if bobsFollowers has 4 items in its array and tinasFollowers has 3 items in its array, the nested loop will first run a check of all 3 items in tinasFollowers against the first item in bobsFollowers before moving onto the same for the second item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">while</span></td>
+                            <td>While Loop</td>
+                            <td>A <span class="attribute">while</span> loop is more suited for looping actions when the number of loops is unknown. So for example if we were create a guessing game, we don't know how many loops a round would need to reach a conclusion. The <span class="attribute">while</span> loop will allow us to create a loop that keeps going until a win condition is met for the game.<br/>An example of correct syntax is below;<br/><span class="attribute">while (counter < 4) {<br/>console.log(counter);<br/>counter++;<br/>}<br/></span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">do...while</span></td>
+                            <td>Do...While Loop</td>
+                            <td>A <span class="attribute">do...while</span> loop is essentially the same as a while loop however the major difference in this statement is that the <span class="attribute">do</span> keyword executes the code at least once before any conditions have been checked and evaluted to be either <span class="attribute">true</span> or <span class="attribute">false</span>.<br/>An example of correct syntax would be;<br/><span class="attribute">do {<br/>cupsAdded++;<br/>console.log(cupsAdded + ' cup of sugar was added.');<br/>} while (cupsAdded < cupsOfSugarNeeded);</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">break</span></td>
+                            <td>Break</td>
+                            <td>The <span class="attribute">break</span> keyword enables a loop to exit out of its process once a condition is met rather than carry on executing the code until its parameters are fulfilled. For example, lets say we are searching for a specific name and we have a very large amount of data we wish to search through, we can write a loop that breaks out of its search once that name is found rather than continuing to execute the code on the entire data set.<br/>An example of the syntax is;<br/><span class="attribute">for (let i = 0; i < names.length; i++) {<br/>if (names[i] === 'steve' ) {<br/>break;<br/>}<br/>}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">for...of</span></td>
+                            <td>For...of Loop</td>
+                            <td>A <span class="attribute">for...of</span> loop is a simplified loop. The purpose of this loop is specifically to loop through an array or a string from start to finish. The expression does not need to be told stopping conditions or counters in the same way that a <span class="attribute">for</span> loop does. <span class="attribute">for...of</span> loops are best used when you wish to do something such as log an entire array. The syntax is much simpler and requires less code to carry out.<br/>An example of the simplified syntax is shown below;<br/><span class="attribute">for (const variable of array) {<br/>console.log(variable)<br/>}</span><br/>This will print out every item of the array it is looping through. Notice how a temporary variable is created within the expression and then called within the code body to be logged.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">for...of</span> continued</td>
+                            <td>Break</td>
+                            <td>The <span class="attribute">break</span> keyword can be used with a <span class="attribute">for...of</span> loop to exit out of the cycle if a certain condition is met, much in the same way it does in a <span class="attribute">for</span> loop.<br/>An example of the syntax is shown below;<br/><span class="attribute">for (const bird of strangeBirds) {<br/>if (bird === 'Basan'){<br/>break;<br/>}<br/>console.log(bird);<br/>}</span><br/>This will break out of the loop once the string 'Basan' is encountered within the strangeBirds array. It will log everything up to this point.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">continue</span></td>
+                            <td>Continue</td>
+                            <td>The <span class="attribute">continue</span> keyword can be used with a <span class="attribute">for...of</span> loop to skip a specific item in an array.<br/>For example, lets say we have an array that contains 6 values and we want to log all of them except 1. We know what that value is so we can write a loop that will do this and skip the value we want to exclude using the <span class="attribute">continue</span> keyword.<br/>An example of the syntax is shown below;<br/><span class="attribute">for (const bird of strangeBirds) {<br/>if (bird === 'Basan'){<br/>continue;<br/>}<br/>console.log(bird);<br/>}</span><br/>This will now skip the string 'Basan' if it is encountered within the strangeBirds array. It will log everything else.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">for...in</span></td>
+                            <td>For...in Loop</td>
+                            <td>A <span class="attribute">for...in</span> loop is a loop to be used specifically when looping through parameters of an object. An example of syntax is shown below;<br/><span class="attribute">for (const crewMember in spaceship.crew) {<br/>console.log(`${crewMember}`);<br/>}</span><br/>In a similar way to the <span class="attribute">for...of</span> loop syntax, we begin by defining a temporary variable to use as the base for the looping expression. We then define which key we want to start the loop on. Depending on the hierarchy of the object this particular section could be additional levels deeper. The code body in this example then loops through and logs that particular variable to the console.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">for...in</span> continued</td>
+                            <td>Accessing nested object parameters</td>
+                            <td>In the above example we loop through an object and log the value to the console, however to log the values of nested objects when when looping through parent objects the syntax reverts to long form. So for example if we have the object <span class="attribute">spaceship</span> and this contains nested objects of each crew member that also contains further information such as name, age, etc. we can log their name against their position to the console by using a long form reference call within the same looping expression as shown in the example above. An example of how to do this is shown below;<br/><span class="attribute">for (const crewMember in spaceship.crew) {<br/>console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`);<br/>}</span><br/>Notice how we keep the loop expression on the <span class="attribute">spaceship.crew</span> level but to log both the crew position and the name we use the longform reference of <span class="attribute">spaceship.crew[crewMember].name</span> in the second template literal. This uses the temporary variable of <span class="attribute">crewMember</span> that we created in the loop expression as an index reference to then correctly identify the information we want to print to the console.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="objects">
+                <h2>Objects</h2>
+                <p>This section describes objects and some closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">object</span></td>
+                            <td>Object literals</td>
+                            <td>An <span class="attribute">object</span> is best thought of as a containing folder for unordered information. It is defined in a very similar way to variable, however the information contained within can be extremley varied and complex. In the example below we create a very simple object called userInformation that contains 2 pieces of data.<br/><span class="attribute">let userInformation = {<br/>forename: 'steve',<br/>surname: 'jones'<br/>};</span><br/>Notice how in the syntax we have the object defined and then all of its information is contained within curly braces. Further to this the information is separated by commas (much in the same way we separate data in an array).<br/>A further note on the data contained within the curly braces. They are called key-value pairs. The key is defined and the value is then defined afterwards. They are separated by a colon. The key can be thought of as the category and the value is the specific information. So in our example above the key is forename or surname and the value is 'steve' or 'jones'.<br/>One thing to note is that when defining a key with any kind of number, space or special character we need to wrap the key with apostrophe's so the code reads it as an entire phrase. So for example <span class="attribute">'favourite colour': green</span> would be the correct syntax.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">object</span> continued</td>
+                            <td>Nested Objects</td>
+                            <td>Objects can be nested within one another to create additional complexity if required. If we wanted to create multiple users within a userDatabase object that each had their own set of data we could create it using the syntax below;<br/><span class="attribute">let userDatabase = {<br/>'user 01': {<br/>name: 'steve',<br/>age: 35<br/>},<br/>'user 02': {<br/>name: 'john',<br/>age: 33<br/>},<br/>}<br/></span> </td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">object.key</span></td>
+                            <td>Accessing the values of an Object</td>
+                            <td>To access the value of an object we can use dot notation to append the key to the object which will return the value found. For example in our previous example, to return the surname of 'jones' we would call the object and the key together. The syntax would look like this;<br/><span class="attribute">userInformation.surname</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">object['key value']</span></td>
+                            <td>Accessing the values of an Object continued</td>
+                            <td>When accessing the value of a key that is defined using a number, spaces or special characters we need to use bracket notation. The syntax would look like this;<br/><span class="attribute">userInformation['favourite colour']</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">object</span> continued</td>
+                            <td>Altering the key-values of an Object</td>
+                            <td>The properties of an object cannot be reassigned in the same way that a <span class="attribute">let</span> variable can, however they are mutable which means we can change the properties and even add additional properties.<br/> if we wanted to change our users name from 'steve' to 'fred' we would call the object and relevant key and assign it a new value. An example of the correct syntax is shown below;<br/><span class="attribute">userInformation.forname = 'fred';</span><br/> if we wanted to add a further key-value pair to the object, the syntax is essentially the same just with the new key appended to the object and the value being assigned to it. For example if we wanted to add in the users age we would write;<br/><span class="attribute">userInformation.age = 37;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">delete</span></td>
+                            <td>Delete keyword</td>
+                            <td>We can use the <span class="attribute">delete</span> keyword to completely remove a key-value pair from an object. For example if we no longer wanted to hold the users age within the object we could use the delete keyword to remove this. An example of the syntax is below;<br/><span class="attribute">delete userInformation.age</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">object.method();</span></td>
+                            <td>Methods</td>
+                            <td>When a function is created within an object this is known as a method. An example of how to write a function within an object is noted below;<br/><span class="attribute">const object = {<br/>sayHello () {<br/>console.log('Hello');<br/>}<br/>};</span><br/>To call this function the correct syntax would be;<br/><span class="attribute">object.sayHello();</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">this</span></td>
+                            <td>This Keyword</td>
+                            <td>The <span class="attribute">this</span> keyword allows an object to access information from within itself.<br/>If an object needs to refer to its own parameters then the <span class="attribute">this</span> keyword is prepended to the parameter. For example we could include a function within a "userInformation" object that logs the user's name to the console. We don't know the users name beforehand so we would need to be self referential with the log. An example of how the correct syntax could look is shown below;<br/><span class="attribute">console.log(`Hi ${this.forname} ${this.surname}!`)</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">_variable</span></td>
+                            <td>Declaring privacy within code</td>
+                            <td>The <span class="attribute">_</span> (underscore) notation is used within Javascript coding when declaring variables to denote that the variable is intended to have a level of privacy attributed to it.<br/>This is not a hard coded rule but more of a convention followed by developers to signify that the variable is not intended to be directly changed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">get</span></td>
+                            <td>Getter</td>
+                            <td>In terms of practical application, a Getter can be used to apply logic to whenever you are either trying to pull information out of an object or to set values when initially creating an object through a factory function. Any error messages to be applied within the logic as part of the initial creation will be used as the default value applied to whatever variable or object when it is initially set. It will not be printed out to the console. An example of the syntax when applying logic to set initial information in a factory function is shown below;<br/><br/><span class="attribute">get name() {<br/>if (typeof this._name === 'string') {<br/>return this._name;<br/>} else {<br/>return 'Name entered is invald, please use text only.'<br/>}<br/>},</span><br/>Notice how the function doesn't hold any parameters within the parentheses. This is because it is only used in the creation and the parameters are set by another part of the code.<br/><br/>An example of the syntax when applying logic to pull information out of an object is shown below;<br/><br/><span class="attribute">get fullName() {<br/>if (this.firstName && this.lastName) {<br/>return `${this.firstName} ${this.lastName}`;<br/>} else {<br/>return 'Missing a first name or a last name.'<br/>}<br/>},</span><br/><br/>Getters are essentially the same as creating a method within an object. You write your function within the object and when called it executes the function in the same way for the most part. The syntax however is more akin to calling a property rather than a method. When calling a <span class="attribute">get</span> on an object the parentheses are left off.<br/>For example instead of writing <span class="attribute">object.method();</span> you would write <span class="attribute">object.method;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">set</span></td>
+                            <td>Setter</td>
+                            <td>In terms of practical application, a Setter is used to apply logic to whenever you are trying to reassign a value of an object. Error messages within the setter code block will be printed to the console to indicate errors have been encountered when trying to reassign if they violate the setter rules.<br/.>An example of syntax is shown below;<br/><br/><span class="attribute">set name(newName) {<br/>if (typeof newName === 'string') {<br/>this._name = newName;<br/>} else {<br/>console.log('Name entered is invald, please use text only.');<br/>}<br/>},</span><br/>Notice how the setter does take in a placeholder parameter contained within the parentheses in contrast to the getter. This is because its purpose is for it be used as a check against reassignment and therefore the placeholder parameter is to be used as a template literal for whatever value is trying to be reassigned.<br/><br/>Setters add additional functionality to objects. They are for applying additional behind the scenes logic checks for when values are being re-assigned within objects.<br/>An example would be to logic check an assignment using the <span class="attribute">typeof</span> operator as shown in the above syntax example. The logic checks to make sure the new data being assigned is of the correct type (strings only being applied to a name property).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function</span></td>
+                            <td>Factory Functions</td>
+                            <td>Factory functions are basically functions that have been set up to create multiple objects. They can be thought of as templates for when many objects need to be created all containing the same framework of shared parameters.<br/>A perfect example would be user profiles on a website. There will be many different users with many different details but all of the input parameters will be the same such as name, age, sex etc.<br/>An example of correct syntax for this is shown below;<br/><span class="attribute">const userInfo = (name, age) => {<br/>return {<br/>name: name,<br/>age: age<br/>}<br/>};</span><br/>The function above creates objects with pre-determined key-value pairs that are fed into the function as arguments. So if we wanted to create a new object we could do this using the syntax below;<br/><span class="attribute">const user01 = userInfo('dave', 26);</span><br/>This would create the object 'user01' that contained the key value pair of name: 'dave' and age: 26.<br/>A shorthand version of factory functions can be written that simply notes the key within the function code block rather than needing to write the longhand 'Key: value'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const {Key} = object</span></td>
+                            <td>Destructuring Assignment</td>
+                            <td>A shorthand way to assign values within an object to a new variable is to use destructuring.<br/>The longhand way of extracting a value from an object and assigning it to a new variable is written as;<br/><span class="attribute">const variable = object.key</span><br/>However if we use the destructured syntax we can shorten the amount of code that needs to be written. The shorthand syntax is written as;<br/><span class="attribute">const {key} = object</span><br/>To access nested objects you simply append them to the object when defining the variable, an example of this is below;<br/><span class="attribute">const {key} = object.nestedObject</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.ObjectMethod()</span></td>
+                            <td>Built-in Object Methods</td>
+                            <td>Javascript has plenty of built-in object methods that do useful tasks. These can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods" target="_blank">MDN web docs page.</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="destructuring">
+                <h2>Destructuring</h2>
+                <p>This section describes the general principles of syntax destructuring.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Destructuring an Array</td>
+                            <td>Arrays often contain numerous amounts of data, if we needed to assign each item from an array as an individual variable, we can use syntax destructuring to achieve this.<br/><br/>In the example below we have a short array that has been converted into individual variables.<br/><br/><span class="attribute">let cars = ['ferrari', 'tesla', 'cadillac'];<br/>let car1 = cars[0];<br/>let car2 = cars[1];<br/>let car3 = cars[2];<br/>console.log(car1, car2, car3);</span><br/><br/>We can refactor the above using syntax destructuring.<br/>The example below shows how we can achieve this with much less code;<br/><br/><span class="attribute">let cars = ['ferrari', 'tesla', 'cadillac'];<br/>let [car1, car2, car3] = cars;<br/>console.log(car1, car2, car3);</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Destructuring an Object</td>
+                            <td>Objects are another Javascript element that can be destructured.<br/><br/>In the example below we have an object that has been converted into individual variables.<br/><br/><span class="attribute">let destinations = { x: 'LA', y: 'NYC', z: 'MIA' };<br/>let x = destinations.x;<br/>let y = destinations.y;<br/>let z = destinations.z;<br/>console.log(x, y, z);</span><br/><br/>We can refactor the above using syntax destructuring.<br/>The example below shows how we can achieve this with much less code;<br/><br/><span class="attribute">let destinations = { x: 'LA', y: 'NYC', z: 'MIA' };<br/>let { x, y, z } = destinations;<br/>console.log(x, y, z);</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Selective Destructuring for use in functions</td>
+                            <td>Function arguments are another place where destructuring is useful. Instead of accepting a complete object as an argument, a function can use destructuring to capture specific properties as named parameters.<br/><br/>In the example below we use selective destructuring to define the arguments being put into a function.<br/><br/><span class="attribute">let truck = {<br/>model: '1977 Mustang convertible',<br/>maker: 'Ford',<br/>city: 'Detroit',<br/>year: '1977',<br/>convertible: true<br/>};<br/><br/>const printCarInfo = ({model, maker, city}) => {<br/>console.log(`The ${model}, or ${maker}, is in the city ${city}.`);<br/>};<br/><br/>printCarInfo(truck);<br/>// Prints: The 1977 Mustang convertible, or Ford, is in the city Detroit.</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="json">
+                <h2>JSON</h2>
+                <p>This section describes JSON and some closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">JSON.parse()</span></td>
+                            <td>Converting JSON Objects to Javascript Objects</td>
+                            <td>To convert a JSON object into a Javascript object for editing or even just reading we use the <span class="attribute">JSON.parse()</span> method to make the conversion.<br/>An example of correct syntax for the conversion is shown below;<br/><br/><span class="attribute">const jsonData = '{ "parent":<br/>{"name": "Sally", "age": 45,<br/>}';<br/><br/>const jsObject = JSON.parse(jsonData);</span><br/><br/>The above code block creates a Javascript object stored in the variable <span class="attribute">jsObject</span>.<br/>Notice how the original JSON object is encased with single quotation marks but all key values are double quotation marked. This is because JSON has a strict requirement for double quotation marks for its content.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">JSON.stringify()</span></td>
+                            <td>creating JSON Objects</td>
+                            <td>To send back a JSON object we need to send it as a string. JSON has quite strict format requirements so its often best to convert JSON objects into javascript objects, edit them and then convert them back into JSON strings.<br/><br/>An example of the steps of bringing in a JSON object, converting it to Javascript object data, editing and then converting to a JSON string is shown below;<br/><br/><span class="attribute">const jsonData = '{"parent":{"name":"Sally","age":45}}';<br/><br/>const jsObject = JSON.parse(jsonData);<br/>jsObject.parent.name = Shelly;<br/>const jsonObjectToJson = JSON.stringify(jsObject);</span><br/><br/>In the above example we have a JSON object declared at the top and we want to edit the name from 'Sally' to 'Shelly'. We do this by converting the object to a Javascript object, target the key-value we want to change and mutate it, then we invoke the <span class="attribute">JSON.stringify()</span> method to convert this back into JSON data.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="iterators">
+                <h2>Iterators</h2>
+                <p>Iterators are built-in methods to be called on arrays. This section describes iterators and some closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">.forEach()</span></td>
+                            <td>For Each</td>
+                            <td>This will execute the same code for each element of an array. When called, the function body should be written within the parentheses. An example of correct syntax is shown below;<br/>In this example we have a variable of <span class="attribute">fruits</span> declared that contains an array of fruits.<br/><span class="attribute">fruits.forEach(fruit => console.log(`I want to eat a ${fruit}.`));</span><br/>The above call contains a concise body function that creates a temporary variable called fruit, it will then iterate through the array printing the string to the console for each item of the array, altering the template literal to whatever the particular item is.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.map()</span></td>
+                            <td>Map</td>
+                            <td>The map method will run through an array and create a new array using the information from the original array it is iterating through.<br/>For example if we had an array of numbers and we wanted to create a new array that had all of the original numbers multiplied by 10 we could use the <span class="attribute">.map()</span> method to do this.<br/><span class="attribute">const bigNumbers = smallNumbers.map(small => {<br/>return small * 10;<br/>});</span><br/>We can also use this method to extract letters from strings. Say for example we have an array of peoples names and we wanted to extract the first letter and get their initials. We could use the <span class="attribute">.map()</span> method to iterate through the array of names returning the 0 indexed letter in each string of the array.<br/><span class="attribute">const initials = firstNames.map(intial => {<br/>return initial[0];<br/>});</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.filter()</span></td>
+                            <td>Filter</td>
+                            <td>The filter method can be used to filter out results of an array based on a condition. Like the <span class="attribute">.map()</span> method, this also creates a new array so the original remains unaltered.<br/>For example, we have an array that has a series of names and we want to filter out all the people who's name begins with 'F'.<br/><span class="attribute">const namesWithF = names.filter(name => {<br/>if (name[0] === 'F') {<br/>return name;<br/>};<br/>});</span><br/><br/>If we wanted to filter through 2 separate arrays and return the common results we could iterate through both arrays using the code shown below;<br/><span class="attribute">const commonElementsInArrays = (arr1, arr2) => {<br/>let result = [];<br/>for (let i = 0; i < arr1.length; i++) {<br/>for (let j = 0; j < arr2.length; j++) {<br/>if (arr2[j] === arr1[i]) {<br/>result.push(arr2[j]);<br/>}<br/>}<br/>} return result;<br/>}</span><br/>This code can be refactored into a more concise form and would end up looking like the code shown below;<br/><span class="attribute">const commonElementsInArrays = (arr1, arr2) => {<br/>let result = arr1.filter(item => arr2.includes(item));<br/>return result;<br/>};</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.findIdex()</span></td>
+                            <td>Find Index</td>
+                            <td>The find index method can be used to search through an array and return the index number of the first encountered instance of the condition within an array.<br/>For example, if you wished to find the index of the first person in an array with the letter 'F' as their initial you could write the following code;<br/><span class="attribute">const startsWithF = names.findIndex(start => {<br/>if (start[0] === 'F') {<br/>return start;<br/>};<br/>});</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.reduce()</span></td>
+                            <td>Reduce</td>
+                            <td>The reduce method can be used to take all of the values of an array and produce a single result. If the array is filled completely with numbers it can be used to add all of the numbers together and produce a total. It can be used with strings to produce a single string but the complexity of setting this up is increased along with it.<br/>The syntax is shown below;<br/><span class="attribute">const total = lotsOfNumbers.reduce((accumulator, currentValue) => {<br/>return accumulator + currentValue;<br/>});</span><br/>This example shows the default behaviour of the reduce method, the accumulator takes the first value in the 'lotsOfNumbers' array and adds it to the second value, the result of this then becomes the value of the accumulator which is then added to the third value in the array and so on until the function has iterated through the entire array.<br/>If the total is required to have an additional number added to it as a starting point for whatever reason you would add this in as a second argument that forms part of the <span class="attribute">.reduce()</span> parameters.<br/>For example we want the total to be calculated with an additional 100 added to it. The syntax would be as follows;<br/><span class="attribute">const total = lotsOfNumbers.reduce((accumulator, currentValue) => {<br/>return accumulator + currentValue;<br/>}, 100);</span><br/>Notice how the added value of 100 follows the function body. This is an optional second parameter of the <span class="attribute">.reduce()</span> method that defines the starting point of the <span class="attribute">accumulator</span> parameter before the code starts iterating through the array.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.some()</span></td>
+                            <td>Some</td>
+                            <td>The some method is used to asses whether at least 1 element of an array evaluates to being true based on the function condition. This method tests for truthy or falsey so the output is always either true or false.<br/>For example if we had an array that contained a series of numbers we could use the <span class="attribute">.some()</span> method to check if at least one of those numbers was an even number. The syntax for this is shown below;<br/><br/><span class="attribute">console.log(array.some(number => number % 2 === 0));</span><br/><br/>Notice how the function contained within the method is iterating through the array and testing if the number provides a remainder when divided by 2 thus indicating if it is even or not.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.every()</span></td>
+                            <td>Every</td>
+                            <td>The every method is used to asses whether every element of an array evaluates to being true based on the function condition. This method tests for truthy or falsey so the output is always either true or false.<br/>For example if we had an array that contained a series of objects (<span class="attribute">[{name:value, colour:value}, {name:value, colour:value}]</span>) we could use the <span class="attribute">.every()</span> method to check if all of those keys and/or values was true or false against the condition. In our example we will add a bit more complexity and only want to check the colour key-value pair of the array and ignore the name key-value pair shown above.<br/>The syntax for this is shown below;<br/><br/><span class="attribute">const isColourGreen = arr => arr.every(placeholderVariable => placeholderVariable.colour === 'green');</span><br/><br/>Notice how the function contained within the method is only iterating through the array and testing if the .colour key-value pair matches the condition of 'green'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.sort()</span></td>
+                            <td>Sort</td>
+                            <td>The sort method can be used to sort items in an array. It sorts them in place and returns them to the original array, mutating it.<br/>The long form way of doing this is to provide a condition comparison function that will continually take in items of an array and run them through a conditional statement, moving the items up or down dependent on the logic until the list is sorted.<br/>An example of how this syntax would look is shown below, in this example we are assuming the array we are sorting contains objects with at least 2 key-value pairs per object (<span class="attribute">[{name:value, number:value}, {name:value, number:value}]</span>), in the code block we target the .number key-value pair to ensure we are sorting the array with a consistent point of reference;<br/><br/><span class="attribute">const sortByNumber = arr => {<br/>function compare(a, b) {<br/>const numA = a.number;<br/>const numB = b.number;<br/>let comparison = 0;<br/>if (numA > numB) {<br/>comparison = 1;<br/>} else if (numA < numB) {<br/>comparison = -1;<br/>}<br/>return comparison;<br/>};<br/>arr.sort(compare);<br/>return arr;<br/>};</span><br/><br/>We can make a concise version of this which is shown below;<br/><br/><span class="attribute">const sortByNumber = arr => arr.sort((placeholderA, placeholderB) => placeholderA.number < placeholderB.number)</span><br/><br/>Notice how in the concise version the sort method automatically takes in 2 placeholders and keeps iterating over all of the information until everything is sorted based on the evaluating condition set.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="dom">
+                <h2>The DOM</h2>
+                <p>This section describes keywords, attributes, methods and other closely associated properties on how to interact with the DOM including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">document</span></td>
+                            <td>Document access keyword</td>
+                            <td>The document keyword is the most important keyword for use when interacting with the DOM. This precedes any other keyword or method as it allows for interaction with the DOM.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.innerHTML</span></td>
+                            <td>Replace content</td>
+                            <td>In conjunction with the relevant selector, this allows for the replacement of anything on the page. It simply overwrites anything that has been selected.<br/>For example if we have a HTML page full of code and we write;<br/><span class="attribute">document.body.innerHTML = '&lt;h1&gt;Fresh Start&lt;h1&gt;';</span><br/>Everything within the <span class="code">&lt;body&gt;</span> tags will be replaced with the h1 heading 'Fresh Start'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.querySelector()</span></td>
+                            <td>CSS Element Selector</td>
+                            <td>The query selector allows us to specify a CSS selector as a string and returns the first element that matches that selector.<br/>For example, if we wrote the code;<br/><span class="attribute">document.querySelector('p')</span><br/>This would select the first paragraph element encountered.<br/><br/>The element to be selected is contained within the method's parentheses wrapped in quotation marks. There is no need to add the opening and closing HTML tags.<br/>When selecting classes however the proper notation for these is required within the quotations so for example to select the first class you would need to add the period.<br/>So you would end up writing;<br/><span class="attribute">document.querySelector('.blue')</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.getElementById()</span></td>
+                            <td>CSS Element by ID Selector</td>
+                            <td>The element by ID selector allows us to select an element through its id tag.<br/>This works in the same way as the <span class="attribute">.querySelector()</span> method only that it targets the ID attribute as the selector rather than the element tag. so the syntax would look like;<br/><span class="attribute">document.getElementById('item01')</span><br/><br/>The syntax works in the same way too in that the ID to be selected is contained within the method's parentheses wrapped in quotation marks. There is no need to add the opening and closing HTML tags.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.getElementsByClassName()</span></td>
+                            <td>CSS Element by Class Name Selector</td>
+                            <td>This method works slightly differently to the query and ID selectors. This method assumes that there are multiple instances of a class within the document and that you are intending to select a specific one for editing. As a result this returns an array of all instances, so when you're looking to edit a specific class within the document, bracket notation is required to specify the index of the returned array for the selector to target and apply whatever effect it is you are looking to implement.<br/><br/>An example of the syntax is shown below;<br/><span class="attribute">document.getElementsByClassName('blue')[2]</span><br/>This selects the third instance of the class 'blue' for editing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.getElementsByTagName()</span></td>
+                            <td>CSS Element by Tag Name Selector</td>
+                            <td>This method works in the same way as the Element by ID selector. This method assumes that there are multiple instances of a tag within the document and that you are intending to select a specific one for editing. Bracket notation is required to specify the index of the target in the returned array to then apply whatever effect it is you are looking to implement.<br/><br/>An example of the syntax is shown below;<br/><span class="attribute">document.getElementsByTagName('li')[2]</span><br/>This selects the third instance of the <span class="code">&lt;li&gt;</span> tag for editing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.style</span></td>
+                            <td>Altering styles</td>
+                            <td>Styles can be directly altered using the DOM to access specific elements. For example if we wanted to change the font of a specific heading we could write the following;<br/><br/><span class="attribute">document.getElementsByTagName('h1')[0].style.fontFamily = 'Times New Roman';</span><br/><br/>This would select the first instance of the <span class="code">&lt;h1&gt;</span> tag and then alter its font family property to be 'Times New Roman'.<br/><br/>Notice how the style element of .fontFamily is using the Javascript convention of camel case rather than the hyphenated CSS convention of font-family.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.children</span></td>
+                            <td>Accessing Children relationships</td>
+                            <td>Instead of selecting specific tags, <span class="attribute">.children</span> can be used to target items via the DOM's relationship tree.<br/>Note that this returns an array, specific items in the array can then be targetted with their index using the appropriate bracket notation.<br/>Due the default behaviour of this returning an array, we can set the results to be contained within a variable. This can then be accessed and edited/manipulated in the desired way.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">let first = document.querySelector("body").children;<br/>first[0].innerHTML = "Hello!";</span><br/>Notice how in the example we create a variable called 'first' and then assign it the resulting array of the <span class="attribute">.children</span> call on the <span class="attribute">document</span> <span class="code">&lt;body&gt;</span> using a <span class="attribute">.querySelector()</span>. The second line selects the first item in the array and uses the <span class="attribute">.innerHTML</span> method to change whatever the item is to 'Hello!'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.parentNode</span></td>
+                            <td>Accessing Parent relationships</td>
+                            <td>With similar behaviour to the <span class="attribute">.children</span> call selecting the children of an element, we can also target the parent of an item using <span class="attribute">.parentNode</span>. Using the appropriate bracket notation to select an item, we can again edit or manipulate the parent of an item with this method.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">let first = document.querySelector("body").children;<br/>first[0].parentNode.style.backgroundColor = 'light blue';</span><br/>Here we still use the 'first' variable that contains the array returned from the <span class="attribute">.children</span> call however we then use the <span class="attribute">.parentNode</span> to reference back to the parent of this child element for editing. In our example it is the <span class="code">&lt;body&gt;</span> and we change its <span class="attribute">.backgroundColor</span> to 'light blue'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.createElement()</span></td>
+                            <td>Create Element</td>
+                            <td>This method creates a new element based on the specified tag name passed into it as an argument. However, it does not append it to the document. It creates an empty element with no inner HTML.<br/>For example, we can create a new <span class="code">&lt;li&gt;</span> element using the following declaration;<br/><span class="attribute">let listItem = document.createElement('li');</span><br/><br/>To then fill the newly created element with content we would do something like the following;<br/><span class="attribute">listItem.id = 'new-list-item';<br/>listItem.innerHTML = 'Item';</span><br/>This would in turn give the new <span class="code">&lt;li&gt;</span> element an ID of 'new-list-item' and its content would be 'Item'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.appendChild()</span></td>
+                            <td>Append Child</td>
+                            <td>While the above method creates new elements, it does not add them to the document. To add the new elements to the document we need to tell the browser what we want adding and where.<br/>We do this by calling the <span class="attribute">.appendChild()</span> method on the location we want the element to be added to with the thing we want added as the argument.<br/><br/>For example, say we have an existing <span class="code">&lt;ul&gt;</span> that has the ID of 'list'. To add our new <span class="code">&lt;li&gt;</span> to the bottom of this list we declare<br/><span class="attribute">document.getElementById('list').appendChild('listItem');</span><br/><br/>This targets the <span class="code">&lt;ul&gt;</span> with the id of 'list' and adds the variable we created called <span class="attribute">listItem</span> to the bottom of it.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.removeChild()</span></td>
+                            <td>Remove Element</td>
+                            <td>This method removes a child element based on the specified tag name passed into it as an argument, much in the same but opposite way the <span class="attribute">.createElement()</span> method works.<br/>For example, we can create a new <span class="code">&lt;ul&gt;</span> selector using the following declaration;<br/><span class="attribute">let fullList = document.querySelector('ul');</span><br/><br/>We can then remove the list from the document body with the following;<br/><span class="attribute">document.body.removeChild('fullList');</span><br/>This removes the <span class="code">&lt;ul&gt;</span> from the <span class="code">&lt;body&gt;</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.hidden</span></td>
+                            <td>Hide Element</td>
+                            <td>If you want to keep the content but hide it rather than completely remove it, the <span class="attribute">.hidden</span> method allows for this. It is a boolean method so the syntax would be;<br/><span class="attribute">document.getElementById('fullList').hidden = true;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="dom_events">
+                <h2>DOM Events</h2>
+                <p>This section describes DOM events with Javascript including keywords, attributes, methods and other closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">.addEventListener()</span></td>
+                            <td>Event handler registration</td>
+                            <td>This element listens for a specific event and executes a block of code when the event is detected. The method takes 2 arguments within its parentheses, the first is the event name input as a string and the second argument is what we want to happen when the event is triggered, this is usually a function.<br/><br/>An example of syntax is shown below;<br/><br/><span class="attribute">let eventTarget = document.getElementById('targetElement');<br/><br/>eventTarget.addEventListener('click', function turnBlue() {<br/>eventTarget.style.color = 'blue'<br/>});</span><br/><br/>In this example we create a variable that will be the focus of the <span class="attribute">.addEventListener()</span> method, we also set the method to trigger on 'click' so when this variable is clicked on, the function will trigger and turn the text of the variable blue as per the function body.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.onclick</span></td>
+                            <td>On Click Interactivity</td>
+                            <td>This triggers an 'On Click' event.<br/>An example of correct syntax is shown below;<br/><span class="attribute">element.onclick = doSomething;</span><br/><br/>A practical example of how this would work is if we wanted an existing button to turn red on click.<br/>We could do this by selecting an element and setting it to be a variable, creating a function that would turn the button red and then declaring an 'On Click' event that was linked to the variable being clicked which in turn would run the function to turn the button red.<br/><span class="attribute">let element = document.querySelector('button');<br/><br/>function turnButtonRed(){<br/>element.style.backgroundColor = 'red';<br/>element.style.color = 'white';<br/>element.innerHTML = 'Red Button';<br/>};<br/><br/>element.onclick = turnButtonRed;</span><br/><br/>In this example we also modify the text colour to be 'white' and use the <span class="attribute">.innerHTML</span> method to turn the button text to read 'Red Button'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.removeEventListener()</span></td>
+                            <td>Removing event handlers</td>
+                            <td>This is used to reverse the <span class="attribute">.addEventListener()</span> method. This method stops the event target from “listening” for an event to fire when it no longer needs to.<br/>A practical example of this would be if you had a random number generator with a button and you only wanted it to generate once, you could use this to then basically kill the button once it had been pressed.<br/><br/>An example of syntax is shown below;<br/><br/><span class="attribute">let eventTarget = document.getElementById('targetElement');<br/><br/>eventTarget.addEventListener('click', function turnBlue() {<br/>eventTarget.style.color = 'blue'<br/>eventTarget.removeEventListener('click', turnBlue);<br/>});</span><br/><br/>In this example we use the code from the <span class="attribute">.addEventListener()</span> to create a variable and give it an event handler that triggers 'on click'.<br/>We then add the <span class="attribute">.removeEventListener()</span> within the function code body to remove that functionality once it has fired giving us the desired behaviour of only being able to happen once.<br/>Notice how we still need to define the behaviour for this within the parentheses of the <span class="attribute">.removeEventListener()</span> method. We want it to remove the 'turnBlue' function on 'click' but because we want it to happen at least once we position that piece of code within the function body of the function we want removing so that it will only trigger after the 'turnBlue' function has executed at least once.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.target</span><br/><span class="attribute">.type</span><br/><span class="attribute">.timeStamp</span></td>
+                            <td>Event Object Property</td>
+                            <td>JavaScript stores events as Event objects with their related data and functionalities as properties and methods. When an event is triggered, the event object can be passed as an argument to the event handler function.<br/><br/><span class="attribute">function eventHandlerFunction(event){<br/>console.log(event.timeStamp);<br/>}<br/><br/>eventTarget.addEventListener('click', eventHandlerFunction);</span><br/><br/>In the example above, when the 'click' event is triggered on the <span class="attribute">eventTarget</span>, the <span class="attribute">eventHandlerFunction</span> receives <span class="attribute">event</span>, the Event object, which has information related to the 'click' event. Then, we log the time it took for the event to be triggered since the document was loaded by accessing the <span class="attribute">.timeStamp</span> property of the event object.<br/><br/>The <span class="attribute">.target</span> property references the element that the event is registered to.<br/>The <span class="attribute">.type</span> property accesses the name of the event.<br/>The <span class="attribute">.timeStamp</span> property accesses the number of milliseconds that passed since the document loaded and the event was triggered.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">mouseover</span><br/><span class="attribute">mouseout</span><br/><span class="attribute">mouseup</span><br/><span class="attribute">mousedown</span><br/><span class="attribute">wheel</span></td>
+                            <td>Mouse Events</td>
+                            <td>There are many event types related to mouse actions, for a full list see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element#events" target="_blank">MDN Website</a> for more info.<br/><br/>A few key events are listed here for reference.<br/><span class="attribute">wheel</span> fires when a scroll wheel or mousepad is used to scroll.<br/><span class="attribute">mousedown</span> fires when a button is pressed. Note that it doesnt need to be released to fire as that is covered by <span class="attribute">.onclick</span><br/><span class="attribute">mouseup</span> fires when a mouse button is released.<br/><span class="attribute">mouseover</span> fires when the cursor hovers over the specific element.<br/><span class="attribute">mouseout</span> fires when the cursor leaves the specific element.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">keyup</span><br/><span class="attribute">keydown</span><br/><span class="attribute">keypress</span></td>
+                            <td>Keyboard Events</td>
+                            <td>There are a number of event types related to keyboard actions.<br/><br/>A few key events are listed here for reference.<br/><span class="attribute">keydown</span> fires when a key is pressed down. It does not need to be released to fire.<br/><span class="attribute">keyup</span> fires when a key is released. Note that it doesn't fire on being pressed, only when released.<br/><span class="attribute">keypress</span> fires when a key is pressed and then released. Note that this requires the full action of pressing and then releaseing a key to fire.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="classes">
+                <h2>Classes</h2>
+                <p>This section describes classes within Javascript including keywords, attributes, methods and other closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">class</span></td>
+                            <td>Class Declaration</td>
+                            <td>A class is a template for an object. They work in a comparable way to factory functions, the syntax is similar however the functionality offers a little more in terms of re-use.<br/>An example of typical syntax is shown below;<br/><br/><span class="attribute">class HospitalEmployee {<br/>constructor(name) {<br/>this._name = name;<br/>this._remainingVacationDays = 20;<br/>}<br/><br/>get name() {<br/>return this._name;<br/>}<br/><br/>get remainingVacationDays() {<br/>return this._remainingVacationDays;<br/>}<br/></br>takeVacationDays(daysOff) {<br/>this._remainingVacationDays -= daysOff;<br/>}<br/>}</span><br/><br/>In this example we declare the class (the declaration is made in PascalCase as opposoed to camelCase) and the first part of the class is to use the <span class="attribute">constructor</span> keyword. Note that this takes in a parameter as an argument.<br/>The following code after this is mostly the same as the internal code body of a factory function. The major difference between this and the factory function is that between each separate section there is no need for separating commas.<br/>Note that between the getters and the method there is no comma after the end of each specific getter or method.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">new</span></td>
+                            <td>New Keyword</td>
+                            <td>Another difference between classes and factory functions is the declaration of variables using the object template.<br/>When declaring a new object using the class as the template you need to use the <span class="attribute">new</span> keyword to create an instance of the object.<br/>So for example;<br/><br/><span class="attribute">const nurseJones = new HospitalEmployee('Jones');</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">extends</span> & <span class="attribute">super</span></td>
+                            <td>Subclasses and Inheritance</td>
+                            <td>The idea of Subclasses and Inheritance is unique to classes in comparison to factory functions.<br/>Classes are reusable templates to create objects however we can create subclasses that inherit properties, getters, setters and methods from other classes to create a parent-child relationship.<br/>For example if we have our parent class of <span class="attribute">HospitalEmployee</span> we can create subclasses for each discipline of employee, such as nurse or doctor. Using this method we can inherit all of the properties contained within the <span class="attribute">HospitalEmployee</span> class and then add additional properties for each specific subclass if we so desired, like department or specialism.<br/><br/>The keywords <span class="attribute">extends</span> & <span class="attribute">super</span> are what allow us to create this behaviour.<br/><br/><span class="attribute">class Nurse extends HospitalEmployee {<br/>constructor(name, department) {<br/>super(name);<br/>this._department = department;<br/>}<br/>}</span><br/><br/>In the example above we use the <span class="attribute">extends</span> keyword to tell the script we want to use the <span class="attribute">HospitalEmployee</span> class as a base to inherit from. We then create a <span class="attribute">constructor</span> in the same way we would for a normal class, defining the arguments we want to use when the object is created.<br/>Immediately after this we use the <span class="attribute">super</span> keyword. This creates the link from the parent class to the child class with the matching argument.<br/>Finally in our example you can see we add in the additional <span class="attribute">department</span> argument to allow the nurse class to take in an additional property during its creation.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Further pinciples of Inheritance</td>
+                            <td>A further point to note when it comes to the extension of classes and inheritance is that when constructing subclasses the <span class="attribute">super</span> of a subclass can populate the inherited properties of the parent class' arguments.<br/><br/><span class="attribute">class HospitalEmployee {<br/>constructor(name, position) {<br/>this._name = name;<br/>this._position = position;<br/>}<br/>}<br/><br/>class Nurse extends HospitalEmployee {<br/>constructor(name, department) {<br/>super(name, 'Nurse');<br/>this._department = department;<br/>}<br/>}</span><br/><br/>In the example above we have a parent class (<span class="attribute">HospitalEmployee</span>) that has 2 arguments and then we have a child sub class (<span class="attribute">Nurse</span>). The <span class="attribute">Nurse</span> class inherits the <span class="attribute">name</span> and <span class="attribute">position</span> properties, however notice that instead of copying all arguments in the <span class="attribute">super</span> section of the <span class="attribute">Nurse</span> sub class we populate one of the properties of that class with the string <span class="attribute">'Nurse'</span>. This is because we want the default position of the Nurse class to always be <span class="attribute">'Nurse'</span>.<br/>The reason for doing this can vary but in our example we wish for this subclass to always have a default value when being defined.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">static</span></td>
+                            <td>Static keyword</td>
+                            <td>The static keyword allows for methods to be declared within a class that are not accessible via instances of the class (the objects created by the class and saved to a variable).<br/><br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">static generatePassword() {<br/>const randomNumber = Math.floor(Math.random()*10000);<br/>return randomNumber<br/>}</span><br/><br/>Standard methods can be called on instances of classes (a declared variable containing an object). So lets say we have a class called <span class="attribute">class</span> and we have declared a variable called <span class="attribute">variable</span> which contains all of the object properties of <span class="attribute">class</span>, of which a <span class="attribute">.method()</span> is included. We call that method by typing <span class="attribute">variable.method()</span>. The method is able to be called on an instance of the <span class="attribute">class</span> which is contained in the <span class="attribute">variable</span>.<br/><br/>Static methods do not allow this, when called they have to be called directly on the class and not the instance.<br/><br/>For example to call the same <span class="attribute">.method()</span> if it had been declared with the <span class="attribute">static</span> keyword you would instead need to type <span class="attribute">class.method()</span>, notice how we are now calling it on the class and not the instance of the class.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="modules">
+                <h2>Modules</h2>
+                <p>This section describes modules within Javascript including keywords, attributes, methods and other closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">export</span></td>
+                            <td>Named Export</td>
+                            <td>A named export requires that each individual resource to be exported is named within a set of curly braces at the very bottom of the file.<br/>For example if we have 2 functions contained within a file that we want to export for use elsewhere the syntax would be similar to what is shown below;<br/><br/><span class="attribute">export { functionA, functionB };</span><br/><br/>Notice how when we export functions we do not include the parentheses.<br/><br/>The <span class="attribute">export</span> keyword can also be placed directly in front of declarations to name them as named exports.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">export const function = () => {<br/>return value<br/>}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">import</span></td>
+                            <td>Named Import</td>
+                            <td>To import a named export requires that each individual resource to be imported is again named within a set of curly braces at the start of the file.<br/>One additional point to note here is that the syntax also requires direction on where to find the items to be imported.<br/>For example if we have 2 functions that have been exported in a separate file and we want to import them into a new file for use, the syntax would be similar to what is shown below;<br/><br/><span class="attribute">import { functionA, functionB } from '/path/to/module.js';</span><br/><br/>As with the export, notice how when we import the functions we do not include the parentheses.<br/><br/>One further important point to note is that when using modules in javascript it requires an additional property to be written in the HTML of a file.<br/>When the <span class="code">&lt;script&gt;</span> tag is written in the HTML, the tag contains an <span class="attribute">src</span> property to tell the browser where to find the javascript file to read the script from. However when using modules we need add an additional <span class="attribute">type</span> property.<br/>So for example our <span class="code">&lt;script&gt;</span> tags could look something like the below;<br/><br/><span class="code">&lt;script type="module" src="./path/to/script.js"&gt; &lt;/script&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">as</span></td>
+                            <td>Renaming imported resources</td>
+                            <td>Sometimes the resources you wish to import share a name with some other value that already exists in your programme (or from another imported module).<br/>This will cause errors to be thrown due to the matching names, however the <span class="attribute">as</span> keyword allows for resources to be renamed upon import to avoid these situations.<br/><br/>Lets say we have 2 functions in separate files that we want to import. Both separate functions share the same name 'greet'.<br/>If we imported them as shown below;<br/><br/><span class="attribute">import { greet } from 'greeterEspanol.js';<br/>import { greet } from 'greeterFrancais.js';</span><br/><br/>This would cause an error when it tried to import the second function saying that it has already been defined.<br/>This is due to the naming conflict.<br/><br/>In the example below we can get around this.<br/><br/><span class="attribute">import { greet as greetEspanol } from 'greeterEspanol.js';<br/>import { greet as greetFrancais } from 'greeterFrancais.js';</span><br/><br/>Notice how using the <span class="attribute">as</span> keyword and defining an alternative name for the function avoids the error as it is not trying to define an already defined function.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">default</span></td>
+                            <td>Default exports</td>
+                            <td>Modules can often contain more than just a single resource. We can export them as a single value using the <span class="attribute">default</span> keyword.<br/>It is worth stressing that when exporting as <span class="attribute">default</span> you are only exporting a single value, for this reason it is common for all of the functions and/or data values of a module to be packaged into an object.<br/>The syntax for packaging into an object and then exporting is shown below;<br/><br/><span class="attribute">const resources = { <br/>valueA,<br/>valueB <br/>}<br/><br/>export { resources as default };</span><br/><br/>The export section of the code above can be written in shorthand form, this is shown below;<br/><br/><span class="attribute">export default resources;</span><br/><br/></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">default</span></td>
+                            <td>Default imports</td>
+                            <td>The syntax for importing default exports is shown below;<br/><br/><span class="attribute">import importedResources from 'module.js';</span><br/><br/>Notice that the curly braces are gone from the import statement. This syntax is actually shorthand for;<br/><br/><span class="attribute">import { default as importedResources } from 'module.js;</span><br/><br/>The imported <span class="attribute">default</span> value may be given any name the programmer chooses.<br/>It should be noted that if the default export is an object, the values inside cannot be used until after the object is unpacked.<br/>The syntax for this is shown below;<br/><br/><span class="attribute">import importedResources from 'module.js'<br/>const { valueA, valueB } = importedResources;</span><br/><br/>Notice how the unpacking of the <span class="attribute">default</span> object uses the same names from the export in the example above.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="testing">
+                <h2>Testing with Mocha</h2>
+                <p>This section describes principles of testing using Javascript and the Mocha framework. This includes keywords, attributes, methods and other closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">npm init</span><br/><br/>(Written in the terminal)</td>
+                            <td>Initialize</td>
+                            <td>The <span class="code">npm init</span> command creates a file <strong>package.json</strong> that can be used to manage packages for the project.<br/>Within this file is an unamed object containing various key-value pairs that are essentially properties of the project.<br/><br/>After running this command you will be prompted to enter information about your project. It’s okay to skip some fields if you’re not ready to enter that information.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">npm install mocha -D</span><br/><br/>(Written in the terminal)</td>
+                            <td>Install Mocha</td>
+                            <td>When you <span class="code">npm install</span> packages, the file directory you are working in will be populated with additional files and folders for the Mocha framework.<br/><br/>To break the actual command down a little to give each bit some context,<br/>The <span class="code">npm install</span> terminal command tells npm (the <strong>n</strong>ode <strong>p</strong>ackage <strong>m</strong>anager) to install a package from the internet and any other packages it depends on.<br/><br/>The <span class="code">mocha</span> portion tells npm what package it is you wish to install.<br/><br/>The <span class="code">-D</span> signifies that this package is a development dependency and will show up under the <span class="code">devDependecies</span> section in <strong>package.json</strong>. This means that the package will only be included in development mode and will not be included in the production bundle.<br/><br/>Once Mocha is installed in the file directory we need to edit the <strong>package.json</strong> file to allow us to run Mocha with a simple command rather than having to type out the file path each time.<br/>Within the <strong>package.json</strong> file, locate the 'scripts' sub object, then locate the 'test' key and change its value to 'mocha'.<br/>An example of the object in this file is shown below;<br/><br/><span class="attribute">{<br/>"name": "file-name",<br/>"version": "1.0.0",<br/>"description": "",<br/>"main": "index.js",<br/>"scripts": {<br/>"test": "mocha"<br/>},<br/>"author": "",<br/>"license": "ISC",<br/>"devDependencies": {<br/>"mocha": "^4.0.1"<br/>}<br/>}</span><br/><br/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Organisation</td>
+                            <td>The general organisation of the file structure when using Mocha will be that you have your file structure with your <span class="attribute">main.js</span> file (also known as implementation code) within a <span class="code">./resources/javascript</span> folder structure.<br/>There may also be a folder in there for modules which will contain various modular javascript files for repeated use throughout the project. These are also known as implementation code.<br/>For Mocha we would also create a <span class="code">test</span> folder that will contain all of the test files we will create. Predictably these files are known as test code.<br/><br/>Another point to note is that for each test code file we are creating the naming tradition will usually match the implementation code file it is testing but it will be suffixed with <span class="attribute">_test</span> to indicate it as the test file.<br/>So for example if we wrote a test that was for the <span class="attribute">main.js</span> file, if we followed the naming convention described above, the test file would be named <span class="attribute">main_test.js</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">describe</span> & <span class="attribute">it</span></td>
+                            <td>Describe and It blocks</td>
+                            <td>In Mocha we group tests using the <span class="attribute">describe</span> function and define tests using the <span class="attribute">it</span> function.<br/>These two functions can be used to make your test suite complete, maintainable, and expressive.<br/><br/>You can organize tests into nested groups that reflect the structure of your implementation code AND provide informative messages by defining your tests using human-readable strings.<br/><br/>If you are testing a <span class="attribute">Math</span> object with the method <span class="attribute">.max</span>, you could use the following test code;<br/><br/><span class="attribute">describe('Math', () => {<br/>describe('.max', () => {<br/>it('test 01, a relevant description of what the test is doing', () => {<br/><br/>// The relevant tests you write to test your code goes here<br/><br/>});<br/>it('test 02, a relevant description of what the test is doing', () => {<br/><br/>// The relevant tests you write to test your code goes here<br/><br/>});<br/>});<br/>});</span><br/><br/>Both the <span class="attribute">describe</span> and <span class="attribute">it</span> functions accept two parameters: a descriptive string and a callback function which is the test. Though the functions are flexible, they are commonly used in the structure above: nest describe blocks to resemble the structure of your implementation code and write individual tests in it blocks. This makes your test suite isolated, maintainable, and expressive.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.ok()</span></td>
+                            <td>Assert function - Verification check</td>
+                            <td>The <span class="attribute">assert.ok()</span> function allows you to compare values and throw errors as needed using one function call.<br/>To enable it you need to define a variable at the top of the file that <span class="attribute">require</span>'s it.<br/>The correct syntax for this is shown below;<br/><span class="attribute">const assert = require('assert');</span><br/><br/>Once this has been defined you can then use this within the <span class="attribute">it</span> blocks to evaluate test conditions.<br/>An example of a basic test that evaluates some simple arithmetic is shown below;<br/><br/><span class="attribute">describe('+', () => {<br/>it('returns the sum of its arguments', () => {<br/>assert.ok(3 + 4 === 7);<br/>});<br/>});</span><br/><br/>As you can see in the above assertion we are evaluating if 3 + 4 = 7. It does so no error is thrown and the test passes.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.equal()</span></td>
+                            <td>Assert function - Equality check</td>
+                            <td>The <span class="attribute">assert.equal()</span> function allows you to compare values for equality.<br/>The <span class="attribute">assert.ok()</span> function can carry out the same task, a comparison of how the two are written is shown below using <span class="attribute">assert.ok()</span> and <span class="attribute">assert.equal()</span><br/><br/><span class="attribute">assert.ok(landAnimals[2] == waterAnimals[2]);<br/>assert.equal(landAnimals[2], waterAnimals[2]);</span><br/><br/>This specialised function is more expressive when reading the test as you can see quickly that the test is checking for equality before having to read through the callback functions and determine what is going on.<br/><br/>An example of correct syntax for this in a test environment is shown below;<br/><br/><span class="attribute">describe('-', () => {<br/>it('returns the difference of two values', () => {<br/>//Setup<br/>const bigNum = 100;<br/>const smallNum = 4;<br/>const expected = 96;<br/><br/>//Exercise<br/>const result =  bigNum - smallNum;<br/><br/>// Verify<br/>assert.equal(result, expected);<br/>});<br/>});</span><br/><br/>The test will work regardless of the order you pass the result and expected, however it is common practice to pass result first and expected second.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.strictEqual()</span></td>
+                            <td>Assert function - Equality check</td>
+                            <td>The <span class="attribute">assert.strictEqual()</span> function essentially does the same as <span class="attribute">assert.equal()</span> however the difference is in the type of comparison they do.<br/><br/><span class="attribute">assert.equal()</span> performs a loose (<span class="attribute">==</span>) equality check which compares values.<br/><span class="attribute">assert.strictEqual()</span> however performs a strict (<span class="attribute">===</span>) equality check which compares types AND values.<br/><br/>So for example the number 3 and the string '3' using <span class="attribute">assert.equal()</span> would not throw an error but it would if we used <span class="attribute">assert.strictEqual()</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.deepEqual()</span></td>
+                            <td>Assert function - Object equality check</td>
+                            <td>Distinct objects and arrays are not considered equal when using either loose or strict equality in JavaScript. As a result both <span class="attribute">assert.equal()</span> & <span class="attribute">assert.strictEqual()</span> will throw errors when comparing objects regardless of whether the content is identical or not.<br/><br/>To compare the value of objects the <span class="attribute">assert.deepEqual()</span> function will perform a loose (<span class="attribute">==</span>) equality check on the objects.<br/>An example of this in a test environment is shown below;<br/><br/><span class="attribute">describe('+', () => {<br/>it('returns the sum of two values', () => {<br/>// Setup<br/>let expected = {a: 3, b: 4, result: 7};<br/>let sum = {a: 3, b: 4};<br/><br/>// Exercise<br/>sum.result = sum.a + sum.b;<br/><br/>// Verify<br/>assert.deepEqual(sum, expected);<br/>});<br/>});</span><br/><br/>Notice how this function ignores the variable name instead compares the content.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.throws(function, error)</span></td>
+                            <td>Assert function - Error throw check</td>
+                            <td>This assert function checks to see if an error is thrown and if that error matches the expected error.<br/>The syntax has a function call as the first argument and the error as the second argument.<br/>The function call should be written in the same way as you would call the function and method.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">assert.throws(<br/>() => {Variable.method(parameter);}, RangeError<br/>)</span><br/><br/>Notice how we have an anonymous callback function as the first argument of the <span class="attribute">assert</span> then we have a comma and then the second argument is RangeError. The RangeError could just be Error or any other defined Error type we have in the code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert</span> library</td>
+                            <td>Assert function - additional methods</td>
+                            <td>The <span class="attribute">assert</span> function has many different descriptive methods attached to it that can be found <a href="https://nodejs.org/api/assert.html" target="_blank">here</a></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>3 Phase test setup</td>
+                            <td>This method of writing a test separates the key parts of the test into 3 distinct sections. This is more about a methodology of writing and creating a test than a specific keyword.<br/><br/>The 3 phases are setup, exercise, and verify. This distinct and well-defined separation of steps makes the test more reliable, maintainable, and expressive.<br/><br/>The phases are defined as follows:<br/><br/>Setup - create objects, variables, and set conditions that your test depends on.<br/>Exercise - execute the functionality you are testing.<br/>Verify - check your expectations against the result of the exercise phase. You can use the assert library here.<br/><br/>Clear separation of each phase makes a test easier to read, change, and validate.<br/><br/>An example of a 3 phase test is shown below;<br/><br/><span class="attribute">describe('.pop', () => {<br/>it('returns the last element in the array', () => {<br/>// Setup phase<br/>const knightString = 'knight';<br/>const jediPath = ['padawan', knightString];<br/><br/>// Exercise phase<br/>const popped = jediPath.pop();<br/><br/>// Verify phase<br/>assert.ok(popped === knightString);<br/>});<br/>});</span><br/><br/>Notice how in the code we have a relevant description in the <span class="attribute">it</span> block and clearly defined phases that make it easy to read what the test is doing.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Teardown</td>
+                            <td>The teardown phase is an important step when testing implementation code.<br/>If the test requires new content to be made in order to test elements then the teardown phase essentially resets the environment before the next test runs.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">fs.appendFileSync(path, str)</span><br/>&<br/><span class="attribute">fs.unlinkSync(path)</span></td>
+                            <td>Creation and deletion of files for testing</td>
+                            <td>The Node filesystem library <span class="attribute">fs</span> needs to be imported much in the same that we do with the <span class="attribute">assert.ok()</span> function. At the top of the file we import this using the syntax shown below;<br/><span class="attribute">const fs = require('fs');</span><br/><br/><span class="attribute">fs.appendFilesync(path, str)</span> creates a new file at <span class="attribute">path</span> with the string <span class="attribute">str</span> as content. If a file at <span class="attribute">path</span> already exists then the string <span class="attribute">str</span> will be appended to the end.<br/><br/><span class="attribute">fs.readFileSyncPath(path)</span> returns the contents of the file found at <span class="attribute">path</span>.<br/><br/>Below is a worked example;<br/><span class="attribute">describe('appendFileSync', () => {<br/>it('creates a new file with a string of text', () => {<br/><br/>// Setup<br/>path = './message.txt';<br/>str = 'Hello Node.js';<br/><br/>// Exercise: write to file<br/>fs.appendFileSync(path, str);<br/><br/>// Verify: compare file contents to string<br/>const contents = fs.readFileSync(path);<br/>assert.equal(contents.toString(), str);<br/><br/>// Teardown: restore file<br/>fs.unlinkSync(path);<br/>});<br/>});</span><br/><br/>Notice how in the setup we define the filepath of <span class="attribute">path</span> and the string of <span class="attribute">str</span> and once we have tested using the <span class="attribute">assert</span> function we then use the <span class="attribute">fs.unlinkSync(path)</span> to restore the file and reset the testing environment for any future tests.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">beforeEach(callbackFunction)</span>,<br/><span class="attribute">afterEach(callbackFunction)</span>,<br/><span class="attribute">before(callbackFunction)</span>,<br/>&<br/><span class="attribute">after(callbackFunction)</span></td>
+                            <td>Hooks</td>
+                            <td>Within the testing environment we often want to repeat things, teardown steps after a test are a good example of this.<br/>We want to do a teardown after each test to reset the environment. The long way of doing this would be to repeat the teardown commands after each test. This result in a lot of additional code needing to be written.<br/><br/>Hooks are a way to implement identical sections of code while avoiding the repetition of writing out the same section again and again.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">const assert = require('assert');<br/>const fs = require('fs');<br/>let path, str;<br/><br/>describe('appendFileSync', () => {<br/><br/>// The hooks are written here above the tests<br/>before(() => {<br/>path = './message.txt';<br/>});<br/>afterEach(() => {<br/>fs.unlinkSync(path);<br/>})<br/><br/>it('writes a string to text file at given path name', () => {<br/><br/>// Setup<br/>str = 'Hello Node.js';<br/><br/>// Exercise: write to file<br/>fs.appendFileSync(path, str);<br/><br/>// Verify: compare file contents to string<br/>const contents = fs.readFileSync(path);<br/>assert.equal(contents.toString(), str);<br/>});<br/>});</span><br/><br/>Notice how we start off by defining the <span class="attribute">assert</span>, <span class="attribute">fs</span>, <span class="attribute">path</span> & <span class="attribute">str</span> variables. Once these are defined we write our test using the 3 phase setup.<br/>Notice that the hooks are written before the test. The <span class="attribute">before()</span> hook sets out a parameter for all of the tests by defining the path needed to run the test and the <span class="attribute">afterEach()</span> tears down the file to reset the workspace after each test has been carried out.<br/>The call back functions are written as anonymous functions containing the actions we want to be taken.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="promises">
+                <h2>Promises</h2>
+                <p>This section describes promises. This includes keywords, attributes, methods and other closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">Promise</span></td>
+                            <td>Promise object and executor function</td>
+                            <td>In the most basic terms a <span class="attribute">Promise</span> is an object that will produce a single value some time in the future. If the promise is successful, it will produce a resolved value, but if something goes wrong then it will produce a reason why the promise failed.<br/><br/>The <span class="attribute">Promise</span> object itself is mostly a facilitator for an executor function (something that runs once a promise has been called).<br/>The functionality of a promise actually comes from the executor function that pops off when a promise is called.<br/>An example of the syntax in its most basic form is shown below;<br/><br/><span class="attribute">const executorFunction = (resolve, reject) => { };<br/>const myFirstPromise = new Promise(executorFunction);</span><br/><br/>Here we have an executor function declared, notice how the executor function takes 2 arguments which tend to act in a boolean fashion in that the outcome is to resolve or rejct the promise so similar to true or false.<br/>Underneath the function we declare a variable that has a value of the <span class="attribute">new Promise</span> so when <span class="attribute">myFirstPromise</span> is used its value will be to call the executor function we defined at the top.<br/><br/>A practical example is shown below;<br/><br/><span class="attribute">const myExecutor = (resolve, reject) => {<br/>if (inventory.sunglasses > 0) {<br/>resolve('Sunglasses order processed.');<br/>} else {<br/>reject('That item is sold out.');<br/>}<br/>};<br/><br/>const orderSunglasses = () => {<br/>return new Promise(myExecutor);<br/>}</span><br/><br/>In this example we create an executor function that has more detail added to its resolve and reject outcomes. We also create an <span class="attribute">orderSunglasses()</span> function that, when invoked, will create and execute a new <span class="attribute">Promise</span>.<br/><br/>In this example, when we call the <span class="attribute">orderSunglasses()</span> function the <span class="attribute">Promise</span> automatically calls the executor function which then checks the <span class="attribute">inventory.sunglasses</span> to make sure we have stock, if there is stock the executor function resolves and the <span class="attribute">Promise</span> returns the resolved value of 'Sunglasses order processed', if there is no stock then the executor function rejects and the <span class="attribute">Promise</span> will deliver the rejection message of 'That item is sold out'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">setTimeout(callbackFunction, 1000)</span></td>
+                            <td>Set Timeout function</td>
+                            <td>Javascript is a single threaded language which means that it executes code from top to bottom, one after the other, in order. It will not carry out more than one task at a time and it works by placing items on the stack to be executed one after the other. This is known as the event loop.<br/><br/>The <span class="attribute">setTimeout()</span> function allows Javascript to emulate concurrency by performing functions after a specified delay.<br/>The function accepts 2 arguments, the first one is a callback function and the second is a delay measured in milliseconds, so 1000 would be 1 second.<br/><br/>The way that this function works means that Javascript will run through the code in its single threaded fashion, execute the <span class="attribute">setTimeout()</span> function, and then move onto the next sections of the code. The action of <span class="attribute">setTimeout()</span> however is to carry out its function after the specified time delay. Therefore in terms of how things are ordered, if there is code still being executed after the <span class="attribute">setTimeout()</span> delay has expired, the function will kind of 'butt' in and carry out whatever it is doing.<br/><br/>Below is an example of syntax;<br/><br/><span class="attribute">const exampleFunction = () => {<br/>console.log('PARTY TIME!');<br/>};<br/><br/>setTimeout(exampleFunction, 2000);</span><br/><br/>In the above example we create <span class="attribute">exampleFunction</span> to log 'PARTY TIME!' to the console. we then call <span class="attribute">setTimeout()</span> which invokes the function but it has a delay of 2000 milliseconds meaning that the code runs but the 'PARTY TIME!' message will not be put on the stack to be executed until 2 seconds later.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.then(callbackFunction, callbackFunction)</span></td>
+                            <td>Success Handler</td>
+                            <td>When a <span class="attribute">Promise</span> resolves or rejects we will likely want to do something with the result.<br/>The <span class="attribute">.then()</span> method is known as a success handler as it is usually invoked if a <span class="attribute">Promise</span> resolves, another method called <span class="attribute">.catch()</span> is usually used for failure however <span class="attribute">.then()</span> can handle failure as the syntax allows for it to accept 2 arguments. It is better to separate out failure and success as its easier to debug.<br/>This method is a higher-order function as it accepts other functions as arguments.<br/>A practical example of how this method works is shown below;<br/><br/><span class="attribute">const checkInventory = (order) => {<br/>return new Promise((resolve, reject) => {<br/>setTimeout(() => {<br/>let inStock = order.every(item => inventory[item[0]] >= item[1]);<br/>if (inStock) {<br/>resolve(`Thank you. Your order was successful.`);<br/>} else {<br/>reject(`We're sorry. Your order could not be completed because some items are sold out.`);<br/>}<br/>}, 1000);<br/>})<br/>};<br/><br/>const handleSuccess = (resolvedValue) => {<br/>console.log(resolvedValue);<br/>}<br/><br/>const handleFailure = (rejectionReason) => {<br/>console.log(rejectionReason);<br/>}<br/><br/>checkInventory(order).then(handleSuccess, handleFailure);</span><br/><br/>In the example above we have a function called <span class="attribute">checkInventory</span> that returns a <span class="attribute">Promise</span> which, in turn, checks our inventory for stock levels.<br/>Dependent on the stock levels the <span class="attribute">Promise</span> will either resolve or reject. The function returns a string for either outcome. Underneath the <span class="attribute">checkInventory</span> function we have 2 additional functions called <span class="attribute">handleSuccess</span> and <span class="attribute">handleFailure</span>. These simply print out whatever argument is passed into them.<br/><br/>At the bottom of the example we call <span class="attribute">checkInventory</span> with the <span class="attribute">.then()</span> method and the 2 simple callback functions passed as arguments. Now when the <span class="attribute">Promise</span> resolves the string that is returned will be printed to the console because of the <span class="attribute">.then()</span> method handling either the success or failure.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.catch(callbackFunction)</span></td>
+                            <td>Failure Handler</td>
+                            <td>The <span class="attribute">.catch()</span> method is basically the same as <span class="attribute">.then()</span> however it only accepts 1 argument and is predominantly used as a failure handler for promises.<br/>You would normally chain the 2 together when calling a function that returns a <span class="attribute">Promise</span>.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">checkInventory(order).then(handleSuccess).catch(handleFailure);</span><br/><br/>Using the same success and failure functions as the previous example, we pass through the relevant functions into the <span class="attribute">.then()</span> and <span class="attribute">.catch()</span> methods to separate out the success and failure paths of the code. Again this is mainly to provide easier debugging.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Chaining Promises</td>
+                            <td>Promises can be chained together, a common pattern with asynchronous programming is multiple operations which depend on each other to execute or that must be executed in a certain order. For example, we might make one request to a database and use the data returned to us to make another request.<br/><br/><span class="attribute">firstPromiseFunction()<br/>.then((firstResolveVal) => {<br/>return secondPromiseFunction(firstResolveVal);<br/>})<br/>.then((secondResolveVal) => {<br/>console.log(secondResolveVal);<br/>});</span><br/><br/>In the example above we invoke a function <span class="attribute">firstPromiseFunction()</span> which returns a promise.<br/>We invoke <span class="attribute">.then()</span> with an anonymous function as the success handler.<br/>Inside the success handler we return a new promise which is the result of invoking a second function, <span class="attribute">secondPromiseFunction()</span> with the first promise’s resolved value.<br/>We invoke a second <span class="attribute">.then()</span> to handle the logic for the second promise settling.<br/>Inside that <span class="attribute">.then()</span>, we have a success handler which will log the second promise’s resolved value to the console.<br/>In order for our chain to work properly, we had to return the promise <span class="attribute">secondPromiseFunction(firstResolveVal)</span>. This ensured that the return value of the first <span class="attribute">.then()</span> was our second promise rather than the default return of a new promise with the same settled value as the initial.<br/><br/>A prctical example of how this might look is shown below;<br/><br/><span class="attribute">checkInventory(order)<br/>.then((resolvedValueArray) => {<br/>return processPayment(resolvedValueArray);<br/>})<br/>.then((resolvedValueArray) => {<br/>return shipOrder(resolvedValueArray);<br/>})<br/>.then((successMessage) => {<br/>console.log(successMessage);<br/>})<br/>.catch((errorMessage) => {<br/>console.log(errorMessage);<br/>});</span><br/><br/>In the example above we chain promises to check the inventory which will either process payment, ship the order and print a success message or the first promise will reject and it will print a failure message.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Avoiding common mistakes - Nesting Promises</td>
+                            <td>Promises should be chained rather than nested. The example below shows a nested set of promises.<br/><br/><span class="attribute">returnsFirstPromise()<br/>.then((firstResolveVal) => {<br/>return returnsSecondValue(firstResolveVal)<br/>.then((secondResolveVal) => {<br/>console.log(secondResolveVal);<br/>})<br/>})</span><br/><br/>The logic ( the <span class="attribute">.then()</span>) for the second promise is all contained with the <span class="attribute">.then()</span> method of the first promise.<br/>Instead of doing this the logic (the <span class="attribute">.then()</span>) of the second promise should be chained onto the first and written outside of the <span class="attribute">.then()</span> logic.<br/>See a refactored version of the same code below;<br/><br/><span class="attribute">returnsFirstPromise()<br/>.then((firstResolveVal) => {<br/>return returnsSecondValue(firstResolveVal)<br/>})<br/>.then((secondResolveVal) => {<br/>console.log(secondResolveVal);<br/>});</span><br/><br/>The change is subtle but the second <span class="attribute">.then()</span> method containing what to do with the second promise which is returned from the first <span class="attribute">.then()</span> is outside of the brackets and chained so it will happen after the first one has resolved.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Avoiding common mistakes - Forgetting to return a Promises</td>
+                            <td>If you are chaining promises together inside one another you have to return them in the same way you would with a function otherwise any <span class="attribute">.then()</span> logic applied after this will simply be applied to the first promise again.<br/>An example of non returned chained promises is shown below;<br/><br/><span class="attribute">returnsFirstPromise()<br/>.then((firstResolveVal) => {<br/>returnsSecondValue(firstResolveVal)<br/>})<br/>.then((someVal) => {<br/>console.log(someVal);<br/>})</span><br/><br/>The second <span class="attribute">.then()</span> in this code block which logs <span class="attribute">someVal</span> to the console will be applied to <span class="attribute">returnsFirstPromise()</span> because no information that came from this was returned as part of its execution. From Javascripts point of view this is simply another <span class="attribute">.then()</span> method applied to the first promise becuase there has not been anything else provided for it to be applied to.<br/>An example of the correct syntax is shown below;<br/><br/><span class="attribute">returnsFirstPromise()<br/>.then((firstResolveVal) => {<br/>return returnsSecondValue(firstResolveVal)<br/>})<br/>.then((someVal) => {<br/>console.log(someVal);<br/>})</span><br/><br/>Notice how we add a <span class="attribute">return</span> before <span class="attribute">returnsSecondValue()</span> to then give the second <span class="attribute">.then()</span> a value to apply its logic to.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">Promise.all([array, of, Promises])</span></td>
+                            <td>Promise all</td>
+                            <td>The <span class="attribute">Promise.all()</span> method allows for multiple promises to be checked however the <span class="attribute">Promise.all()</span> method will only return a resolved outcome if all Promises return with a resolved outcome of their own.<br/>If one fails then the code stops in its tracks and immediately returns a rejection and does not execute any more of the code.<br/>An important point to note is that up to the point of failure any of the promises in the array that resolve will have their outcomes carried out, so for example if the first promise logs something to the console as its success outcome, this will happen but if the next Promise fails then the <span class="attribute">Promise.all()</span> <span class="attribute">.catch()</span> failure handler method will be invoked and the logic of this will be executed and no further promises in the array will be carried out.<br/><br/>An example of the correct syntax with <span class="attribute">.then()</span> and <span class="attribute">.catch()</span> methods chained is shown below;<br/><br/><span class="attribute">Promise.all([promiseOne, promiseTwo, promiseThree]).then(onFulfill).catch(onReject);</span><br/><br/>The <span class="attribute">await</span> operator can also be used with <span class="attribute">Promise.all()</span> to provide concurrency when used in <span class="attribute">async</span> functions.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">async</span></td>
+                            <td>Async Keyword</td>
+                            <td>The <span class="attribute">async</span> keyword is used to write functions that handle asynchronous actions.<br/><span class="attribute">async</span> functions always return a <span class="attribute">Promise</span> meaning that promise syntax such as <span class="attribute">.then()</span> and <span class="attribute">.catch()</span> can be used.<br/>One important point to note is that even when a value is returned what is actually returned is a promise with a resolved value, not just the value.<br/>An example of the syntax for a function declartion using <span class="attribute">async</span> is shown below;<br/><br/><span class="attribute">async function functionName() {<br/>return value<br/>}</span><br/><br/>An example of the syntax for a function expression using <span class="attribute">async</span> is shown below;<br/><br/><span class="attribute">const functionName = async () => {<br/>return value<br/>}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">await</span></td>
+                            <td>Await Operator</td>
+                            <td>The <span class="attribute">await</span> operator is used in conjunction with the <span class="attribute">async</span> keyword, it returns the resolved value of a promise.<br/>Promises resolve in an indeterminate amount of time, the <span class="attribute">await</span> operator halts, or pauses, the execution of our <span class="attribute">async</span> function until a given promise is resolved.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">async function functionName() {<br/>let value = await Promise();<br/>console.log(value);<br/>}</span><br/><br/>In the example above we tell the <span class="attribute">async</span> function to <span class="attribute">await</span> the result of the <span class="attribute">Promise()</span> before moving onto the next section in the code block which is to log the variable to the console.<br/>If we didnt await this result the function would carry on and print the default state of a promise which is 'pending' to the console because the promise was not given enough time to resolve before the rest of the code was executed.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Handling dependencies</td>
+                            <td>When we need to chain a few promises together that depend on the outcome of other promises we can use multiple <span class="attribute">await</span> operators within an <span class="attribute">async</span> function to ensure that the other dependent promises are not executed before a result has been returned.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">async function functionName() {<br/>let valueOne = await PromiseOne();<br/>let valueTwo = await PromiseTwo(valueOne);<br/>let valueThree = await PromiseThree(ValuteTwo);<br/>console.log(valueThree);<br/>};</span><br/><br/>In the above example we have multiple promises that depend on the value returned from another promise in order to resolve.<br/>We use the <span class="attribute">await</span> operator to force the code to pause executing the code until the promise has resolved so that we can then methodically work through the rest of the code block.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">try...catch</span></td>
+                            <td>Handling Errors</td>
+                            <td>When using <span class="attribute">async...await</span>, we use <span class="attribute">try...catch</span> statements for error handling. By using this syntax, not only are we able to handle errors in the same way we do with synchronous code, but we can also catch both synchronous and asynchronous errors. This makes it easier to debug.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">async function functionName() {<br/>try {<br/>let value = await PromiseOne();<br/>console.log(`${value} is ready!`);<br/>} catch (error) {<br/>console.log(error);<br/>}<br/>};</span><br/><br/>In the above example we use <span class="attribute">try...catch</span> to handle the potential error thrown from <span class="attribute">PromiseOne</span>.<br/>The <span class="attribute">catch</span> portion of the code has <span class="attribute">error</span> as the argument however this is actually just a placeholder for the rejection reason returned by <span class="attribute">PromiseOne</span>.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Handling Independent Promises</td>
+                            <td>When handling multiple independent promises we can use the <span class="attribute">await</span> operator later on in the code to provide concurrency.<br/>An example of syntax that provides concurrency is shown below;<br/><br/><span class="attribute">async function concurrentFunction() {<br/>const firstValue = firstPromise();<br/>const secondValue = secondPromise();<br/>console.log(await firstValue, await secondValue);<br/>}</span><br/><br/>Notice how instead of placing the <span class="attribute">await</span> operator in front of the <span class="attribute">firstPromise</span> or <span class="attribute">secondPromise</span> we place it in front of the variables when they are being logged to the console.<br/>This allows the code to run through and trigger both promises at the same time when being invoked as part of the log operation.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="requests">
+                <h2>Requests with fetch API</h2>
+                <p>This section describes requests using the fetch API. This includes keywords, attributes, methods and other closely associated properties including various notes on how the syntax works.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">fetch()</span></td>
+                            <td>Fetch GET request</td>
+                            <td>The <span class="attribute">fetch()</span> function creates a request object that contains relevant information that an API needs. It sends that request object to the API endpoint provided. Finally it returns a <span class="attribute">Promise</span> that ultimately resolves to a response object, which contains the status of the promise with information the API sent back.<br/>Below is a section by section breakdown of the typical syntax for a GET request where we are simply getting information;<br/><br/><span class="attribute">fetch('enter-full-endpoint-url-as-required-by-API').then(response => {</span><br/>This section of the code block sends the request.<br/><br/><span class="attribute">if (response.ok) {<br/>return response.json()<br/>}</span><br/>This section converts the response object to JSON.<br/><br/><span class="attribute">throw new Error('Request failed!');<br/>}, networkError => console.log(networkError.message)</span><br/>This section handles failure. Similar to the second argument of a <span class="attribute">.then()</span> method.<br/><br/><span class="attribute">).then(jsonResponse => {<br/>//whatever specific code you would like to run related to the jsonResponse<br/>});</span><br/>This section handles the success of the request.<br/><br/>Below is a practical example of the syntax using the Datamuse API. This is an API that returns similar words to a user input.<br/>This API requires a bit of setup to get it working, as will most API's, the setup is explained after the code to give more context of how the syntax is working.<br/><br/><span class="attribute">// Information to reach API<br/>const url = 'https://api.datamuse.com/words?sl=';<br/><br/>// Selects page elements<br/>const inputField = document.querySelector('#input');<br/>const submit = document.querySelector('#submit');<br/>const responseField = document.querySelector('#responseField');<br/><br/>// Asynchronous function<br/>const getSuggestions = () => {<br/>const wordQuery = inputField.value;<br/>const endpoint = url + wordQuery;<br/><br/>fetch(endpoint)<br/>.then(response => {<br/>if (response.ok) {<br/>return response.json();<br/>}<br/>throw new Error('Request failed!');<br/>}, networkError => {<br/>console.log(networkError.message)<br/>})<br/>.then((jsonResponse) => {<br/>renderResponse(jsonResponse);<br/>},)<br/>}</span><br/><br/>In the above code we need to begin by declaring a variable that holds a standard portion of a URL. This is part of the setup required by this particular API.<br/>The second section we are selecting parts of the DOM for manipulation later.<br/><br/>The third section is where we begin our function.<br/>The first variable is storing the word entered by the user.<br/>The second variable is where we concatenate the standard URL required by the API with the user's inputted word. This creates our endpoint URL that we need to input into the upcoming <span class="attribute">fetch()</span>.<br/>The <span class="attribute">fetch()</span> is then declared with the standard syntax explained above including the handling of failure and success. In the last <span class="attribute">.then()</span> we include another function <span class="attribute">renderResponse()</span> with the argument <span class="attribute">jsonResponse</span> which has been generated by the <span class="attribute">fetch()</span>. This particular function simply renders all of the similar words returned by the API onto the webpage.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">fetch()</span></td>
+                            <td>Fetch POST request</td>
+                            <td>The above explanation and example looks at GET requests, however using very similar syntax and methods we can perform POST requests where instead of requesting existing information we are creating new information and submitting this.<br/>Below is a section by section breakdown of the typical syntax for a POST request where we are creating information;<br/><br/><span class="attribute">fetch('enter-full-endpoint-url-as-required-by-API', {<br/>method: 'POST',<br/>body: JSON.stringify({id: '200'})</span><br/>This section of the code block sends the request.<br/><br/><span class="attribute">}).then(response => {<br/>if (response.ok) {<br/>return response.json()<br/>}</span><br/>This section converts the response object to JSON.<br/><br/><span class="attribute">throw new Error('Request failed!');<br/>}, networkError => console.log(networkError.message)</span><br/>This section handles failure. Similar to the second argument of a <span class="attribute">.then()</span> method.<br/><br/><span class="attribute">).then(jsonResponse => {<br/>//whatever specific code you would like to run related to the jsonResponse<br/>});</span><br/>This section handles the success of the request.<br/><br/>Below is a practical example of the syntax using the Rebrandly API. This is an API that returns a shortened URL based on user input. The action is a POST action in that you are submitting information and creating a new URL through the API.<br/>This API also requires a bit of setup to get it working, the setup is explained after the code to give more context of how the syntax is working.<br/><br/><span class="attribute">// Information to reach API<br/>const apiKey = 'INSERT-API-KEY-HERE';<br/>const url = 'https://api.rebrandly.com/v1/links';<br/><br/>// Some page elements<br/>const inputField = document.querySelector('#input');<br/>const shortenButton = document.querySelector('#shorten');<br/>const responseField = document.querySelector('#responseField');<br/><br/>// Asynchronous functions<br/>const shortenUrl = () => {<br/>const urlToShorten = inputField.value;<br/>const data = JSON.stringify({destination: urlToShorten});<br/><br/>fetch(url, {<br/>method: 'POST',<br/>headers: {<br/>'Content-type': 'application/json',<br/>'apikey': apiKey<br/>},<br/>body: data<br/>})<br/>.then((response => {<br/>if (response.ok) {<br/>return response.json();<br/>} throw new Error('Request failed!')<br/>}), (networkError) => {<br/>console.log(networkError.message);<br/>})<br/>.then((jsonResponse) => {<br/>renderResponse(jsonResponse);<br/>} )<br/>}</span><br/><br/>This API requires the use of an API key to make it work correctly, this is declared at the top along with a second variable that holds a required URL to make the API fetch work. This is part of the setup required by this particular API.<br/>The second section we are again selecting parts of the DOM for manipulation later in the same way we did for the GET request.<br/><br/>The third section is again where we begin our function.<br/>The first variable is storing the URL entered by the user.<br/>The second variable is where we convert the first variable into a JSON format to be transferred to the API.<br/><br/>The <span class="attribute">fetch()</span> is then declared with the standard syntax explained above including the handling of failure and success.<br/>Notice this time around the <span class="attribute">fetch()</span> is accepting the <span class="attribute">url</span> and then an object with specifics that relate to the API operation. These will be detailed in the API documentation.<br/>In the last <span class="attribute">.then()</span> we include another function <span class="attribute">renderResponse()</span> with the argument <span class="attribute">jsonResponse</span> which has been generated by the <span class="attribute">fetch()</span>. This particular function simply renders the shortened URL returned by the API onto the webpage.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">fetch()</span></td>
+                            <td>Async Fetch GET request</td>
+                            <td>The <span class="attribute">async</span> version of a GET request has slightly altered syntax to the GET request noted above.<br/>Below is a section by section breakdown of the typical syntax for an <span class="attribute">async</span> GET request where we are simply getting information;<br/><br/><span class="attribute">const getData = async () =>{<br/>try {<br/>const response = await fetch('enter-full-endpoint-url-as-required-by-API');</span><br/>This section of the code block sends the request.<br/><br/><span class="attribute">if (response.ok) {<br/>const jsonResponse = await response.json();<br/>//Code to execute with jsonResponse<br/>}</span><br/>This section handles the response if the request is successful.<br/><br/><span class="attribute">throw new Error('Request failed!');<br/>} catch (error) {<br/>console.log(error);<br/>}<br/>}</span><br/>This section handles the response if it fails.</span><br/><br/>Below is a practical example of the syntax using the Datamuse API again but using the <span class="attribute">async</span> version of the request.<br/>This API requires a slightly different setup to get it working, this will be explained in the API documentation.<br/><br/><span class="attribute">// Information to reach API<br/>const url = 'https://api.datamuse.com/words?';<br/>const queryParams = 'rel_jja=';<br/><br/>// Selecting page elements<br/>const inputField = document.querySelector('#input');<br/>const submit = document.querySelector('#submit');<br/>const responseField = document.querySelector('#responseField');<br/><br/>// Asynchronous function<br/>const getSuggestions = async () => {<br/>const wordQuery = inputField.value;<br/>const endpoint = url + queryParams + wordQuery;<br/>try {<br/>const response = await fetch(endpoint)<br/>if (response.ok) {<br/>const jsonResponse = await response.json();<br/>renderResponse(jsonResponse);<br/>}<br/>} catch (error) {<br/>console.log(error);<br/>}<br/>}</span><br/><br/>In the above code we need to begin by declaring a variable that holds a standard portion of a URL and a second variable that forms part of the query parameters as required by the API.<br/>The second section we are selecting parts of the DOM for manipulation later.<br/><br/>The third section is where we begin our function.<br/>The first variable is storing the word entered by the user.<br/>The second variable is where we concatenate the 2 setup variables and the user's inputted word. This creates our endpoint URL that we need to input into the upcoming <span class="attribute">fetch()</span>.<br/>The <span class="attribute">fetch()</span> is then declared within the <span class="attribute">try</span> block which gives us a shortened syntax for the handling of success.<br/>The <span class="attribute">catch()</span> then follows which handles the failure, logging the error message to the console if applicable.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">fetch()</span></td>
+                            <td>Async Fetch POST request</td>
+                            <td>As with the <span class="attribute">async</span> version of a GET request, the <span class="attribute">async</span> version of a POST request also has slightly altered syntax to the POST request noted above.<br/>Below is a section by section breakdown of the typical syntax for a POST request where we are creating information;<br/><br/><span class="attribute">const getData = async () => {<br/>try {<br/>const response = await fetch('enter-full-endpoint-url-as-required-by-API', {<br/>method: 'POST',<br/>body: JSON.stringify({id: '200'})<br/>})</span><br/>This section of the code block sends the request.<br/><br/><span class="attribute">if (response.ok) {<br/>const jsonResponse = await response.json();<br/>//Code to execute with jsonResponse<br/>}</span><br/>This section handles the response if successful.<br/><br/><span class="attribute">throw new Error('Request failed!');<br/>} catch (error) {<br/>console.log(error);<br/>}<br/>}</span><br/>This section handles the response if it fails.<br/><br/>Below is a practical example of the syntax using the Rebrandly API again but using the <span class="attribute">async</span> version of the request.<br/><br/><span class="attribute">// information to reach API<br/>const apiKey = 'INSERT-API-KEY-HERE';<br/>const url = 'https://api.rebrandly.com/v1/links';<br/><br/>// Some page elements<br/>const inputField = document.querySelector('#input');<br/>const shortenButton = document.querySelector('#shorten');<br/>const responseField = document.querySelector('#responseField');<br/><br/>// Asynchronous functions<br/>const shortenUrl = async () => {<br/>const urlToShorten = inputField.value;<br/>const data = JSON.stringify({destination: urlToShorten});<br/>try {<br/>const response = await fetch(url, {<br/>method: 'POST',<br/>body: data,<br/>headers: {<br/>'Content-type': 'application/json',<br/>'apikey': apiKey<br/>}<br/>});<br/>if(response.ok){<br/>const jsonResponse = await response.json();<br/>renderResponse(jsonResponse);<br/>}<br/>} catch (error) {<br/>console.log(error);<br/>}<br/>}</span><br/><br/>In the same way as before, this API requires the use of an API key to make it work correctly, this is declared at the top along with a second variable that holds a required URL to make the API fetch work. This is part of the setup required by this particular API.<br/>The second section we are again selecting parts of the DOM for manipulation later in the same way we did before.<br/><br/>The third section is again where we begin our function.<br/>The first variable is storing the URL entered by the user.<br/>The second variable is where we convert the first variable into a JSON format to be transferred to the API.<br/><br/>The <span class="attribute">fetch()</span> is then declared within the <span class="attribute">try</span> block to give us a shortened syntax for the handling of success.<br/>The <span class="attribute">catch()</span> follows which handles the failure, logging the error message to the console if applicable.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>For additional tags and examples see the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">MDN Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>

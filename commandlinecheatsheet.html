@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Command Line Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./htmlcheatsheet.html">HTML</a></li>
+                    <li><a href="./csscheatsheet.html">CSS</a></li>
+                    <li><a href="./commandlinecheatsheet.html">Command Line</a></li>
+                    <li><a href="./javascriptcheatsheet.html">JavaScript</a></li>
+                    <li><a href="./reactcheatsheet.html">React</a></li>
+                    <li><a href="./markdowncheatsheet.html">Markdown</a></li>
+                    <li><a href="./styleguide.html">Style Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>Command Line Cheat Sheet</h1>
+            <p>Below is a brief list of fundamental Command Line commands and a brief description of what they do and any notes on correct syntax.</p>
+            <div id="navigation">
+                <h2>Navigation</h2>
+                <p>The commands here are based around basic navigation through the file system using the command line.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">ls</span></td>
+                            <td>List</td>
+                            <td>This command tells the computer to list all of the files and directories in the current directory.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">pwd</span></td>
+                            <td>Print Working Directory</td>
+                            <td>This command tells the computer to print the current directory. This enables you to locate where you are in the system file tree.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">cd</span></td>
+                            <td>Change Directory</td>
+                            <td>This command tells the computer to change into a different directory. The syntax to change directory would be <span class="code">cd</span> and then the name of the directory you wish to change into.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">..</span></td>
+                            <td>Move up a level</td>
+                            <td>This is not a command in the same way as the others but is a shorthand that tells the computer to change into the directory above the current one. It is used as an addition to another command so for example the syntax to change into the above directory would be <span class="code">cd</span> and then <span class="code">..</span> instead of having to write the longhand of the directory name each time you want to move up a level.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">mkdir</span></td>
+                            <td>Make Directory</td>
+                            <td>This command tells the computer to create a new directory. The command should be followed by a space and then the name of the directory to be created. The command <span class="code">mkdir</span> <span class="code">folder</span>, would make a new directory called "folder" in the current directory within the file system.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">touch</span></td>
+                            <td>Make File</td>
+                            <td>This command tells the computer to create a new file. The command should be followed by a space and then the name of the file, including suffix, to be created. The command <span class="code">touch</span> <span class="code">file.txt</span>, would make a new text file called "file" in the current directory within the file system.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="git">
+                <h2>Git</h2>
+                <p>The commands here are general commands for working within the Git workflow.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">git init</span></td>
+                            <td>Initialize</td>
+                            <td>This command creates a new Git repository.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git status</span></td>
+                            <td>Check Status</td>
+                            <td>This command inspects the contents of the working directory and staging area.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git add</span></td>
+                            <td>Add</td>
+                            <td>This command allows adding of files from the working directory to the staging area.<br/>An example of the syntax would be;<br/><span class="code">git add filename</span><br/>When noting the filename this needs to also include the suffix such as <span class="code">filename.txt</span><br/><br/>Multiple files can be added to the staging area this way, they can be chained in one command, for example;<br/><span class="code">git add filename_01 filename_02</span><br/><br/>A shortcut to add all files in the working directory is;<br/><span class="code">git add .</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git diff</span></td>
+                            <td>Difference</td>
+                            <td>This command allows for a comparison between files in the working directory and those in the staging area. Differences are highlighted in green.<br/><br/>An example of this command in action is explained below.<br/>In the staging area there is an existing file called <span class="code">file-01.txt</span>, in order to compare that with the version contained in the working directory, we would write <span class="code">git diff file-01.txt</span>.<br/>This would return a comparison between the 2 files, highlighting differences.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git commit</span></td>
+                            <td>Commit</td>
+                            <td>This command permanently stores file changes from the staging area to the repository.<br/>The syntax includes another small section of code and a very brief description contained within quotation marks. An example is shown below;<br/><span class="code">git commit -m "Commit file to repository"</span><br/><br/>There are standard conventions for commit messages, they must be in quotations, they must be written in the present tense and they should be brief (50 characters or less) when using <span class="code">-m</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git log</span></td>
+                            <td>View Log</td>
+                            <td>This command pulls up all earlier versions of a project to view.<br/>The contained information of a log will show the unqiue commit code (a 40 character SHA), the commit author, the date and time of the commit and the commit message.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git log --oneline</span></td>
+                            <td>View Log in one line format</td>
+                            <td>This command does the same as <span class="code">git log</span> but is a condensed format that shows the first 7 character of the SHA and comment of the commit rather than the full body of information found in a normal log command.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git log -s "keyword"</span></td>
+                            <td>View Commits with given Keyword</td>
+                            <td>This command displays a list of commits where the number of occurrences of the keyword changes within at least one file via addition, deletion, or modification.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git checkout HEAD filename</span></td>
+                            <td>Discard working directory changes</td>
+                            <td>This command resets the file in the working directory to the file that was most recently commited. This is used primarily in case changes were made to the file in the working directory that are no longer required or relevant.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git reset HEAD filename</span></td>
+                            <td>Unstage files</td>
+                            <td>This command allows for the removal of files that have been staged but not commited. This is useful if a file has been staged and further changes are required before being commited or if the wrong file has been staged.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git reset commit_SHA</span></td>
+                            <td>Reset to a previous commit</td>
+                            <td>This command resets the current HEAD (most recent commit) to a previous commit in the history of the project. This allows for rolling the project back to a previous point if needed.<br/>The commit_SHA section of the syntax is a placeholder. When using this command instead of using commit_SHA you put in the first 7 characters of the commit's SHA number you wish to roll back to.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git commit --amend</span></td>
+                            <td>Amend a commit</td>
+                            <td>This command allows you to correct mistakes and edit commits instead of creating new ones.<br/><br/>It’s important to note that although it seems like <span class="code">--amend</span> is simply updating the commit, what Git actually does is replace the whole previous commit. For this reason, when you execute the command <span class="code">git commit --amend</span>, your terminal editor asks you to update your commit message. However, if you want to keep the same commit message, you can simply add the flag <span class="code">--no-edit</span><br/>This results in the syntax;<br/><span class="code">git commit --amend --no-edit</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git push</span></td>
+                            <td>Push</td>
+                            <td>This command uploads local repository content to a remote repository such as GitHub.<br/>The syntax for pushing is;<br/><span class="code">git push &lt;remote repository name&gt; &lt;branch name&gt;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>

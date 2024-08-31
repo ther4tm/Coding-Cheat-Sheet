@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./htmlcheatsheet.html">HTML</a></li>
+                    <li><a href="./csscheatsheet.html">CSS</a></li>
+                    <li><a href="./commandlinecheatsheet.html">Command Line</a></li>
+                    <li><a href="./javascriptcheatsheet.html">JavaScript</a></li>
+                    <li><a href="./reactcheatsheet.html">React</a></li>
+                    <li><a href="./markdowncheatsheet.html">Markdown</a></li>
+                    <li><a href="./styleguide.html">Style Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>React Cheat Sheet</h1>
+            <p>Below is a brief list of fundamental React tags/expressions and syntax including a brief description of what they do and any notes on correct syntax.</p>
+            <div class="container" id="jsx">
+                <h2>JSX</h2>
+                <p>This section describes some fundamental properties of JSX.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Intro</td>
+                            <td>JSX is a syntax extension for Javascript. It was written to be used with React. JSX code looks a lot like HTML.<br/>An important point to note is that JSX is not valid Javascript and web browsers cannot read it, it needs to be compiled before it reaches a web browser.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const header = </span><span class="code">&lt;h1&gt;title&lt;/h1&gt;</span><span class="attribute">;</span></td>
+                            <td>General JSX Syntax</td>
+                            <td>JSX elements can be saved to variables.<br/>An example is shown below;<br/><br/><span class="attribute">const header = </span><span class="code">&lt;h1&gt;title&lt;/h1&gt;</span><span class="attribute">;</span><br/><br/>They can also be saved to objects.<br/>An example is shown below;<br/><br/><span class="attribute">const myTeam = {<br/>center: </span><span class="code">&lt;li&gt;Benzo Walli&lt;/li&gt;</span><span class="attribute">,<br/>powerForward: </span><span class="code">&lt;li&gt;Rasha Loa&lt;/li&gt;</span><span class="attribute">,<br/>smallForward: </span><span class="code">&lt;li&gt;Tayshaun Dasmoto&lt;/li&gt;</span><span class="attribute">,<br/>shootingGuard: </span><span class="code">&lt;li&gt;Colmar Cumberbatch&lt;/li&gt;</span><span class="attribute">,<br/>pointGuard: </span><span class="code">&lt;li&gt;Femi Billon&lt;/li&gt;</span><span class="attribute"><br/>};</span><br/><br/>Notice how the syntax looks like a hybrid of Javascript and HTML.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const p1 = </span><span class="code">&lt;p id='paragraph'&gt;text&lt;/p&gt;</span><span class="attribute">;</span></td>
+                            <td>JSX Attributes</td>
+                            <td>JSX elements can also contain attributes much in the same way they are used in HTML.<br/>An example is shown below;<br/><br/><span class="attribute">const link = </span><span class="code">&lt;a href='www.google.com'&gt;Google&lt;/a&gt;</span><span class="attribute">;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">const nav = (</span><br/><span class="code">&lt;div&gt;<br/>&lt;p&gt;text&lt;/p&gt;<br/>&lt;/div&gt;</span><br/><span class="attribute">);</span></td>
+                            <td>Nested Elements in JSX</td>
+                            <td>JSX elements can be nested much in the same that HTML is written.<br/>An example of this is shown below;<br/><br/><span class="attribute">const clickHeader = </span><span class="code">&lt;a href='www.google.com'&gt;&lt;h1&gt;Click Me!&lt;/h1&gt;&lt;/a&gt;</span><span class="attribute">;</span><br/><br/>An important point to note is that if a JSX expression takes up more than one line then it must be wrapped in parentheses.<br/>An example is shown below;<br/><br/><span class="attribute">const nav = (</span><br/><span class="code">&lt;div&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt;item 01&lt;/li&gt;<br/>&lt;li&gt;item 02&lt;/li&gt;<br/>&lt;li&gt;item 03&lt;/li&gt;<br/>&lt;/ul&gt;<br/>&lt;/div&gt;</span><br/><span class="attribute">);</span><br/><br/>This way we can write our JSX in the same we would with HTML to give a visual representation of hierarchy.<br/><br/>Multi-line JSX items must also be wrapped in a single outer layer.<br/>Notice in the above example we have a containing <span class="code">&lt;div&gt;</span> element. This provides the single outer layer.<br/>An example of <strong>INCORRECT</strong> syntax using multiple outer layers is shown below;<br/><br/><span class="attribute">const nav = (</span><br/><span class="code">&lt;p&gt;item 01&lt;/p&gt;<br/>&lt;p&gt;item 02&lt;/p&gt;<br/>&lt;p&gt;item 03&lt;/p&gt;</span><br/><span class="attribute">);</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.render()</span></td>
+                            <td>Rendering JSX</td>
+                            <td>React as a language relies on 2 things in order to render elements to the screen correctly: What to render and where to place it.<br/>An example of syntax to render a simple header is shown below;<br/><br/><span class="attribute">const container = document.getElementById('container');<br/>const root = createRoot(container);<br/>root.render(</span><span class="code">&lt;h1&gt;Hello world&lt;/h1&gt;</span><span class="attribute">);</span><br/><br/>In the above code we have 2 variables and a function call.<br/>The first variable <span class="attribute">container</span> is a standard Javascript selection using the DOM. It is selecting the container element by its ID.<br/>This forms part of the 'where' that is required by React to place something.<br/>The second variable <span class="attribute">root</span> is an enabler for the upcoming function call. Note that we are using the <span class="attribute">createRoot()</span> method passing in <span class="attribute">container</span> as the argument.<br/>On the final line of the code snippet we call the <span class="attribute">.render()</span> method on the <span class="attribute">root</span> variable. This is telling React that we want to render something at the position of <span class="attribute">root</span>, which we have set up to be <span class="attribute">container</span>.<br/>Contained with the parentheses of the <span class="attribute">.render()</span> method is the content we want to render at this position which as you can see is a simple header element with the text 'Hello world'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">className="text"</span></td>
+                            <td>Classes in JSX</td>
+                            <td>Classes can be used in the same way within JSX as they are in HTML however there is a slight difference in the syntax.<br/><span class="attribute">class</span> is a reserved word in Javascript so instead we use <span class="code">className</span>. It works in just the same way as it would in HTML but in order to avoid conflict between the languages it is refactored within JSX to <span class="code">className</span>.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">const myDiv = </span><span class="code">&lt;div className="text"&gt;text&lt;/div&gt;</span><span class="attribute">;</span><br/><br/>Notice how we use it in the exact same way as we would do within HTML.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;br/&gt;</span></td>
+                            <td>Self closing tags in JSX</td>
+                            <td>Self closing tags in JSX are not optional.<br/>The forward slash after tags like <span class="code">&lt;br/&gt;</span> and <span class="code">&lt;img src="file_path.jpg" /&gt;</span> are required otherwise an error will be thrown.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">{  }</span></td>
+                            <td>Javascript in JSX</td>
+                            <td>When writing JSX, any text placed between JSX (HTML) tags will be treated as a JSX element.<br/>We can however insert Javascript elements between these tags using the curly braces <span class="attribute">{ }</span>.<br/>Doing this will tell our code that whatever is in between the curly braces should be treated in the same way as Javascript.<br/>For example, the code shown below will render a <span class="code">&lt;h1&gt;</span> element with the value of 5<br/><br/><span class="attribute">root.render(</span><span class="code">&lt;h1&gt;<span class="attribute">{ 2 + 3 }</span>&lt;/h1&gt;</span><span class="attribute">);</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Javascript in JSX cont'd</td>
+                            <td>Using the curly brace syntax, Javascript can be used throughout JSX code blocks to import previously declared variables or data stored in objects.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">const goose = './image.jpg';<br/><br/>const gooseImg = </span><span class="code">&lt;img src=</span><span class="attribute">{goose}</span><span class="code"> /&gt;</span><span class="attribute">;<br/>root.render(gooseImg);</span><br/><br/>In the above code we have a variable declared that holds the value of a link to an image. This is standard Javascript.<br/>Underneath we have some JSX that is creating an <span class="code">&lt;img /&gt;</span> tag, however inside we use the curly braces syntax to use the variable (<span class="attribute">goose</span>) we declared at the top to be the value of the <span class="code">src</span> element.<br/><br/>Notice how we don't need to wrap quotation marks around this variable as they are contained in the original variable declaration.<br/><br/>The same methodology can be used if we stored various different bits of data in an object.<br/>An example of this is shown below;<br/><br/><span class="attribute">const pics = {<br/>bird: "./image01.jpg",<br/>fish: "./image02.jpg"<br/>};<br/><br/>const bird = (<br/></span><span class="code">&lt;img src=</span><span class="attribute">{pics.bird}<br/></span><span class="code">alt="picture of a bird"</span> <span class="code">/&gt;</span><br/><span class="attribute">);</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">onClick=</span><span class="attribute">{function}</span></td>
+                            <td>Event listeners in JSX</td>
+                            <td>JSX elements can have event listeners just like HTML elements. Event listeners are created in JSX by giving the element an event listener attribute.<br/>An event listeners name should be the word <span class="attribute">on</span> plus the type of event that it is listening for such as <span class="attribute">Click</span> or <span class="attribute">MouseOver</span>. Further supported event names can be found on the <a href="https://react.dev/reference/react-dom/components/common#" target="_blank">React Website</a>.<br/>Event listener attributes should always be set to a valid function.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">const container = document.getElementById('app');<br/>const root = createRoot(container);<br/><br/>function makeDog(value) {<br/>value.target.setAttribute('src', './photo-dog.jpeg');<br/>value.target.setAttribute('alt', 'dog');<br/>}<br/><br/>const cat = (<br/></span><span class="code">&lt;img <br/>onClick=</span><span class="attribute">{makeDog}</span><span class="code"><br/>src="./photo-cat.jpg" <br/>alt="cat" /&gt;</span><br/><span class="attribute">);<br/><br/>root.render(cat);</span><br/><br/>In the above example we have rendered a picture of a cat using the <span class="attribute">root.render()</span> method and passing the JSX variable named <span class="attribute">cat</span> as the argument, this variable has an event listener contained within that we will explain later.<br/>Above this variable we have also declared a function named <span class="attribute">makeDog</span> that targets the 'src' & 'alt' elements of the <span class="code">&lt;img&gt;</span> tag and changes their values.<br/>The event listener contained in the JSX element <span class="attribute">cat</span> is set to <span class="code">onClick</span> so when the picture is clicked the code will run the <span class="attribute">makeDog</span> function which in turn will alter the 'src' and 'alt' elements of the image so it will now appear to be a dog.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Conditional Statements in JSX</td>
+                            <td><span class="attribute">if...else</span> statements cannot be inserted into JSX syntax. In order to write a conditional statement the logic needs to be held outside of the JSX and then the results can be JSX.<br/>An example of the syntax is shown below;<br/><br/><span class="attribute">let message;<br/><br/>if (user.age >= drinkingAge) {<br/>message = (<br/></span><span class="code">&lt;h1&gt;<br/>Hey, check out this alcoholic beverage!<br/>&lt;/h1&gt;</span><span class="attribute"><br/>);<br/>} else {<br/>message = (<br/></span><span class="code">&lt;h1&gt;<br/>Hey, check out these earrings I got at Claire's!<br/>&lt;/h1&gt;</span><span class="attribute"><br/>}<br/><br/>root.render(message);</span><br/><br/>Notice how we start by creating a <span class="attribute">let</span> variable called <span class="attribute">message</span> which ultimately ends up being the argument passed into the <span class="attribute">root.render()</span> call at the bottom.<br/>The <span class="attribute">if...else</span> statement is written underneath with the JSX elements being the value assigned to the <span class="attribute">let</span> variable based on the outcome of the conditional statement.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">?</span></td>
+                            <td>Ternary Operators in JSX</td>
+                            <td>Ternary operators can be used to write truthy or falsey conditional statements in JSX.<br/>Unlike <span class="attribute">if...else</span> conditionals, these are single line conditionals and they can be written within JSX using the curly braces (<span class="attribute">{ }</span>) syntax.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">const headline = (<br/></span><span class="code">&lt;h1&gt;</span><br/><span class="attribute">{ age >= drinkingAge ? 'Buy Drink' : 'Do Teen Stuff' }</span><br/><span class="code">&lt;/h1&gt;</span><br/><span class="attribute">);</span><br/><br/>The reason we can use ternary operators in JSX is because it will result in a value whereas <span class="attribute">if...else</span> statements may not always provide a value as an outcome.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">&&</span></td>
+                            <td>And Operators in JSX</td>
+                            <td><span class="attribute">&&</span> operators can be used to write conditional statements in JSX that may or may not always evaluate to an action.<br/>As with ternary operators, these are single line conditionals and they can be written within JSX using the curly braces (<span class="attribute">{ }</span>) syntax.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">const age = Math.random() * 10;<br/><br/>const education = (<br/></span><span class="code">&lt;ul&gt;<br/></span><span class="attribute">{ age > 4 && </span><span class="code">&lt;li&gt;Primary school&lt;/li&gt;</span><span class="attribute"> }<br/>{ age > 11 && </span><span class="code">&lt;li&gt;Secondary school&lt;/li&gt;</span><span class="attribute"> }<br/>{ age > 16 && </span><span class="code">&lt;li&gt;College&lt;/li&gt;</span><span class="attribute"> }<br/></span><span class="code">&lt;/ul&gt;</span><br/><span class="attribute">);</span><br/><br/>In the above example we have a variable declared that produces a random <span class="attribute">age</span>. We then have another variable named <span class="attribute">education</span> that contains our JSX elements including the <span class="attribute">&&</span> conditional statements all wrapped in curly braces.<br/>Each separate line has a conditional statement that will only be rendered if the condition is met, so in this example if our <span class="attribute">age</span> variable is below the number 4 then nothing will be rendered, if the <span class="attribute">age</span> value is 12 then both the first and second <span class="code">li</span> elements will be rendered showing 'Primary school' and 'Secondary school' however the <span class="code">li</span> containing 'College' will not be rendered because the condition has not been met.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.map</span></td>
+                            <td>Map iterator in JSX</td>
+                            <td>The <span class="attribute">.map()</span> array iterator can be used to create lists from existing arrays within JSX.<br/>An example showing correct syntax is shown below;<br/><br/><span class="attribute">const people = ['Rowe', 'Prevost', 'Gare'];<br/><br/>const peopleList = people.map((person) =><br/></span><span class="code">&lt;li&gt;</span><span class="attribute">{person}</span><span class="code">&lt;/li&gt;</span><span class="attribute"><br/>);<br/><br/>root.render(</span><span class="code">&lt;ul&gt;</span><span class="attribute">{peopleList}</span><span class="code">&lt;/ul&gt;</span><span class="attribute">);</span><br/><br/>In the above example we have an array named <span class="attribute">people</span> containing strings. Underneath we create another variable called <span class="attribute">peopleList</span>, in this we use the <span class="attribute">.map()</span> method to iterate through the array contained within <span class="attribute">people</span>, however within the argument of the <span class="attribute">.map()</span> method we include a function that contains JSX elements to additionally wrap each item in the array with <span class="code">&lt;li&gt;</span> tags.<br/>This results in <span class="attribute">peopleList</span> being populated with an array that matches the original array however each item is now wrapped in <span class="code">&lt;li&gt;</span> tags.<br/>We then use this to render a list of the names using the <span class="attribute">root.render()</span> call at the bottom.<br/>Notice how in the argument for <span class="attribute">.render()</span> we wrap the whole thing in <span class="code">&lt;ul&gt;</span> tags to create a valid JSX list.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">key="text"</span></td>
+                            <td>Key attribute in JSX</td>
+                            <td>A Key is a JSX attribute. It doesn't do anything visible however React uses them internlly to keep track of lists. If lists are not tracked then due to the way React handles re-rendering elements, a list might get scrambled if there is no 'ordering' in place.<br/>Not all lists needs to have keys however they are needed if;<br/>1 - The list items have memory from one render to the next. For example if a to-do list is re-rendered and each item must remember whether it has been checked off or not.<br/>2 - The order might be shuffled. For example search results might be re-rendered and the order may be scrambled in the re-rendering.<br/><br/>An example of the syntax of how to achieve this is shown below;<br/><br/><span class="attribute">const people = ['Rowe', 'Prevost', 'Gare'];<br/><br/>const peopleList = people.map((person,i) =><br/></span><span class="code">&lt;li key=</span><span class="attribute">{'person_' + i}</span><span class="code">&gt;</span> <span class="attribute">{person}</span><span class="code">&lt;/li&gt;</span><span class="attribute"><br/>);<br/><br/>root.render(</span><span class="code">&lt;ul&gt;</span><span class="attribute">{peopleList}</span><span class="code">&lt;/ul&gt;</span><span class="attribute">);</span><br/><br/>In the above example notice how we use javascript to add an increasing key to each item when it gets added to the array.<br/>In the argument for the <span class="attribute">.map()</span> method we include the <span class="attribute">person</span> attribute and a second <span class="attribute">i</span> attribute that we then use within the <span class="attribute">key</span> attribute we give to the <span class="code">&lt;li&gt;</span> tags that wrap around the iterated items.<br/>This results in the <span class="attribute">peopleList</span> array containing the results;<br/><span class="code">&lt;li key='person_0'&gt;Rowe&lt;/li&gt;</span><br/><span class="code">&lt;li key='person_1'&gt;Prevost&lt;/li&gt;</span><br/><span class="code">&lt;li key='person_2'&gt;Gare&lt;/li&gt;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container" id="react_fundamentals">
+                <h2>React Fundamentals</h2>
+                <p>This section describes some fundamental properties of React.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Intializing React on a project</td>
+                            <td>React relies on a number of different libraries and folders. These can all be imported using some simple command line commands to auto install all the dependencies for a project.<br/>While in the relevant project root folder type in;<br/><br/><span class="code">npx create-react-app folder_name</span><br/><br/>This will create a folder with the name you put in instead of <span class="code">folder_name</span> and it will populate the folder with all of the necessary structure required to run a React app.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">React</span></td>
+                            <td>Importing React</td>
+                            <td>React should be imported from the 'react' package, which in turn should be installed in each project as a dependency.<br/>When correctly imported the React library can be utilised to make use of various methods.<br/>An example of the syntax to import React is shown below;<br/><br/><span class="attribute">import React from 'react';</span><br/><br/>In a react application there are typically 2 .js files named App.js and Index.js (although these can be named whatever you wish).<br/>App.js is typically the top level of the application and index.js is the entry point (Think of app.js as a module that is separate from index.js).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">ReactDOM</span></td>
+                            <td>Importing ReactDOM</td>
+                            <td>The methods imported from 'react-dom' interact with the DOM.<br/><br/>The methods imported from 'react' do not deal with the DOM at all. They don’t engage directly with anything that isn’t part of React.<br/><br/>To clarify: the DOM is used in React applications, but it isn’t part of React. After all, the DOM is also used in countless non-React applications. Methods imported from 'react' are only for pure React purposes, such as creating components or writing JSX elements.<br/>An example of correct syntax is shown below;<br/><br/><span class="attribute">import ReactDOM from 'react-dom/client';</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function MyReactComponent()</span></td>
+                            <td>Function Components</td>
+                            <td>Function components in React are very similar to regular functions in Javascript, they operate in similar ways however there are slight differences.<br/>A function component in React must be defined using PascalCase otherwise React won't recognise it as a function component.<br/>Functions components must ALWAYS include a <span class="attribute">return</span>.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">function MyReactComponent() {<br/>return </span><span class="code">&lt;h1&gt;Hello!&lt;&gt;</span><span class="attribute">;<br/>}</span><br/><br/>A few further comments on function components is that the internal body of the function can contain all of the regular syntax rules of JSX. So for example multi-line code including images can be returned as part of the function body using JSX syntax which in turn can then use javascript and object selectors to target elements outside of the function.<br/>An example is shown below;<br/><br/><span class="attribute">function MyReactComponent() {<br/>return (</span><br/><span class="code">&lt;div&gt;<br/>&lt;h1&gt;Title&lt;&gt;</span><br/><span class="code">&lt;img src=</span><span class="attribute">{picture.src}</span> <span class="code"> alt=</span><span class="attribute">{picture.alt}</span><span class="code"> /&gt;<br/>&lt;/div&gt;</span><br/><span class="attribute">);<br/>};</span><br/><br/>Notice how the JSX has an outer most element that wraps everything, it is encased in parentheses and we use curly braces to use javascript selectors to populate the src and alt attributes of the image.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">export</span></td>
+                            <td>Exporting</td>
+                            <td>Exporting in React works in the same way as Javascript. The syntax is the same and works in the same way as it does when using modules in Javacsript.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">export default MyReactComponent;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">&lt;MyComponent /&gt;</span></td>
+                            <td>Using and Rendering Function Components</td>
+                            <td>In the above JSX section we described how to render JSX elements contained within variables, we can also render function components however the setup and execution for this is slightly different.<br/>To render a component we need to use the <span class="attribute">.createRoot()</span> method from the React library and then chain the <span class="attribute">.render()</span> method to the end of it.<br/>An important point about the syntax here is that the component, when used as an argument in rendering, is written in syntax that looks like HTML rather than Javascript.<br/><br/>An example of how to render a function component is shown below;<br/>We write this call in the index.js file once the function component has been imported into it from the app.js file.<br/><br/><span class="attribute">ReactDOM.createRoot(document.getElementById('app')).render(</span><span class="code">&lt;MyComponent /&gt;</span><span class="attribute">);</span><br/><br/>In the above example we use the <span class="attribute">ReactDOM.createRoot()</span> method to create the root of where we want something to be rendered on the screen.<br/> The argument we are passing in is an element on the page with the Id of 'app' as you can see by the syntax we are using, we are using traditional DOM manipulation to select that element.<br/>We then chain the <span class="attribute">.render()</span> method after this which has the function component as the argument.<br/>Notice how the function component syntax is very similar to a self closing HTML tag.<br/>Also notice how it doesn't contain parentheses either after the function name.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">onHover=</span><span class="attribute">{handleHover}</span></td>
+                            <td>Event Listeners and Handlers in Function Components</td>
+                            <td>React function components can also include event listeners in basically the same way as Javascript. Attributes added to JSX elements like <span class="attribute">&lt;div&gt;</span> or <span class="attribute">&lt;img /&gt;</span> tags can have event listener attributes added into them so that events like <span class="attribute">onClick</span> or <span class="attribute">onHover</span> can trigger some functionality.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">function SubmitButton() {<br/>function handleClick() {<br/>alert('Submission Successful.');<br/>}<br/>return </span><span class="code">&lt;button onClick=</span><span class="attribute">{handleClick}</span><span class="code">&gt;Submit&lt;/button&gt;</span><span class="attribute">;<br/>}</span><br/><br/>The above function component includes a nested function (<span class="attribute">handleClick()</span>) that handles the event that is being listened for.<br/>The listener is contained within the JSX being returned, you can notice the <span class="code">onClick</span> attribute forming part of the <span class="code">&lt;button&gt;</span> tag.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container" id="props">
+                <h2>Props (Properties)</h2>
+                <p>This section describes the use of props (Properties) including notes on usages and correct syntax.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">props.value</span></td>
+                            <td>Assigning and accessing props</td>
+                            <td>Every component has <span class="attribute">props</span>, these are similar to attributes in HTML. They take on a similar syntax, however they can be named whatever you like dependant on what you need to use them for.<br/>An example of a button with some standard props is shown below;<br/><br/><span class="code">&lt;button type="submit" value="submit"&gt;Submit&lt;button /&gt;</span><br/><br/>A components <span class="attribute">props</span> is an object, it holds information about that component.<br/>To access a components <span class="attribute">props</span> object you can reference the <span class="attribute">props</span> object and the dot notation for its properties much in the same way as accessing the key-value pairs of an object.<br>So for example if we had a component that had the props <span class="attribute">name: "Steve"</span> we could access this by using dot notation on the <span class="attribute">props</span> object. <br/>The syntax for this is shown below;<br/><br/><span class="attribute">props.name</span><br/><br/><span class="attribute">props</span> serve the same purpose for components as arguments do for functions.<br/><br/><span class="attribute">function App() {<br/>return </span><span class="code">&lt;PropsDisplayer name="Steve" /&gt;</span><span class="attribute">;<br/>}<br/><br/>function PropsDisplayer(props) {<br/>return </span><span class="code">&lt;p&gt;</span><span class="attribute">{props.name}</span><span class="code">&lt;/p&gt;</span><span class="attribute"><br/>}</span><br/><br/>In the example above we have 2 components. The first is returning the second and at the same time it is giving it the <span class="attribute">props</span> with the value <span class="code">name="Steve"</span>.<br/>The reason for this is because props travel from parent to child. So in the example <span class="attribute">App()</span> is the parent component which is returning the child component <span class="attribute">PropsDisplayer()</span>.<br/><br/>So when <span class="attribute">App()</span> is called, it passes the <span class="attribute">props</span> of <span class="code">name="Steve"</span> to <span class="attribute">PropsDisplayer()</span> which in turn then uses <span class="attribute">props</span> as its argument and then within its code body references this using dot notation to return a <span class="code">&lt;p&gt;</span> tag with the value <span class="attribute">{props.name}</span> back up through the chain.<br/>Lets say we are rendering this to the page so the final outcome will be <span class="code">Steve</span> is rendered to the page.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Props Attribute values</td>
+                            <td>The values of props can be anything however there is specific syntax for enabling them to be read correctly.<br/>The hard and fast rule is that attributes that are strings need to be surrounded by double quotation marks (" ") and everything else needs to be contained within curly braces ({ }).<br/>Examples of the various attribute values are shown below;<br/><br/><span class="code">name="Steve"<br/>age={38}<br/>married={true}</span><br/><br/>Attributes can also be arrays. An example of syntax is shown below;<br/><br/><span class="code">list={["Steve", 38, true]}</span><br/><br/>The individual values of an array can be accessed in the traditional manner. So in order to access the age value of the array in the example above, we would use <span class="attribute">props.list[1]</span>.<br/>If we were to access the same thing directly within the parent component we would prefix it with <span class="attribute">this.</span> so it would become <span class="attribute">this.props.list[1]</span><br/><br/>Objects can also be props. An example of this is shown below;<br/><br/><span class="code">list={<br/>{name: "Steve",<br/>age: 38,<br/>married: true}<br/>}</span><br/><br/>These are also accessed in the same way we would normally access an objects values. To access the age value we would use <span class="attribute">props.list.age</span> or <span class="attribute">props.list["age"]</span> and again if we were accessing this directly within the component we would prefix the call with the <span class="attribute">this.</span> keyword.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">function({attribute})</span></td>
+                            <td>Destructuring Syntax</td>
+                            <td>A destructured syntax can be used when a specific attribute is required for use within a component.<br/>Below is an example of structured syntax;<br/><br/><span class="attribute">function App() {<br/>return </span><span class="code">&lt;PropsDisplayer name="Steve"</span><span class="code"> /&gt;</span><span class="attribute">;<br/>}<br/><br/>function PropsDisplayer(props) {<br/>return </span><span class="code">&lt;p&gt;</span><span class="attribute">{props.name}</span><span class="code">&lt;/p&gt;</span><span class="attribute"><br/>}</span><br/><br/>We can destructure this if we know we want to access a specific prop.<br/>An refactored version of the above code is shown below using destructured syntax;<br/><br/><span class="attribute">function App() {<br/>return </span><span class="code">&lt;PropsDisplayer name="Steve" /&gt;</span><span class="attribute">;<br/>}<br/><br/>function PropsDisplayer({name}) {<br/>return </span><span class="code">&lt;p&gt;</span><span class="attribute">{name}</span><span class="code">&lt;/p&gt;</span><span class="attribute"><br/>}</span><br/><br/>Notice how instead of using the keyword of <span class="attribute">props</span> as the argument in the <span class="code">PropsDisplayer</span> component we use the attribute name directly and wrap it in curly braces, we then use this in the specific section of code we want it to appear within the code block itself.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Using Props in conditional statements</td>
+                            <td>Props can be used as the input/deciding factor in a conditional statement. So we can use them to provide different outcomes dependant on the code blocks we are using them with.<br/>An example of how props can be used in a conditional statment to provide alternate outcomes is shown below;<br/><br/><span class="attribute">function App() {<br/>return (<br/></span><span class="code">&lt;div&gt;<br/>&lt;h1&gt;MovieFlix&lt;/h1&gt;<br/>&lt;Greeting name="Alison" signedIn={true} /&gt;<br/>&lt;/div&gt;</span><span class="attribute"><br/>);<br/>}<br/><br/>function Greeting(props) {<br/>if (props.signedIn == false) {<br/>return </span><span class="code">&lt;h1&gt;Please login.&lt;/h1&gt;</span><span class="attribute">;<br/>} else {<br/>return (<br/></span><span class="code">&lt;div&gt;<br/>&lt;h1&gt; back, </span><span class="attribute">{props.name}</span><span class="code">!&lt;/h1&gt;<br/>&lt;article&gt;<br/>Latest Movie: A Computer Bug's Life<br/>&lt;/article&gt;<br/>&lt;/div&gt;</span><span class="attribute"><br/>)<br/>}<br/>}</span><br/><br/>In the example above we have 2 components, the first <span class="attribute">App()</span> component is providing props to be filtered down into the <span class="attribute">Greeting()</span> child component.<br/>Within the code body of <span class="attribute">Greeting()</span> we have a conditional statement that alters what is displayed on the page dependant on whether the <span class="attribute">props.signedIn</span> is <span class="attribute">true</span> or <span class="attribute">false.<br/></span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Event Listeners and defining Event Handlers</td>
+                            <td>Props can be used as Event Listeners. As with other <span class="attribute">props</span> they need to be passed down from parent to child, they also need to have in-built handler functions so React knows what to do when the event is triggered.<br/>There are a few differences in Event Listeners and the Event handlers within React compared to Javascript, an example of syntax is shown below;<br/><br/><span class="attribute">function Clicker() {<br/>function handleClick() {<br/>let speech = 'Button Clicked!';<br/>alert(speech);<br/>}<br/>return </span><span class="code">&lt;Button onClick=</span><span class="attribute">{handleClick}</span><span class="code">/&gt;</span><span class="attribute">;<br/>}<br/><br/>function Button(props) {<br/>return (<br/></span><span class="code">&lt;button onClick=</span><span class="attribute">{props.onClick}</span><span class="code">&gt;<br/>Click me!<br/>&lt;/button&gt;</span><span class="attribute"><br/>);<br/>}</span><br/><br/>In the example above we have 2 components. The parent component <span class="attribute">Clicker()</span> contains the handler function <span class="attribute">handleClick()</span> inside of its code body which creates an alert with the text 'Button Clicked!' when invoked. Underneath this it returns the <span class="attribute">Button()</span> component with <span class="attribute">props</span>. The <span class="attribute">props</span> assigned to it is an attribute named <span class="attribute">onClick</span> which references the <span class="attribute">handleClick()</span> function. A key point to note here is that the parent component creates an attribute and note an event listener. This is because the event listener can only go on HTML like JSX and the parent is returning a component not HTML like JSX. The easy way to tell this is due to the capitlisation of the <span class="code">&lt;Button&gt;</span> tag. Capitals at the start of a tag show that its a React component and not a HTML like JSX tag.<br/><br/>Underneath all of this we have the second component <span class="attribute">Button()</span> which returns HTML like JSX with an event listener named <span class="attribute">onClick</span> which itself references the <span class="attribute">props</span> that have been passed down via the parent component.<br/>React has several <span class="attribute">on</span> keywords that create event listeners and this is how the event listener is created within React, its a more compact way of creating an event listener rather than having to select specific things in the DOM.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">onClick</span></td>
+                            <td>Click - Event listener</td>
+                            <td>This triggers when the user clicks on an element.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">onChange</span></td>
+                            <td>Change - Event listener</td>
+                            <td>This triggers when the user changes the value of an input field.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">onSubmit</span></td>
+                            <td>Submit - Event listener</td>
+                            <td>This triggers when the user submits a form.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">onMouseOver</span></td>
+                            <td>Mouse Over - Event listener</td>
+                            <td>This triggers when the mouse pointer moves over an element.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">onMouseOut</span></td>
+                            <td>Mouse Out - Event listener</td>
+                            <td>This triggers when the mouse pointer moves out of an element.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">props.children</span></td>
+                            <td>Children</td>
+                            <td>Components in React when referenced by other components are typically written as self closing tags such as <span class="code">&lt;Button /&gt;</span>.<br/>However they can be written in the same way most HTML tags are by including opening and closing tags such as <span class="code">&lt;Button&gt;&lt;/Button&gt;</span>.<br/>The reason for using opening and closing tags over self closing tags is that the <span class="attribute">props.children</span> attribute.<br/><br/><span class="attribute">props.children</span> returns everything between the opening and closing tags it has been called on.<br/>This allows the outer component to be seperated from its internal content making it flexible and reusable.<br/>A further point to note is that if the internal content is only a single element this gets returned as it is however if there are more elements, for example multiple <span class="code">&lt;li&gt;</span> tags, then these will be returned as an array. If there is nothing inbetween then <span class="attribute">undefined</span> will be returned.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">function App() {<br/>return (<br/></span><span class="code">&lt;div&gt;<br/>&lt;List type='Living Musician'&gt;<br/>&lt;li&gt;Oasis&lt;/li&gt;<br/>&lt;li&gt;The Black Keys&lt;/li&gt;<br/>&lt;/List&gt;<br/>&lt;List type='Dead Musician'&gt;<br/>&lt;li&gt;Jimi Hendrix&lt;/li&gt;<br/>&lt;/List&gt;<br/>&lt;/div&gt;</span><span class="attribute"><br/>);<br/>}<br/><br/>function List(props) {<br/>let titleText = `Favorite ${props.type}`;<br/>if (props.children instanceof Array) {<br/>titleText += 's';<br/>}<br/>return (<br/></span><span class="code">&lt;div&gt;<br/>&lt;h1&gt;</span><span class="attribute">{titleText}</span><span class="code">&lt;/h1&gt;<br/>&lt;ul&gt;</span><span class="attribute">{props.children}</span><span class="code">&lt;/ul&gt;<br/>&lt;/div&gt;</span><span class="attribute"><br/>);<br/>}</span><br/><br/>In the above example the first component <span class="attribute">App()</span> returns some JSX including the component <span class="attribute">List()</span> however, notice that each <span class="attribute">List()</span> has been written with opening and closing tags containing different levels of information as well as different <span class="attribute">props</span> attributes.<br/>The second component, <span class="attribute">List()</span>, has been written to be a reusable component that renders different information based on the <span class="attribute">props</span> it has been passed. It also has a conditional statement that allows for the pluralization of the <span class="attribute">{titleText}</span> dependant on whether the <span class="attribute">props.children</span> returns a single value or an array.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Props Default Values</td>
+                            <td>In the instance of elements requiring input to render something we can provide default values as part of the component declaration.<br/>There are 3 ways to provide this, they have been outlined below;<br/><br/><span class="attribute">function Example(props) {<br/>return </span><span class="code">&lt;h1&gt;</span><span class="attribute">{props.text}</span><span class="code">&lt;/h1&gt;</span><span class="attribute"><br/>}<br/><br/>Example.defaultProps = {<br/>text: 'This is default text',<br/>};</span><br/><br/>The above example creates a <span class="attribute">defaultProps</span> static property to component which has whatever value is assigned to it as an object.<br/><br/><span class="attribute">function Example({text='This is default text'}) {<br/>return </span><span class="code">&lt;h1&gt;</span><span class="attribute">{text}</span><span class="code">&lt;/h1&gt;</span><span class="attribute"><br/>}</span><br/><br/>The above example here provide the default values directly as part of the component definition parameters.<br/><br/><span class="attribute">function Example(props) {<br/>const {text = 'This is default text'} = props;<br/>return </span><span class="code">&lt;h1&gt;</span><span class="attribute">{text}</span><span class="code">&lt;/h1&gt;</span><span class="attribute"><br/>}</span><br/><br/>The final example sets a default value as part of the component body.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>For additional tags and examples see the <a href="https://react.dev/reference/react" target="_blank">React Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Markdown Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./htmlcheatsheet.html">HTML</a></li>
+                    <li><a href="./csscheatsheet.html">CSS</a></li>
+                    <li><a href="./commandlinecheatsheet.html">Command Line</a></li>
+                    <li><a href="./javascriptcheatsheet.html">JavaScript</a></li>
+                    <li><a href="./reactcheatsheet.html">React</a></li>
+                    <li><a href="./markdowncheatsheet.html">Markdown</a></li>
+                    <li><a href="./styleguide.html">Style Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>Markdown Cheat Sheet</h1>
+            <p>Below is a brief list of fundamental Markdown tags and a brief description of what they do and any notes on correct syntax.</p>
+            <div id="fundamentals">
+                <h2>Fundamentals</h2>
+                <p>This section describes some fundamental Markdown properties.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">*text*</span> or <span class="attribute">_text_</span></td>
+                            <td>Italics</td>
+                            <td>An asterisk or an underscore either side of a body of text styles the text in italics.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">**text**</span> or <span class="attribute">__text__</span></td>
+                            <td>Bold</td>
+                            <td>A double asterisk or underscore either side of a body of text styles the text in bold.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"># text</span> or <br/><span class="attribute">text<br/>====</span></td>
+                            <td>Heading 1</td>
+                            <td>A hash or an equals symbol under line styles the text to be a heading 1 element.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">## text</span> or <br/><span class="attribute">text<br/>----</span></td>
+                            <td>Heading 2</td>
+                            <td>A double hash or a minus symbol under line styles the text to be a heading 2 element.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">### text</span></td>
+                            <td>Heading 3, 4, 5 or 6</td>
+                            <td>A number of hashes prior to the text style the text to be a heading element that relates to the number of hashes. For example a heading 5 element would require 5 hashesh prior to the text.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">[text](http://www.website.com)</span></td>
+                            <td>Link</td>
+                            <td>Text contained in square brackets followed by a valid URL will style the text to be a hyperlink that will link to the URL.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">![Image](http://www.website.com/image.jpg)</span></td>
+                            <td>Image</td>
+                            <td>An exclamation point followed by the keyword Image in square brackets, then followed by a valid URL that links to an image will insert the desired image.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">&gt; text</span><br/><span class="attribute">&gt; text</span></td>
+                            <td>Blockquote</td>
+                            <td>A series of greater than signs will style all lines of text following the greater than symbol as a blockquote.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">+ text</span>, <span class="attribute">* text</span> or <span class="attribute">- text</span></td>
+                            <td>Unordered List</td>
+                            <td>A *, + or - before text will style the text to be a bullet pointed list.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">1. text</span>, <span class="attribute">2. text</span></td>
+                            <td>Ordered List</td>
+                            <td>A number with a period before text will style the text to be a numbered list.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">`text`</span></td>
+                            <td>Inline Code</td>
+                            <td>Text wrapped in backticks will style the text to be shown as inline code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">```<br/>text<br/>text<br/>```</span></td>
+                            <td>Code Block</td>
+                            <td>3 backticks before and after a block of text will style the text to be shown as inline code block.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>For additional tags and examples see the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">MDN Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>

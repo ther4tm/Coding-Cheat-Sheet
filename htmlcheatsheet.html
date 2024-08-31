@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./htmlcheatsheet.html">HTML</a></li>
+                    <li><a href="./csscheatsheet.html">CSS</a></li>
+                    <li><a href="./commandlinecheatsheet.html">Command Line</a></li>
+                    <li><a href="./javascriptcheatsheet.html">JavaScript</a></li>
+                    <li><a href="./reactcheatsheet.html">React</a></li>
+                    <li><a href="./markdowncheatsheet.html">Markdown</a></li>
+                    <li><a href="./styleguide.html">Style Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>HTML Cheat Sheet</h1>
+            <p>Below is a list of all HTML tags and a brief description of what they do and any notes on correct syntax.</p>
+            <div id="main_root">
+                <h2>Main Root</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;html&gt;</span></td>
+                            <td>HTML</td>
+                            <td>This is the top level element in any webpage. All other items must be contained within this tag. This is referred to as the root element.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="document_metadata">
+                <h2>Document Metadata</h2>
+                <p>The metadata of a page is best thought of as invisible information that is used to help browsers, search engines and software in general read and render the other elements of a page.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;!--</span>, <span class="code">--&gt;</span></td>
+                            <td>Comment</td>
+                            <td>Text placed between these tags is treated as a comment. It is a way for notes to be added to the code that does not affect the page in any way.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;head&gt;</span></td>
+                            <td>Head</td>
+                            <td>This contains invisible data that helps the browser to determine certain things like the title of the page or where to find the linked CSS stylesheet.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;link&gt;</span></td>
+                            <td>Link</td>
+                            <td>This specifies relationships between the current document and an external resource. For example this can provide a link to a CSS stylesheet that will then style the page.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;style&gt;</span></td>
+                            <td>Style</td>
+                            <td>This allows for writing a section of CSS that is contained within this document and not a linked external stylesheet. This is only applied to the page it is contained within.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;title&gt;</span></td>
+                            <td>Title</td>
+                            <td>This defines the document's title that is shown in the browser titles bar or a page's tab. This tag can only contain text.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="sectioning_root">
+                <h2>Sectioning Root</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;body&gt;</span></td>
+                            <td>Body</td>
+                            <td>This represents the content of a HTML document. There is only ever one of these in a HTML page. Usually the <span class="code">&lt;head&gt;</span> element is located above this in the organisation of the document.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="content_sectioning">
+                <h2>Content Sectioning</h2>
+                <p>Content sectioning elements allow for logical organisation of the page.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;article&gt;</span></td>
+                            <td>Article</td>
+                            <td>This is a self contained composition in a document, page, application or site which is intended to be independently distributable or reusable. i.e. forum posts, blog entry or a user submitted comment.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;aside&gt;</span></td>
+                            <td>Aside</td>
+                            <td>This is a portion of a document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;footer&gt;</span></td>
+                            <td>Footer</td>
+                            <td>This element typically contains information that is supplemental to an <span class="code">&lt;article&gt;</span> or the <span class="code">&lt;body&gt;</span> etc. It will contain things like information about the author of a post or copyright data or links to related document. These can be used under sectioning content or the section root element (<span class="code">&lt;body&gt;</span>), you can have multiples of this in one page.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;header&gt;</span></td>
+                            <td>Header</td>
+                            <td>This is similar to the <span class="code">&lt;footer&gt;</span> in that you can have multiple instances of this within the document. It acts as introductory content , typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;h1&gt;</span>, <span class="code">&lt;h2&gt;</span>, <span class="code">&lt;h3&gt;</span>, <span class="code">&lt;h4&gt;</span>, <span class="code">&lt;h5&gt;</span>, <span class="code">&lt;h6&gt;</span></td>
+                            <td>Section Headings</td>
+                            <td>These are used to provide headings and titles to sections, they help to organise a site and bring structureda hierarchy. They can be reused  is similar to the <span class="code">&lt;footer&gt;</span> in that you can have multiple instances of this within the document. It acts as introductory content , typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;nav&gt;</span></td>
+                            <td>Navigation</td>
+                            <td>This defines a section of the page where you can find navigational links. These links can be to other sections of the same page or different pages.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="text_content">
+                <h2>Text content</h2>
+                <p>Text content elements are used to organise blocks and section of content within the <span class="code">&lt;body&gt;</span> tags. They are important features to use correctly for accessibility and SEO purposes. They help to identify  the purpose or structure of the content.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;blockquote&gt;</span></td>
+                            <td>Blockquote</td>
+                            <td>This is the overall wrapper element for the entire table.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;div&gt;</span></td>
+                            <td>Division Element</td>
+                            <td>This is the generic containing element for flow content. It has no effect on the content or layout until styled in some way using CSS.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;figure&gt;</span></td>
+                            <td>Figure</td>
+                            <td>This represents self-contained content, usually an image and potentially with an optional caption, which is specified using the <span class="code">&lt;figcaption&gt;</span> element. The figure, its caption, and its contents are referenced as a single unit.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;figcaption&gt;</span></td>
+                            <td>Figure Caption</td>
+                            <td>This is a text element that is used to help describe the related figure.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;ul&gt;</span></td>
+                            <td>Unordered List</td>
+                            <td>This is the container element for unordered lists. This requires <span class="code">&lt;li&gt;</span> elements to provide content. When populated with content, text is displayed indented and in a bullet point fashion.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;ol&gt;</span></td>
+                            <td>Ordered List</td>
+                            <td>This is the container element for ordered lists. This also requires <span class="code">&lt;li&gt;</span> elements to provide content. When populated with content, text is displayed indented and in a numbered fashion.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;p&gt;</span></td>
+                            <td>Paragraph</td>
+                            <td>This is the most basic way of displaying text. This is not confined to displaying text however as it is a form of page organisation it can also display images and forms.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="inline_text_semantics">
+                <h2>Inline Text Semantics</h2>
+                <p>These HTML elements can be used to alter a piece of text to give it styling properties or further structure and meaning. They are used inline to alter specific elements that may not fit the broader rules defined in the CSS.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;a&gt;</span></td>
+                            <td>Link Element</td>
+                            <td>Together with its <span class="attribute">href</span> attribute, this creates a hyperlink to web pages, files, email addresses, locations within the current page, or anything else a URL can address. Adding a <span class="attribute">title</span> attribute to the link will allow tooltip's to be displayed when the link is briefly hovered over.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;b&gt;</span></td>
+                            <td>Boldface</td>
+                            <td>This is an outdated tag that used to be the primary way of creating bold typefaced text. There are alternative ways to do this using CSS. It was also previously used to give importance to a word, again this is outdated and the <span class="code">&lt;strong&gt;</span> tags should be used instead.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;br&gt;</span></td>
+                            <td>Link Break</td>
+                            <td>This produces a line break in a section of text.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;cite&gt;</span></td>
+                            <td>Citation</td>
+                            <td>This is used to mark a cited piece of work. This is often abbreviated in a context appropriate way.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;em&gt;</span></td>
+                            <td>Emphasis</td>
+                            <td>This is used to place emphasis on a specific piece of text. This element can be nested with each level receiving greater degrees of emphasis.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;i&gt;</span></td>
+                            <td>Italics</td>
+                            <td>This is used to differentiate text. Historically it put the text in italics and was used to signify various technical or other taxonimical designations.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;q&gt;</span></td>
+                            <td>Quotation</td>
+                            <td>This is used to create quotations that do not require line breaks. Browsers by default render these with quotation marks around them.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;s&gt;</span></td>
+                            <td>Strikethrough</td>
+                            <td>This places a strike through enclosed text.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;small&gt;</span></td>
+                            <td>Small Text</td>
+                            <td>This transforms the contained text to one size smaller from the default or applied size. For example <span class="attribute">small</span> text is transformed into <span class="attribute">x-small</span> text.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;span&gt;</span></td>
+                            <td>Span</td>
+                            <td>This tag creates an inline container element to which effects can be applied. Attributes such as <span class="attribute">id</span> and <span class="attribute">class</span> can help to bring further specificity to the enclosed text by creating unique version of the span tag.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;strong&gt;</span></td>
+                            <td>Strong</td>
+                            <td>These tags provide emphasis on its contained content indicating a strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;sub&gt;</span></td>
+                            <td>Subscript</td>
+                            <td>These tags specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;sup&gt;</span></td>
+                            <td>Superscript</td>
+                            <td>Specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;u&gt;</span></td>
+                            <td>Underline</td>
+                            <td>Represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline but may be altered using CSS.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="image_multimedia">
+                <h2>Image and Multimedia</h2>
+                <p>These tags help to populate the page with media other than text.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;audio&gt;</span></td>
+                            <td>Audio</td>
+                            <td>This tag allows for embedding audio into the page.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;img&gt;</span></td>
+                            <td>Image</td>
+                            <td>This tag allows for embedding images into the page.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;video&gt;</span></td>
+                            <td>Video</td>
+                            <td>This tag allows for embedding video into the page.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="embedded_content">
+                <h2>Embedded Content</h2>
+                <p>In addition to images and multimedia there are other types of content that can be embedded into the page.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;embed&gt;</span></td>
+                            <td>Embed</td>
+                            <td>This embeds external content into the document. This content is usually provided by an external application or other source of interactive content such as a browser plug-in.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="scripting">
+                <h2>Scripting</h2>
+                <p>Scripting allows for more dynamic content to be created on web pages.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;script&gt;</span></td>
+                            <td>Script</td>
+                            <td>This is typically used to embed or refer to JavaScript code.<br/>An example of typical syntax is;<br/><span class="code">&lt;script src="main.js"&gt;</span><br/>The default behaviour in browsers is for the script to be downloaded and executed in page order. So for example if the script is in the middle of the page, the script will be downloaded and executed before the bottom section of the page is downloaded and displayed. This behaviour can be modified with the attributes described below.<br/><br/>The <span class="attribute">defer</span> attribute can be included within the tag to ensure that the entire HTML file has been parsed before executing the script. This allows for a quicker loading of the page.<br/><br/>The <span class="attribute">async</span> attribute can be used within the tag to allow for the script to be downloaded in the background and executed once fully downloaded. This does not wait for the entire HTML to be parsed before executing.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="table_elements">
+                <h2>Table elements</h2>
+                <p>These tags are for the creation of tables within the page.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;table&gt;</span></td>
+                            <td>Table</td>
+                            <td>This is the overall wrapper element for the entire table.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;thead&gt;</span></td>
+                            <td>Table Head</td>
+                            <td>This is the wrapper element for the head of the table.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;tbody&gt;</span></td>
+                            <td>Table Body</td>
+                            <td>This is the wrapper element for the main content of the table.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;tfoot&gt;</span></td>
+                            <td>Table Foot</td>
+                            <td>This is the wrapper element for the footer content of the table.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;th&gt;</span></td>
+                            <td>Table Header</td>
+                            <td>This is the wrapper element for rows within the table head. This is used within the <span class="code">&lt;thead&gt;</span> tags to create rows for data within the head of the table. These usually serve to define the titles of each column.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;tr&gt;</span></td>
+                            <td>Table Row</td>
+                            <td>This is the wrapper element for rows within the main body of the table. This is used within the <span class="code">&lt;tbody&gt;</span> and <span class="code">&lt;tfoot&gt;</span> tags to create rows for data.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;td&gt;</span></td>
+                            <td>Table Data</td>
+                            <td>This is the wrapper element that contains individual cell data. The attributes <span class="attribute">colspan</span> and <span class="attribute">rowspan</span> can be used to help format the table within the HTML allowing for cells to stretch further than the default single cell layout. For example <span class="attribute">colspan="2"</span> will allow for the defined cell to stretch over 2 column spaces rather than the default single cell layout. These can be used to help format the titular <span class="code">&lt;th&gt;</span> and <span class="code">&lt;tr&gt;</span> elements of the table too.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="forms">
+                <h2>Forms</h2>
+                <p>These tags are focused on the creation of forms and user interactivity. These tags usually provide users with the ability to create data and submit information for various purposes.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">&lt;form&gt;</span></td>
+                            <td>Form</td>
+                            <td>This is the enabling element of user input on a site. Within the form tags it is necessary to include the attributes <span class="attribute">action</span> and <span class="attribute">method</span>.<br/><br/>The <span class="attribute">action</span> attribute tells the browser where to send the form's information upon being submitted.<br/>The <span class="attribute">method</span> attribute tells the browser how the information is sent.<br/><br/>An example of correct syntax is shown below;<br/><span class="code">&lt;form</span> <span class="attribute">action</span><span class="code">="./submission.html"</span> <span class="attribute">method</span><span class="code">="POST"&gt;</span><br/><br/><span class="code">&lt;/form&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;label&gt;</span></td>
+                            <td>Label</td>
+                            <td>The label tag allows for text, or a label, describing the input parameter.<br/>The label tag should contain a <span class="attribute">for=""</span> attribute. The purpose of this is to assign the label to an input.<br/>The <span class="attribute">for=""</span> of the label should match the <span class="attribute">id=""</span> of the <span class="code">&lt;input&gt;</span><br/><br/>An example of syntax is shown below;<br/><span class="code">&lt;label for="text"&gt;Text&lt;/label&gt;</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;input&gt;</span></td>
+                            <td>Input</td>
+                            <td>The input tag allows for a number of different input methods to be defined allowing the user to write, choose and generally interact with the website.<br/>The <span class="attribute">type</span> attribute is the key to the interactivity provided by the <span class="code">&lt;input&gt;</span> tag, these are listed individually below with their various settings.<br/><br/>An example of the typical syntax for an <span class="code">&lt;input&gt;</span> tag is shown below, in this example we specify the inpute type as text;<br/><span class="code">&lt;input type="text" name="name" id="id" &gt;</span><br/>Notice that there is no requirement for a closing tag or / element within the tags.<br/>Also notice that the <span class="attribute">name=""</span> attribute is what will be paired with the input when it is submitted by the user.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="text"</span></td>
+                            <td>The input tag allows for a number of different input methods to be defined allowing the user to write, choose and generally interact with the website.<br/>The <span class="attribute">type</span> attribute is the key to the interactivity provided by the <span class="code">&lt;input&gt;</span> tag, these are listed below with their various settings.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="password"</span></td>
+                            <td>This attribute words in much the same way as the <span class="attribute">type="text"</span> however when a user is writing something into the textbox it will display dots or asterisk's instead of the characters so nobody else looking at the screen can see the input.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="number"</span></td>
+                            <td>This allows for the input of numbers. It will not accept non numerical input, acting as a quick front end validation tool.<br/><br/>This attribute also allows for additional functionality to be used within the <span class="code">&lt;input&gt;</span> tag.<br/>A <span class="attribute">min="1"</span> and <span class="attribute">max="10"</span> attribute can be used to ensure that the user input is kept within the defined range, in this case between 1 and 10.<br/><br/>A further attribute that can be used with this is the <span class="attribute">step="1"</span> property. When a number input field is defined it will enter with an increase and decrease arrow button within the input field that will allow a user to increase or decrease the number. The <span class="attribute">step</span> defines how much this arrow increases or decreases the number. So for example if we want the arrows to increase/decrease by 10 each time it is pressed we would define <span class="attribute">step="10"</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="range"</span></td>
+                            <td>This provides a slide bar that allows for selection from a pre-determined range of numbers.<br/>This also requires additional attributes to be defined within the <span class="code">&lt;input&gt;</span> tag.<br/>A <span class="attribute">min="1"</span> and <span class="attribute">max="10"</span> attribute is required to provide the given range for a user to select from.<br/>A further <span class="attribute">value="5"</span> property is provided to give the slider a starting point.<br/><br/>An optional <span class="attribute">step="1"</span> property can be provided to give the slider pre-determined increment values.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="checkbox"</span></td>
+                            <td>The checkbox type allows for multiple choice input to be created within a form.<br/>It is important to include a <span class="attribute">value=""</span> property with each individual checkbox so that when the box is checked and submitted the value associated with that check will be returned by the form submission.<br/><br/>An example of syntax is shown below, in this example we have made a number of checkboxes for pizza toppings;<br/><br/><span class="code">&lt;input type="checkbox" name="topping" id="onion" value="onion"&gt;</span><br/><span class="code">&lt;input type="checkbox" name="topping" id="mushroom" value="mushroom"&gt;</span><br/><br/>Note that each checkbox will have the same name property so when the form is submitted they will all be returned under the 'topping' name, the id and value properties are related to whatever the checkbox option is so the appropriate label is assigned and the correct value is returned.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="radio"</span></td>
+                            <td>This provides a radio button that is usually used for boolean type selections (yes or no).<br/>As with the checkbox attribute, it is important to include a <span class="attribute">value=""</span> property with each individual radio button so that when the button is selected and submitted the value associated with that button will be returned by the form submission.<br/><br/>An example of syntax is shown below;<br/><br/><span class="code">&lt;input type="radio" name="name" id="yes" value="yes"&gt;</span><br/><span class="code">&lt;input type="radio" name="name" id="no" value="no"&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">type="submit"</span></td>
+                            <td>This creates a submission button.<br/>Adding a <span class="attribute">value=""</span> attribute will create the button with whatever text is contained within parentheses of <span class="attribute">value</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;select&gt;</span> & <span class="code">&lt;option&gt;</span></td>
+                            <td>Dropdown list</td>
+                            <td>The <span class="code">&lt;select&gt;</span> tag creates the container for a dropdown list.<br/>Much in the same way as other input tags it also requires a <span class="attribute">name=""</span> and <span class="attribute">id=""</span>.<br/><br/>The <span class="code">&lt;option&gt;</span> tags contain the items to populate the dropdown list.<br/>These also require <span class="attribute">value=""</span><br/>An example of correct syntax is shown below;<br/><br/><span class="code">&lt;select name="bun" id="bun"&gt;<br/>&lt;option value="sesame"&gt;Sesame&lt;/option&gt;<br/>&lt;option value="brioche"&gt;Brioche&lt;/option&gt;<br/>&lt;/select&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">type="text"</span>, <span class="attribute">list=""</span>, <span class="code">&lt;datalist&gt;</span> & <span class="code">&lt;option&gt;</span></td>
+                            <td>Custom/searchable list</td>
+                            <td>The <span class="code">&lt;datalist&gt;</span> tag allows for custom text to be inputted but also acts as a searchable list that contains pre-determined options.<br/>Much in the same way as other input tags it also requires an <span class="attribute">id=""</span> to be paired with the <span class="code">&lt;input&gt;</span>.<br/><br/>The <span class="code">&lt;option&gt;</span> tags contain the items to populate the searchable list.<br/>These also require <span class="attribute">value=""</span><br/><br/>An example of correct syntax is shown below, in this example we create a searchable list of sauces with a few pre-determined options;<br/><br/><span class="code">&lt;input type="text" list="sauces" id="sauce" name="sauce"&gt;<br/>&lt;datalist id="sauces"&gt;<br/>&lt;option value="ketchup"&gt;Ketchup&lt;/option&gt;<br/>&lt;option value="mayo"&gt;Mayo&lt;/option&gt;<br/>&lt;/datalist&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;textarea&gt;</span></td>
+                            <td>Text Box</td>
+                            <td>The <span class="code">&lt;textarea&gt;</span> tag allows for custom text to be submitted. This can be for things like comments, or custom messages that aren't covered by other provided options in a form.<br/>This requires a <span class="attribute">name=""</span> and <span class="attribute">id=""</span> but it also requires attributes telling the browser how big to render the textbox.<br/>The <span class="attribute">cols=""</span> property tells the browser how wide the box should be and the <span class="attribute">rows=""</span> property tells the broswer how tall it should be.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="attribute">placeholder=""</span></td>
+                            <td>This creates a temporary piece of text that populates the textbox this attribute has been deeclared on.<br/>When the user starts to type something the placeholder text will disappear.<br/> This is usually to help direct the user in terms of expected input.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">&lt;button&gt;</span></td>
+                            <td>Button</td>
+                            <td>This is an interactive element that can used to submit information or to provide an answer to a questionnaire.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="form_validation">
+                <h2>Form Validation</h2>
+                <p>These tags and attributes are focused on the validation of user input.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">required</span></td>
+                            <td>Required</td>
+                            <td>This attribute is an additional keyword that can be inserted into <span class="code">&lt;input&gt;</span> tags to ensure quick client-side validation on a form.<br/>This will not allow the form to be submitted unless the associated <span class="code">&lt;input&gt;</span> has been filled with some content.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">minlength=""</span></td>
+                            <td>Minimum Length</td>
+                            <td>This attribute ensures that a user input reaches a set minimum length before being submitted.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">maxlength=""</span></td>
+                            <td>Maximum Length</td>
+                            <td>This attribute ensures that a user input does not exceed a set maximum length before being submitted.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">pattern=""</span></td>
+                            <td>Pattern</td>
+                            <td>This attribute ensures that a user input matches a pre-determined pattern.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="accessibility">
+                <h2>Accessibility</h2>
+                <p>These tags and attributes are focused on improving the accessibility of a website.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">role=""</span></td>
+                            <td>Role</td>
+                            <td>This attribute is an additional attribute contained within HTML tags to provide context to people using screen readers as to the role of the content.<br/><br/>For example the <span class="attribute">role="presentation"</span> attribute essential hides non essential parts of the site from the screen reader to allow for a less cumbersome expereince for the user. You would typically use this on containing divs or <span class="code">&lt;ol&gt;</span> elements.<br/>Note that this particular role keyword will hide an element and its necessary child elements so for example the <span class="code">&lt;ol&gt;</span> AND <span class="code">&lt;li&gt;</span> will be skipped from being read by a screen and instead it will skip straight to the text contained between the <span class="code">&lt;li&gt;</span> tags.<br/><br/>There are many role keywords, see the <a href="https://www.w3.org/TR/html-aria/#allowed-descendants-of-aria-roles" target="_blank">W3 Website</a> for more info.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Aria Properties</td>
+                            <td>These attributes are additional options that can be included within HTML tags to provide further context to people using screen readers as to the role and relationship of the content.<br/><br/>For example when a label is provided underneath an image as note on an artist, for someone using a screen reader it might not be clear what the paragraph below the image means. The property <span class="attribute">aria-label</span> gives the screen reader additional information to read out loud to the user.<br/><br/>There are many role keywords, see the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#states_and_properties" target="_blank">MDN Website</a> for more info.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>For additional tags and examples see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#table_content" target="_blank">MDN Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
