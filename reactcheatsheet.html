@@ -498,6 +498,11 @@
                         <td>Redux is a method of managing state throughout web apps. It is perhaps best thought of as the main HQ for the state in your entire web app.<br/><br/>Before implementing Redux, a React web app can be built from numerous different components, some may have their own states and some may be stateless, however there is no centralised HQ for state.<br/>This is what Redux provides.<br/><br/>In addition to this Redux insists on a system based on a pure separation of concerns when it comes to state. This means that functions that process elements of state should be written to have no additional effect on the input. This ensures that the results are always consistent and the function has no additional logic to change the result other than calculation of its input.<br/>The best analogy for this is that of a cassette player. The player is consistent and will only play the songs present on the inserted cassette.</td>
                     </tr>
                     <tr>
+                        <td></td>
+                        <td>Importing Redux elements</td>
+                        <td>The Redux library must be imported like other methods and components before using in our app. Example syntax is shown below;<br/><br/><span class="attribute">import {  } from 'redux';</span></td>
+                    </tr>
+                    <tr>
                         <td><span class="attribute">action</span></td>
                         <td>Action keyword</td>
                         <td>In Redux state is managed through actions.<br/><br/>If we follow on with our cassette player analogy, the player itself is a function that we will describe later however, actions are best thought of as different tapes that can be inserted into the player to tell it what song to play.<br/><br/>An action is written as a plain Javacsript object.<br/>Every action has a <span class="attribute">type</span> property with a string value. This string is a description of the action.<br/>Actions can also have a secondary key-value called <span class="attribute">payload</span>. This contains any additional information related to the action.<br/><br/>In the examples below we are interacting with an array that represents the state for a spotify playlist.<br/><br/><span class="attribute">const action = {<br/>type: 'playlist/addSong',<br/>payload: 'Carrion'<br/>};</span><br/><br/>In the above action we are adding a song to the array so our action description is <span class="attribute">'playlist/addSong'</span>. It tells us in very simple terms <span class="attribute">playlist</span> is the state target and <span class="attribute">addSong</span> is the action. It then also tells us what song to add in the <span class="attribute">payload</span>, we are adding a song called <span class="attribute">Carrion</span>.<br/><br/><span class="attribute">const action = {<br/>type: 'playlist/removeSong',<br/>payload: 'Thriller'<br/>}</span><br/><br/>In this action we are removing the song <span class="attribute">Thriller</span> from the playlist<br/><br/><span class="attribute">const action = {<br/>type: 'playlist/removeAll'<br/>}</span><br/><br/>Finally, notice how this action does not have a <span class="attribute">payload</span> because its purpose it to remove everything from the state in contrast to the previous removal action where it is removing a specific item described in the <span class="attribute">payload</span>.</td>
@@ -521,6 +526,51 @@
                         <td></td>
                         <td>Targetting state objects when returning</td>
                         <td>The example below shows how a state object can be copied and then individual values of that copied object can be targetted.<br/><br/><span class="attribute">const initialWagonState = {<br/>supplies: 100,<br/>distance: 0,<br/>days: 0<br/>};<br/><br/>const reducer = (state = initialWagonState, action) => {<br/>switch (action.type) {<br/>case 'gather': {<br/>return {...state,<br/>supplies: state.supplies + 15,<br/>days: state.days + 1<br/>};<br/>}<br/>case 'travel': {<br/>if (state.supplies &lt; (20 * action.payload)) {<br/>return state;<br/>}<br/>return {...state,<br/>supplies: state.supplies - (20 * action.payload),<br/>distance: state.distance + (10 * action.payload),<br/>days: state.days + action.payload<br/>};<br/>}<br/>case 'tippedWagon': {<br/>return {...state,<br/>supplies: state.supplies - 30,<br/>days: state.days + 1<br/>}<br/>}<br/>default: {<br/>return state;<br/>}<br/>}<br/>};</span><br/><br/>In the example above we copy the original state and then target individual key-value pairs and apply controlled logic to each one.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container" id="redux_store">
+            <h2>Redux Store</h2>
+            <p>This section describes additional entities of the the Javascript library Redux, including notes on usages and correct syntax.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag/Expression</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="attribute">createStore()</span></td>
+                        <td>Creating a Store</td>
+                        <td><span class="attribute">createStore</span> must be imported before using in our app. Example syntax is shown below;<br/><br/><span class="attribute">import { createStore } from 'redux';</span><br/><br/>The <span class="attribute">store</span> is an object within Redux that enforces one-way data flow.<br/>Its purpose is to hold the current state.<br/>It acts as the central HQ for the state of our web app by receiving actions to then execute through the reducer functions that will update the state.<br/>Its purpose can be carried out without the additional code however its best thought of as a way to control the complexity of state by providing a centralised point of contact to then look to for debugging etc.<br/><br/>With this in mind we declare a store using the <span class="attribute">createStore()</span> method imported from the redux library.<br/>The syntax for this is shown below;<br/><br/><span class="attribute">const store = createStore(reducerFunction);</span><br/><br/>Notice in the above code we declare <span class="attribute">createStore()</span> and pass in the reducer function as the argument. This is so we link the function to the store which will eventually give us the state updating functionality we're looking for.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="attribute">.dispatch()</span></td>
+                        <td>Dispatching actions</td>
+                        <td>Once declared with <span class="attribute">createStore()</span>, the <span class="attribute">store</span> has a number of useful methods that we can make use of.<br/>The first is the <span class="attribute">.dispatch()</span> method.<br/><br/>In order to interact with the state and have it update we need to be able to dispatch actions to it.<br/>We can dispatch actions using this method appended to the store object, an example of syntax is shown below;<br/><br/><span class="attribute">store.dispatch({ type: 'some action' });</span><br/><br/>If we have actions declared within our code we can also simply enter the variable name directly as the argument, an example is shown below;<br/><br/><span class="attribute">const action = {<br/>type: 'some action'<br/>}<br/><br/>store.dispatch(action);</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="attribute">.getState()</span></td>
+                        <td>Getting the current state</td>
+                        <td>Another method available to us once we declare <span class="attribute">createStore()</span> is the <span class="attribute">.getState()</span> method.<br/>This is called on the <span class="attribute">store</span> object and returns the state.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">store.getState();</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="attribute">actionCreator()</span></td>
+                        <td>Action Creator functions</td>
+                        <td>Action creator functions are essentially action objects turned into functions. The point of them is to reduce the potential for errors.<br/><br/>The way this works is that an action is declared in the function body and then when an action needs to be dispatched the function is called which in turn will return the action to the caller.<br/>An example of syntax is shown below;<br/><br/><span class="attribute">const actionCreatorFunction = () => {<br/>return { type: 'some action' };<br/>}<br/><br/>store.dispatch(actionCreatorFunction());</span><br/><br/>This reduces the amount of times an action needs to be individually typed which in turn lowers the potential for spelling mistakes and general syntax errors.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="attribute">.subscribe()</span></td>
+                        <td>Event listeners in Redux</td>
+                        <td>In Redux actions dispatched to the <span class="attribute">store</span> can be listened for and responded to using the <span class="attribute">.subscribe()</span> method.<br/>This method only has 1 argument which is a function. This is also the "listener" that is executed in response to changes to the <span class="attribute">state</span>.<br/>A simple example of how this could work is shown below;<br/><br/><span class="attribute">const reactToChange = () => console.log('Change detected!');<br/>store.subscribe(reactToChange);</span><br/><br/>In the above example every time an action is disptached to the <span class="attribute">store</span> and a change to the <span class="attribute">state</span> happens, the function <span class="attribute">reactToChange</span> will be executed.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="attribute">unsubscribe()</span></td>
+                        <td>Removing event listeners in Redux</td>
+                        <td>Following on from the <span class="attribute">.subscribe()</span> method described above, this can also be removed if necessary using its own in built <span class="attribute">unsubscribe</span> function.<br/><br/>When <span class="attribute">store.subscribe(function)</span> is declared it returns an <span class="attribute">unsubscribe()</span> function as part of its declaration. We can assign this function to a variable like a normal variable to then be able to use this unsubscribe functionality if we wanted to.<br/>The syntax for this is a little confusing in terms of the declaration so an example is given below;<br/><br/><span class="attribute">const unsubscribe = store.subscribe(reactToChange);</span><br/><br/>In the above declaration we have both created the listener using the <span class="attribute">.subscribe()</span> method and in the same declaration we have assigned the returned <span class="attribute">unsubscribe()</span> function to its own variable.<br/><br/>In this example every time our state is updated we print 'Change detected!' to the console as that is the purpose of the <span class="attribute">reactToChange</span> function that is fed into the <span class="attribute">.subscribe()</span> method.<br/>Lets say we have made a number of changes and we no longer want to print to the console we can unsubscribe by calling <span class="attribute">unsubscribe();</span> this will remove the function <span class="attribute">reactToChange</span> from the <span class="attribute">store.subscribe()</span>.<br/><br/>This example is quite simple but if our subscribe function is doing something a bit more interesting or interactive, the ability to stop this and change it to something else could be quite useful.</td>
                     </tr>
                 </tbody>
             </table>
