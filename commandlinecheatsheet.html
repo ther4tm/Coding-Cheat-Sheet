@@ -150,6 +150,41 @@
                     </tbody>
                 </table>
             </div>
+            <div id="git_branches">
+                <h2>Git Branches</h2>
+                <p>The commands here are additional commands for working within the Git workflow.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">git branch</span></td>
+                            <td>Branch check</td>
+                            <td>This command tells you the name of the branch you are currently on.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git branch new_branch</span></td>
+                            <td>Create new branch</td>
+                            <td>This command allows you to create a new branch where the <span class="code">new_branch</span> section of the command is the name of the new branch you are creating.<br/><br/>Branch names cannot contain white spaces. For example <span class="code">new-branch</span> or <span class="code">new_branch</span> would be valid names.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git checkout branch_name</span></td>
+                            <td>Change branch</td>
+                            <td>This command allows you to change branches.<br/><br/>When working on another branch you can make commits to the branch without the master branch being affected.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="code">git merge branch_name</span></td>
+                            <td>Merge branch</td>
+                            <td>This command allows you to merge branches.<br/><br/>When a branch is publish ready you can merge it to the master by navigating into the master branch and then using the command targetting the branch to be merged.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
     <footer>
