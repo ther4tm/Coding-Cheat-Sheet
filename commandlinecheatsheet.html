@@ -227,6 +227,11 @@
                             <td>Pushing new branches for review</td>
                             <td>When a feature has been completed, the local copy of the branch will need to be pushed to the remote (origin) so it can be reviewed by others and then potentially merged into the master if deemed acceptable.</td>
                         </tr>
+                        <tr>
+                            <td><span class="code">git rebase</span></td>
+                            <td>Rebasing branches</td>
+                            <td>Rebasing is an operation possible in Git repo's when the base of a branch needs to be relocated to a new commit point on the masters commit history for some reason. This could be because a bug was found and then fixed or something similar.<br/>Rebasing a branch after the bug fix rewrites its history and avoids needing to merge the master branch into the new feature branch and keeps a clean history rather than a complicated back and forth.<br/><br/><a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" target="_blank">This website explains in greater detail</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
