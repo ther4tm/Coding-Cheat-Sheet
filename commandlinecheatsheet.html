@@ -235,6 +235,31 @@
                     </tbody>
                 </table>
             </div>
+            <div id="git_ignore">
+                <h2>Git Ignore</h2>
+                <p>The commands here are additional commands for working within the Git workflow.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code">.gitignore</span></td>
+                            <td>Git Ignore files</td>
+                            <td>Git ignore files are used to tell Git which files or folders to ignore when staging and making changes.<br/>This can be because the folders/files contain API secret keys or dependencies from a package manager or even system files, basically anything that we do not want to alter or keep a track of.<br/><br/>the git ignore file is usually kept in the root of the project folder and is named <span class="code">.gitignore</span><br/><br/>Within a git ignore file the # is treated as a comment and white space lines are ignored.<br/>Filenames and paths can all be written relative to the position of the git ignore file.<br/>For example if we had a folder named test in the same folder as the git ignore file and we wanted to ignore it we would write <span class="code">/test</span> in the git ignore file because its in the same location.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Git Ignore patterns</td>
+                            <td>Within the git ignore file there are patterns that can be written to specifically target folders or files or multiple folders and files to be ignored.<br/><br/><span class="code">*</span> - will match 0 or more characters except for <span class="code">/</span>.<br/>For example, adding <span class="code">*.html</span> to a git ignore file will ignore all files that end with <span class="code">.html</span>.<br/><span class="code">example*</span> would ignore all files that started with <span class="code">example</span> like <span class="code">example.txt</span>.<br/><br/><span class="code">!</span> - This works the same as in Javascript in that it will negate whatever is written after it so for example;<br/><span class="code">index*<br/>!public/index.css</span><br/>will ignore every file that begins with index except for the file index.css in the public folder.<br/><br/><span class="code">[ ]</span> - Can be used to match a single character from a set of characters or numbers. For example <span class="code">index.[a-i]</span> would ignore <span class="code">index.css</span> but not <span class="code">index.js</span> as j is outside the scope in the square brackets.<br/><br/><span class="code">**</span> - This is used to match 0 or more directories. For example if there is a temp folder insiade of every folder in the root directroy and we only wanted to match files with <span class="code">.log</span> as the extension we could write<span class="code">**/temp/.log</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
     <footer>
