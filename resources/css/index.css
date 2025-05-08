@@ -26,6 +26,7 @@ nav ul {
 
 nav li {
     font-family: Poppins;
+    color: #ffffff;
     font-size: 20px;
     padding: 0 10px;
     display: inline-block;
@@ -39,6 +40,53 @@ nav li a {
 
 nav a:hover {
     color: rgb(29, 123, 108);
+}
+
+/* NavBar */
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+.dropdownBtn {
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: inherit;
+    font-family: Poppins;
+    margin: 0;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    &:hover {
+        color: rgb(29, 123, 108);
+    }
+}
+
+.dropdownContent {
+    display: none;
+}
+
+.dropdownContent a {
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.dropdown:hover .dropdownContent {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+    font-size: 1rem;
+    padding: 0.5rem;
 }
 
 h1 {

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Node.js Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="dropdown">
+                    <button class="dropdownBtn">Front End</button>
+                    <div class="dropdownContent">
+                        <a href="./htmlcheatsheet.html">HTML</a>
+                        <a href="./csscheatsheet.html">CSS</a>
+                        <a href="./javascriptcheatsheet.html">JavaScript</a>
+                        <a href="./reactcheatsheet.html">React</a>
+                        <a href="./reduxcheatsheet.html">Redux</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdownBtn">Back End</button>
+                    <div class="dropdownContent">
+                        <a href="./nodecheatsheet.html">Node.js</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdownBtn">Other</button>
+                    <div class="dropdownContent">
+                        <a href="./commandlinecheatsheet.html">Command Line</a>
+                        <a href="./markdowncheatsheet.html">Markdown</a>
+                        <a href="./styleguide.html">Style Guide</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>Node.js Cheat Sheet</h1>
+            <p>Below is a list of commands, methods and fundamental principles regarding the Node.js runtime including a brief description of what they do and any notes on correct syntax.</p>
+            <div id="fundamentals">
+                <h2>Fundamentals</h2>
+                <p>This section describes some fundamental properties of the Node.js runtime.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">node</span></td>
+                            <td>Node REPL</td>
+                            <td>When installed, Node comes with a built in Javascript REPL that can be accessed by typing <span class="attribute">node</span> into the terminal and pressing enter.<br><br/>The node Read Eval Print Loop (REPL) is a programme that can read, evaluate and then print its evaluation to the console.<br/>By default you begin an evaluation of the input by pressing enter, therefore giving the appearance of the REPL being a single line programme, however it can evaluate multiple lines by entering editor mode.<br/>While in the REPL type in <span class="attribute">.editor</span> and then the enter button acts a return element allowing for multi line input. To evaluate multi line input you need to press <span class="attribute">ctrl + d</span>.<br/><br/>This is useful for many things including performing calculations or developing code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">global</span></td>
+                            <td>Node global object</td>
+                            <td>The node environment contains many node specific global elements in addition to those built in Javascript as a language. These elements can all be accessed within the node <span class="attribute">global</span> object.<br/>To see all of these you could simply type <span class="attribute">console.log(global)</span><br/><br/>This object contains many different properties and methods that can be used in many different ways.<br/>remember that its also simply a javascript object so these keys can all be accessed using standard dot notation such as:<br/><span class="attribute">global.exampleKey</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">node exampleProgramme.js</span></td>
+                            <td>Running a programme with node</td>
+                            <td>Node allows for Javascript programmes to be run outside of the browser environment and negates the need for them to be embedded into HTML.<br/><br/>So for example, you could write a simple Javascript arithmetic programme that adds the values of 2 variables together to get an answer. To run this without Node you would need to wrap this into HTML in order for it to be executed and have the answer computed. It's a lot of extra coding.<br/><br/>The Node environment allows us to execute a programme without having to embed it.<br/>In the terminal we simply enter the Node environment (by typing <span class="attribute">node</span>) and then enter the file name we wish to execute.<br/><br/><span class="attribute">node exampleProgramme.js</span><br/><br/>One thing to bear in mind here is that we need to be aware of our location in the file system, the file name to be executed will only be whatever directory you are in within the terminal, so if you wanted to execute a file in another folder from the one you are in within terminal you would need to enter the rest of its location parameters (for example something like <span class="attribute">/users/documents/exampleFile.js</span>)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">require()</span></td>
+                            <td>Requiring in other modules</td>
+                            <td>Node's global module contains some key elements that are always accessible throughout the programme however, it also contains many other useful modules that are not 'loaded' in by default.<br/>To access these other modules we need to bring them into the programme using the <span class="attribute">require()</span> function.<br/>The syntax for this is the same as defining a variable.<br/><br/><span class="attribute">const events = require('events');</span><br/><br/>You simply add in the module as a string within the require parentheses.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="core_modules">
+                <h2>Core Modules</h2>
+                <p>This section describes some properties of various core modules within Node.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">require('module').builtinModules</span></td>
+                            <td>The Core modules</td>
+                            <td>Node.js has several core modules, some of these are global and are accessible straight away while others need to be required in before use.<br/><br/>To see a full list of these modules make sure you are in the node environment by typing <span class="attribute">node</span> followed by <span class="attribute">require('module').builtinModules</span>. This will then display a list of all the core modules.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">console</span></td>
+                            <td>The Console module</td>
+                            <td>The Console module is a global module within node and can be accessed without the need to be required in first.<br/><br/>The most common method used with this module is the <span class="attribute">.log()</span> method. This is used to print whatever is within the parentheses to the terminal.<br/><br/>The <span class="attribute">.assert()</span> method prints a message to the terminal if the value within the parentheses is falsey. This can quickly check on the truthy or falsey nature of something.<br/><br/>The <span class="attribute">.table()</span> method prints out a table in the terminal based on whatever array or object is enclosed within the parentheses. This is a easy visual way to see the hierarchy of an object or array.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">process</span></td>
+                            <td>The Process module</td>
+                            <td>The process module is also a global module within node and can be accessed without the need to be required in first.<br/><br/>This module has tools for evaluating the current process, things like assessing the memory usage, the development phase or the file location.<br/><br/>The <span class="attribute">process.env</span> property is an object which stores and controls information about the environment in which the process is currently running. For example, the <span class="attribute">process.env</span> object contains a <span class="attribute">PWD</span> property which holds a string with the directory in which the current process is located. It can be useful to have some if/else logic in a program depending on the current environment.<br/>For example, a web application in a development phase might perform different tasks than when it’s live to users. We could store this information on the <span class="attribute">process.env</span>.<br/>A common convention is to add a property to <span class="attribute">process.env</span> with the key <span class="attribute">NODE_ENV</span> and a value of either production or development.<br/> This is done in the same way that Javascript objects are amended, if a key does not exist it will be created and if it exists it will be mutated.<br/>So we could write <span class="attribute">process.env.NODE_ENV = 'development';</span> which will then create the <span class="attribute">NODE_ENV</span> key and assign it the property of <span class="attribute">'development'</span>. We can then apply some if/else logic to something that we are working on in the background as a quick check against development or production deployment.<br/>For example;<br/><span class="attribute">if (process.env.NODE_ENV === 'development'){<br/>console.log('Testing! Testing! Does everything work?');<br/>}</span><br/><br/>The <span class="attribute">.memoryUsage()</span> method returns information on the CPU demands of the current process in the form of an object. The object looks like the following;<br/><br/><span class="attribute">{ rss: 26247168,<br/>heapTotal: 5767168,<br/>heapUsed: 3573032,<br/>external: 8772 }</span><br/><br/>The values of the properties will differ however we can use this information to assess CPU usage.<br/><br/><span class="attribute">process.argv</span> holds an array of command line values.<br/>This means that whatever we type into the command line can then be used back in whatever programme we are executing.<br/>For example if we have a javascript file (app.js) that simply has the line <span class="attribute">console.log(process.argv[3]);</span>, if we type into the command line <span class="attribute">node app.js testing feature</span> the following will happen;<br/>node will execute the file app.js which in turn runs the <span class="attribute">console.log()</span> method which logs the 3rd index item to the terminal found with the <span class="attribute">process.argv</span> method contained within its parentheses. the 3rd index item refers to the 4th word written in the command line which is held in the <span class="attribute">process.argv</span> array. This means the word feature will be printed to the terminal.<br/><br/>There are additional methods for this module which are explained in greater depth <a href="https://nodejs.org/api/process.html" target="_blank">here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">os</span></td>
+                            <td>The Os module</td>
+                            <td>The os module is not a global module and therefore needs to be required in before use.<br/><br/><span class="attribute">const os = require('os');</span><br/><br/>The os module allows for information about the computer, operating system and network to be retrieved when debugging/developing an app.<br/><br/><span class="attribute">os.type()</span> returns information about the computer's operating system.<br/><br/><span class="attribute">os.arch()</span> returns information about the computer's CPU architecture.<br/><br/><span class="attribute">os.networkInterfaces()</span> returns information about the computer's network interfaces such as IP and MAC addresses.<br/><br/><span class="attribute">os.homedir()</span> returns information about the current user's home directory.<br/><br/><span class="attribute">os.hostname()</span> returns the hostname of the operating system.<br/><br/><span class="attribute">os.uptime()</span> returns the length of time, in seconds, since the computer was last rebooted.<br/><br/>An example of how we might utilize this would be as follows;<br/><br/><span class="attribute">const local = {<br/>'Home Directory': os.homedir(),<br/>'Operating System': os.type(),<br/>'Last Reboot': os.uptime()<br/>}</span><br/><br/>When logged to the console, this could return an object that looked something like;<br/><br/><span class="attribute">{<br/>'Home Directory': '/Users/dave',<br/>'Operating System': 'Windows_NT',<br/>'Time since reboot': 94973.12<br/>}</span><br/><br/>There are additional methods for this module which are explained in greater depth <a href="https://nodejs.org/api/os.html" target="_blank">here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">util</span></td>
+                            <td>The Util module</td>
+                            <td>The util module is also not a global module and therefore needs to be required in before use.<br/><br/><span class="attribute">const util = require('util');</span><br/><br/>The util module is focused on providing utility based methods and objects for debugging and code maintenance.<br/><br/>One important object is <span class="attribute">.types</span> which contains many different methods that can be used to check truthy or falsey values.<br/>For example we could have 2 different variables defined in our file, one that contains a valid date object and another that contains a date written out as a string. We could then use the <span class="attribute">.types</span> object appended with the <span class="attribute">.isDate()</span> method to check the truthy or falsey-ness of those variables in the following way;<br/><span class="attribute">console.log(util.types.isDate(dateObject))<br/>console.log(util.types.isDate(string))</span><br/>The result would print true for the date object and false for the string to the terminal.<br/><br/>There are additional methods for this module which are explained in greater depth <a href="https://nodejs.org/api/util.html" target="_blank">here</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="essential_modules">
+                <h2>Essential Modules</h2>
+                <p>This section describes some properties of various other essential modules within Node.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">events</span></td>
+                            <td>The Events module</td>
+                            <td>The events module is not a global module and therefore needs to be required in before use.<br/><br/><span class="attribute">const events = require('events');</span><br/><br/>The events module is focused on providing methods that provide functionality on the back end for when there is no set time frame or determined point of them triggering. On the front end we doing this with things like onClick events and the like.<br/><br/>An example of this in action would be if we wanted to trigger a welcome message to someone who just created a new user account with our website.<br/><br/>In our Javascript file (app.js) we <span class="attribute">require</span> in the <span class="attribute">events</span> module at the top and then create a new emitter variable using one of the built in methods in the events module.<br/>It would look like the following;<br/><span class="attribute">let myEmitter = new events.EventEmitter();</span><br/>Notice how we include the keyword <span class="attribute">new</span>, this is because the <span class="attribute">.EventEmitter()</span> method is a <span class="attribute">class</span> which creates new instances when invoked. This means we can make multiple emitters in the same file to listen out for different events.<br/><br/>Because <span class="attribute">.EventEmitter()</span> is a class it means our new variable <span class="attribute">myEmitter</span> also has the methods <span class="attribute">.on()</span> and <span class="attribute">.emit()</span>.<br/>The <span class="attribute">.on()</span> method is the listener portion in a similar way to <span class="attribute">onClick</span>. It takes 2 arguments, the first is the name of the event in string form and the second argument is a listener callback function (This is basically what you want it to do when it hears the event).<br/>The <span class="attribute">.emit()</span> method is the announcement or the 'click' of an onClick event. This also takes 2 arguments. The first is the name of the event in string form so it can match up with the listener, the second argument is essentially the payload, also in string form. This is what will be passed into the listener callback function to be processed.<br/><br/>So in our example we have an emitter (<span class="attribute">myEmitter</span>), lets create a simple callback function the prints a welcome message to the terminal when is is invoked.<br/><span class="attribute">let welcomeNewUser = (data) => {<br/>console.log(`Welcome to the group ${data}!`);<br/>};</span><br/>Then lets create our listener and announcer;<br/><span class="attribute">myEmitter.on('new user', welcomeNewUser);<br/>myEmitter.emit('new user', 'Dave');</span><br/><br/>Now our listener and callback functions are all set up when we run this in node by typing <span class="attribute">node app.js</span> into the terminal we should receive a message back that says 'Welcome to the group Dave!'.<br/><br/>In our example Dave is just a placeholder and would likely be replaced by some sort of user input however for this example it helps to explain the chain of events.<br/>The emitter is invoked with the event name ('new user') and the user input ('Dave'), the listener matches the event ('new user') and fires off the call back function (<span class="attribute">welcomeNewUser</span>) with the payload of 'Dave' from the emitter.<br/>The template literal of <span class="attribute">${data}</span> in the callback function is replaced with the payload of 'Dave' and prints the full message to the terminal.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>For additional tags and examples see the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">MDN Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
