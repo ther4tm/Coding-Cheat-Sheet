@@ -165,6 +165,46 @@
                     </tbody>
                 </table>
             </div>
+            <div id="API_fundamentals">
+                <h2>API fundamentals</h2>
+                <p>This section explains some of the fundamental principles of REST, RESTful API's and API's in general.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>REST</td>
+                            <td>Representational State Transfer (REST) is the architecture behind a specific type of web service. It consists of standards and constraints for sharing data between different systems.<br/>Systems that implement this architecture are known as RESTful.<br/><br/>A simple way of visualising what REST is would be to compare it to physical collections of music, movies or TV programmes against a streaming service.<br/>If you want to listen to a specific track, the entire album must be copied and duplicated and then distributed however with a streaming service a singular track can be shared via a reference to a song title and doesn't require a copy of the entire album to be made. The streaming service is RESTful whereas the physical collection is not.<br/><br/>An Application Programming Interface (API) is an interface that allows software programmes to communicate with one another. A RESTful API is the same but it is constrained by the principles of REST.<br/>In a web API a server receives a request through a URL endpoint and sends a response in return which is often data in JSON format.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>REST Principles</td>
+                            <td>There are 6 main constraints that define REST;<br/><br/><span class="attribute">Uniform Interface</span><br/>The interface of components must be the same. URI standards must be used to identify resources which basically means paths should be used that could be entered into the browser location bar.<br/><br/><span class="attribute">Client-Server</span><br/>There is a separation of concerns between the client and the server.<br/><br/><span class="attribute">Stateless Interactions</span><br/>All requests contain all of the information needed for that request. It does not rely on any session state.<br/><br/><span class="attribute">Cacheable</span><br/>The client can cache resources.<br/><br/><span class="attribute">Layered System</span><br/>The client can be connected to the end server or an intermediate layer such as a load balancer.<br/><br/><span class="attribute">Code on Demand</span><br/>This is optional but a client can download code, which reduces visibility from the outside.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Response codes</td>
+                            <td>The status codes received back from a server when requests have been made are an easy way to understand, at a high level, what is going on with a request.<br/>There are a 5 categories of status codes and they can be defined as;<br/><br/><span class="attribute">1xx</span> - Information<br/><span class="attribute">2xx</span> - Success<br/><span class="attribute">3xx</span> - Redirection<br/><span class="attribute">4xx</span> - Client error<br/><span class="attribute">5xx</span> - Server error</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>REST API Endpoints</td>
+                            <td>API's allow data to be accessed via endpoints. An endpoint is the URL path contained in a request such as GET, PUT, POST or DELETE.<br/><br/>An API URL will consist of 2-3 main elements. these are the root, the path and optional query strings (dependent on what the request is doing).<br/><br/><span class="attribute">Root</span><br/>The root of the API is the domain of the site, sometimes it might also contain the version of the API.<br/><span class="code">https://my.api.com</span> or <span class="code">https://my.api.com/v3</span><br/><br/><span class="attribute">Path</span><br/>The unique location of the specific resource being accessed.<br/>This is usually the part of the path that a route will be written for on the server.<br/><span class="code">/users</span> or <span class="code">/users/25</span><br/><br/><span class="attribute">Query Parameters</span><br/>This is the optional element that will not always be present.<br/>It will hold the key:value pairs for the request but could also contain things like limits to only return a specified number of results.<br/><span class="code">?name=josh&age=35</span> or <span class="code">?limit=10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Guidelines on creating RESTful API Endpoints</td>
+                            <td>There are a few naming conventions with regards to API endpoints.<br/><br/><span class="attribute">Paths should be plural</span><br/>It is likely that databases are for mass information and not singular things therefore the convention is for the endpoint segment to be plural<br/><span class="code">/users/5</span> as opposed to <span class="code">/user/5</span><br/><br/><span class="attribute">Endpoints should not display the file extension</span><br/>The API might be returning JSON data or similar however the URL should not end in .json or.js etc.<br/><br/><span class="attribute">Endpoints should use nouns and not verbs</span><br/>Words like <span class="code">add</span> or <span class="code">delete</span> should not appear in RESTful API URL's. These kind of actions should be handled by the routes written on the server.<br/><br/><span class="attribute">Paths are case sensitive</span><br/>Paths should be written in lowercase with the use of hyphens instead of underscores.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p>For additional tags and examples see the <a href="https://expressjs.com/en/5x/api.html" target="_blank">Express.js Website</a> for more info.</p>
         </div>
     </body>
