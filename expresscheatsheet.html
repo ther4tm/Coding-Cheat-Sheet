@@ -290,6 +290,121 @@
                     </tbody>
                 </table>
             </div>
+                        <div id="authentication_authorization">
+                <h2>Authentication & Authorization</h2>
+                <p>This section explains some of the concepts and syntax behind User authentication and authorization in general.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Authentication</td>
+                            <td>Authentication is the process of verifying who you are.<br/><br/>This can be through supplying username and passwords or username and PIN codes. There can be various different identifier and entry code style combinations, all of which should be unique to each person.<br/><br/>A username and password system is known as single factor, it is also becoming increasingly insecure.<br/>Multi factor authentication is the process of logging in using a username and password and then receiving a secondary temporary passcode on a secondary laptop, phone or email address. This way the genuine user who has set up this login system has access to the various devices being used to log in and therefore makes it much harder for anyone else to gain access as they are unlikely to have access to the additional devices/email addresses.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Authorization</td>
+                            <td>Authorization is the verification of what you are allowed to do.<br/><br/>You might be logged in, however you might not be allowed to edit other user's information unless you have administrator privileges.<br/><br/>Authorization prevents users from accessing parts of an application which they are not intended to access.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Encryption</td>
+                            <td>Encryption is the process of transforming data into an unreadable format unless you have the correct key to decode the data.<br/><br/>This prevents information from being stolen/intercepted and therefore prevents things like authentication and authorization from being overridden.<br/><br/>There are two main types of encryption, single key and asymmetrical.<br/><br/>Single key encryption is the process of encoding the data with a key that both the sender and the receiver possess.<br/><br/>Asymmetrical encryption is the process of encoding the data with one key on the sender's side and then decoding it with another key on the receiver's side.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Sessions & Cookies</td>
+                            <td>Websites can often provide personalised user experiences. Things like colour changes to the homepage or providing customised search options etc.<br/>This can be done through a user logging in, but it can also be done on a temporary basis through the use of sessions.<br/>A session is similar to a temporary login.<br/>The user can make various changes to suit their preference and the app can remember these, keeping their preferences consistent during the user's browsing time.<br/><br/>Session data is stored server-side and associated with a session ID.<br/>Sessions are best thought of as short term memory for a web app.<br/><br/>While session data is stored server side, the actual ID associated with that data is kept client side. This is done in the form of cookies.<br/><br/>Cookies are small text files no bigger the 4kb.<br/>The browser stores these and they are automatically sent with HTTP requests to a web app.<br/>They are set by the HTTP response header in key-value pairs. A session cookie is et set with the first HTTP response from the server and persists until the browser is closed or the cookie expires.<br/>They look similar to the example below;<br/><br/><span class="attribute">Set-Cookie: sessionID=34jgL79b</span><br/><br/>A session would usually follow the events listed below;<br/>1. User navigates to a site. The web server creates a session and a session ID.<br/>2. In the server's response, it tells the browser to store a cookie with the session ID. The should not include any personal information.<br/>3. The session ID cookie automatically attaches to each HTTP request to the server.<br/>4. When the server reads the session ID cookie sent t=with the HTTP request, it returns the session data associated with the ID.<br/>5. The process continues as long as the session is active.<br/>6. The session and session ID cookie expires after a user closes out the browser, logs out or a pre-determined time passes.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Cookie security</td>
+                            <td>Cookies can contain sensitive information, including things like personal preferences and browsing history.<br/>To prevent malicious actors from gaining access to this information we can provide security to the cookies. This can range from simple expiration dates set on the cookies to other keywords that can prevent cross site scripting attacks.<br/><br/>Below is an example of setting a cookie with an expiration date and time;<br/><br/><span class="attribute">Set-Cookie:Key=Value; expires=Saturday, 01-May-2027 07:30:00 GMT</span><br/><br/>We can also add additional keywords after this to provide added security.HTTPOnly ensures that the cookie data is not accessible to a script running client-side. This will prevent cross site scripting attacks.<br/>Example syntax is shown below;<br/><br/><span class="attribute">Set-Cookie:Key=Value; expires=Saturday, 01-May-2027 07:30:00 GMT; HTTPOnly</span><br/><br/>2 other common keywords are;<br/><br/><span class="attribute">SameSite</span> - This helps prevent cross site request forgery attacks<br/><br/><span class="attribute">Secure</span> - This makes sure that cookies are only sent with a request to an HTTPS page<br/><br/>There are further options which can be found with detailed explanations <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie" target="_blank">here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">localStorage</span> & <span class="attribute">sessionStorage</span></td>
+                            <td>Local Storage & Session Storage</td>
+                            <td>Cookies provide a way of accessing sessions however the attaching the data to each request, constantly sending it back and forth can affect site performance. Cookie data is also limited to just 4kb which is very small.<br/><br/><span class="attribute">localStorage</span>/<span class="attribute">sessionStorage</span> are newer forms of client side storage introduced when HTML5 came out.<br/><br/><span class="attribute">localStorage</span> stores data in browser as key-value pairs. It can also store up to 10MB of data, a significant increase.<br/>It does not interact with the server but is modified and accessed by client side JavaScript code.<br/>It also persists after the users has closed the browser, it will clear once the browser cache is deleted.<br/><br/><span class="attribute">sessionStorage</span> uses the same syntax as <span class="attribute">localStorage</span> but holds session data. It can only hold 5MB of data but still a lot more than cookies. This does clear when the browser or tab is closed and therefore is more secure as well as being more of a temporary measure.<br/><br/>To set key-values to local storage the syntax would be as follows;<br/><br/><span class="attribute">localStorage.setItem('key', 'value');</span><br/><br/>A practical example of this is shown below;<br/><br/><span class="attribute">function selectProfile(name){<br/>if (name != localStorage.getItem('profile')) {<br/>alert("Now setting character to... " + name)<br/>}<br/>localStorage.setItem('profile', name);<br/>}</span><br/><br/>In the example above we set the key to <span class="attribute">'profile'</span> and we use a variable that is set by some incoming value to set the value. This is then stored in <span class="attribute">localStorage</span> and can be accessed later.<br/><br/>To access this information we would use the syntax;<br/><br/><span class="attribute">localStorage.getItem('key');</span><br/><br/>Once again, a practical example of this would be;<br/><br/><span class="attribute">function loadProfile(){<br/>// Set character to the 'profile' value from localStorage<br/>var character = localStorage.getItem('profile');<br/><br/>if (character) {<br/>display_character(character)<br/>}<br/>}</span><br/><br/>This accesses the <span class="attribute">localStorage</span> key of <span class="attribute">'profile'</span> and returns its value which is then used to display a character elsewhere in the web app.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Session Security</td>
+                            <td>Session security is important to prevent hijacking by malicious actors. For example if someone is doing some internet banking and their session gets hijacked, the malicious actor could transfer funds from the victims bank to another account.<br/>There are a few good practice elements that can be implemented to help prevent this;<br/><br/><span class="code">Define session expiry</span><br/>Simply by ensuring that a session has a time limit can close the window to anyone with malicious intent.<br/>Automatic session expiry on the back end and then session expiry on the client side significantly impacts a hacker's window to get in and cause harm.<br/>Idle timeouts are popular but absolute timeouts are an even stricter way to ensure security albeit at the expense of possibly annoying users with the need to consistently refresh the session.<br/><br/><span class="code">Make Session ID's difficult to hack</span><br/>Session ID's are basically passwords. The longer and more complex they are, the more difficult it is for a hacker to gain access.<br/>They are ideally over 128 bits long and do not contain any kind of personal information to reduce the possibility of guessing.<br/>Any kind of algorithm should also not follow any kind of predictable pattern which would aid hacking.<br/><br/><span class="code">Securing Cookies</span><br/>If cookies are to be used then they should be secured with the keywords already discussed. This makes them harder to steal.<br/><br/><span class="code">Enforce HTTPS</span><br/>All sessions based web apps should enforce HTTPS for communications. This prevents web attacks and prevents the attacker gaining access to the session.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>HTTP Security Headers</td>
+                            <td>HTTP security headers are response headers that get sent back by the server upon a request. They include security information, telling the browser how to behave and what security policies it should be employing with the web app.<br/>By implementing these security policies they prevent numerous attacks and are generally good practice in providing a more secure environment all round.<br/><br/>There are numerous options and there will be multiple employed in a well written app.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">Strict-Transportation-Security</span></td>
+                            <td>HTTP Security Headers</td>
+                            <td>This header tells the browser that only the HTTPS version of the requested site is available. This means only HTTPS can be used and therefore the communication between them is more secure.<br/><br/><span class="attribute">Strict-Transport-Security: max-age31536000; includeSubDomains</span><br/><br/>The above example defines that the browser should remember that this app is only to be accessed using HTTPS for the length of 1 year (31536000 seconds), the <span class="attribute">includeSubDomains</span> keyword also tells it to apply this to sub domains of the app.<br/><br/><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security" target="_blank">More detailed information on this header can be found here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">Content-Security-Policy</span></td>
+                            <td>HTTP Security Headers</td>
+                            <td>This defines an allowlist of where content is to be loaded from. It restricts assets the browser can load while using the current website. It prevents cross site scripting attacks by defining that the browser cannot load JavaScript from other sources than those defined by the header.<br/><br/><span class="attribute">Content-Security-Policy: script-src 'self'; img-src 'self' https://www.thiswebsite.com</span><br/><br/>The above example defines that the browser should not load scripts or images from any other source than https://thiswebsite.com<br/><br/><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP" target="_blank">More detailed information on this header can be found here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">X-Frame-Options</span></td>
+                            <td>HTTP Security Headers</td>
+                            <td>This header stops the current page from being hidden in an <span class="code">&lt;iframe&gt;</span> tag in another sites HTML. This prevents clickjacking which is the process of deceiving the user to click on something they think is harmless when in fact its actually an invisible button that redirects to something more nefarious such as delete account or transfer funds etc.<br/><br/><span class="attribute">X-Frame-Options: DENY</span><br/><br/>The above example means that the webpage cannot be hidden in a <span class="code">&lt;iframe&gt;</span> tag anywhere. There are other options that allow partial access if necessary<br/><br/><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options" target="_blank">More detailed information on this header can be found here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">helmet()</span></td>
+                            <td>How to set security headers in express using Helmet</td>
+                            <td>Helmet is a middleware that can be installed and then used to set the security headers.<br/>You can install it in the usual way;<br/><br/><span class="code">npm install helmet</span><br/><br/>It is then implemented within the server in the usual way;<br/><br/><span class="attribute">const helmet = require('helmet');<br/>app.use(helmet());</span><br/><br/>There are numerous options to configure the middleware however the default options set most of the headers as standard<br/><br/><a href="https://www.npmjs.com/package/helmet/v/6.1.2" target="_blank">More detailed information on this header can be found here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>How to set security headers in other common servers</td>
+                            <td><span class="code">nginx</span><br/>The following is added to an nginx server's config file to add the <span class="attribute">Strict-Transport-Security</span> header to all HTTP responses;<br/><br/><span class="attribute">add_header Strict-Transport-Security: 'max-age31536000; includeSubDomains always;'</span><br/><br/><a href="https://blog.nginx.org/blog/http-strict-transport-security-hsts-and-nginx" target="_blank">This link</a> details the options for this header as well as serving as a guide for adding other headers in the same environment<br/><br/><br/><br/><span class="code">Apache</span><br/>The following is added to an Apache server's config file (located at /etc/httpd/conf/httpd.conf) to add the <span class="attribute">Strict-Transport-Security</span> header to all HTTP responses;<br/><br/><span class="attribute">Header always set Strict-Transport-Security: "max-age31536000; includeSubDomains"</span><br/><br/><br/><br/><span class="code">Microsoft IIS</span><br/>The following is added to the Web.config file's <span class="attribute">&lt;httpProtocol&gt;</span> section;<br/><br/><span class="attribute">&lt;system.webServer&gt;<br/>&lt;httpProtocol&gt;<br/>&lt;customHeaders&gt;<br/>&lt;add name="Content-Security-Policy" value="default-src 'self';" /&gt;<br/>&lt;/customHeaders&gt;<br/>&lt;/httpProtocol&gt;<br/>&lt;/system.webServer&gt;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                        <div id="express_session">
+                <h2>Express Session</h2>
+                <p>This section explains some of the concepts and syntax behind the express session middleware.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">express-session</span></td>
+                            <td>Using express session</td>
+                            <td>We can use <span class="attribute">express-session</span> middleware on our server to generate unique session ID's.<br/>First we install it in the usual way;<br/><br/><span class="code">npm install express-session</span><br/><br/>Then we require it in to our server in the usual way;<br/><br/><span class="attribute">const session = require('express-session');</span><br/><br/>Once it's installed and present in our server we then need to configure it.<br/>The configuration object has 3 keys, these are;<br/><br/><span class="attribute">secret</span> - This property is a key used for signing and/or encrypting cookies in order to protect our session ID.<br/><br/><span class="attribute">resave</span> - This option, when set to true, will force a session to be saved back to the session data store. This happens even if there have been no changes made.<br/>Typically this should be set to false, however, that depends on the web app's session storage strategy.<br/><br/><span class="attribute">saveUninitialized</span> - This is a boolean value. When set to true, the server will store every new session, even if there are no changes to the session object. This could be useful for track recurring visits from the same browser however this does eat up memory. Setting it to false allows us to save memory.<br/><br/>An example of the configuration object in use is shown below;<br/><br/><span class="attribute">app.use(<br/>session({<br/>secret: 'oai253vj65',<br/>resave: false,<br/>saveUninitialized: false,<br/>})<br/>);</span><br/><br/>In the above example the <span class="attribute">secret</span> value would usually be a random string that is stored in a secure environment variable and not hardcoded like this. It is written like the above as an demonstration.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">.MemoryStore()</span></td>
+                            <td>Storing session data</td>
+                            <td>Sessions are stored in 3 different ways.<br/><br/>1. In-memory (the default option)<br/>2. Databases such as MongoDB or MySQL<br/>3. In a memory cache such as Redis or Memcached.<br/><br/><span class="attribute">express-session</span> provides an in-memory store called <span class="attribute">MemoryStore()</span>. This is automatically set as the default option unless another is specified.<br/><br/>A new store can be instantiated like so;<br/><br/><span class="attribute">const store = new session.MemoryStore();</span><br/><br/>This can then be added to the configuration object like so;<br/><br/><span class="attribute">app.use(<br/>session({<br/>secret: 'oai253vj65',<br/>resave: false,<br/>saveUninitialized: false,<br/>store,<br/>})<br/>);</span><br/><br/>An important note about the above code is that in-memory sessions should only be used in development and not in production as they provide security risks.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">cookie: {}</span></td>
+                            <td>Creating session cookies</td>
+                            <td>To create a cookie for our session we should define it within the configuration object.<br/>To define the cookie we need to define key-values of the various elements of the cookie we want to create. An example is shown below;<br/><br/><span class="attribute">app.use(<br/>session({<br/>secret: 'oai253vj65',<br/>cookie: { maxAge: 172800000, secure: true, sameSite: 'none'},<br/>resave: false,<br/>saveUninitialized: false,<br/>store,<br/>})<br/>);</span><br/><br/>in the above example we create a cookie that expires in 48 hours, it is only to use HTTPS and then we allow for cross-site. Differing parameters can be added to enable differing cookies to be created.<br><br/><a href="https://expressjs.com/en/resources/middleware/session.html" target="_blank">More detailed information on the options for this can be found here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">req.session</span></td>
+                            <td>Using the session to authenticate users</td>
+                            <td>We can use the session now it has been configured.<br/>Lets use an example to demonstrate what we might add and how we might utilise the session object.<br/><br/>In this example we have a simple login page that asks for a username and a password.<br/>If a user logs in with the correct credentials we want to create a session.<br/>Within our POST request logic to login we might have something that look like the following;<br/><br/><span class="attribute">if (user.password === password) {<br/>req.session.authenticated = true;<br/>req.session.user = {<br/>username,<br/>password,<br/>}<br/>}</span><br/><br/>Now the above code is an extremely simplified version of the internal logic of a POST request but you can see the essence of what it's doing.<br/>Once the user has passed our checking logic to ensure they are authenticated we'll add an <span class="attribute">authenticated</span> property to the session object that is set to true so that we know they are authentic.<br/>We then add a <span class="attribute">user</span> property that we populate with a new object that contains the received <span class="attribute">username</span> and <span class="attribute">password</span> properties following authentication.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p>For additional tags and examples see the <a href="https://expressjs.com/en/5x/api.html" target="_blank">Express.js Website</a> for more info.</p>
         </div>
     </body>
