@@ -660,6 +660,66 @@
                     </tbody>
                 </table>
             </div>
+            <div id="tdd">
+                <h2>Test Driven Development</h2>
+                <p>This section explains the concepts around Test Driven Development (TDD), including notes on syntax and implementation.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Brief Overview of Headless Testing</td>
+                            <td>What is Headless testing?<br/>Headless testing is basically the testing of websites and apps without the GUI of a browser.<br/>It's quicker to execute because the time needed to process the GUI is no longer included.<br/><br/>Within the test you can still generate screenshots and PDFs of websites, scrape content from websites, automate form submission, and simulate keyboard input.<br/><br/><a href="https://expressjs.com/en/5x/api.html" target="_blank">LogRocket.com has a brief overview of various headless testing methods here</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Mocha</td>
+                            <td>What is Mocha?<br/>Mocha is the test running tool for Node.js and is a Javascript testing framework.<br/>It brings additional tools for testing.<br/><br/>To install Mocha into the project you can type the following into the root directory of the project;<br/><br/><span class="code">npm install --save-dev mocha</span><br/><br/>The <span class="attribute">--save-dev</span> attribute ensures that these are installed for development only and not production.<br/><br/>Refer back to <a href="https://ther4tm.github.io/Coding-Cheat-Sheet/javascriptcheatsheet#testing" target="_blank">notes on mocha for a refresher</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Chai</td>
+                            <td>What is Chai?<br/>Chai is an additional assertion library for Node.js and browsers that can be used with any Javascript testing framework.<br/><br/>To install Chai into the project you can type the following into the root directory of the project;<br/><br/><span class="code">npm install --save-dev chai</span><br/><br/>The <span class="attribute">--save-dev</span> attribute ensures that these are installed for development only and not production.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.include()</span></td>
+                            <td>Chai features</td>
+                            <td>Node's built in assertion library allows for many ways to test such as the following;<br/><br/><span class="attribute">assert.ok(foo.includes(bar));</span><br/><br/>To improve the readability and flow of tests the Chai extension library has some similar functions that allow us to rewrite some of the code.<br/>For example the above code can be rewritten using Chai like the following;<br/><br/><span class="attribute">assert.include(foo, bar);</span><br/><br/>We can also use the same method to check that text includes certain values such as;<br/><br/><span class="attribute">assert.include('foobar', 'foo')<br/></span><span class="code">//Evaluates to true</span><br/><br/>There are plenty of other methods within Chai that enable the writing of more expressive tests, allowing for easier to understand code.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>WebdriverI/O</td>
+                            <td>What is WebdriverI/O?<br/>WebdriverI/O provides methods that allows us to programmatically interact with the user-facing elements of our app in a headless browser.<br/><br/>To install WebdriverI/O into the project you can type the following into the root directory of the project;<br/><br/><span class="code">npm i webdriverio</span><br/><br/></td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">browser.url()</span></td>
+                            <td>Feature Test I : Navigating without a browser</td>
+                            <td>Feature tests can simulate user navigation. We can test to see if certain aspects of our app are behaving as expected using this.<br/><br/>So for example if we wish to create an app that had a messaging aspect to it and we want to test that the message area was blank upon a user navigating there at the beginning of a session, we could test for that.<br/><br/><span class="attribute">describe('User visits root', () => {<br/>describe('without existing messages', () => {<br/>it('starts blank', ()  => {<br/>browser.url('/');<br/>})<br/>});<br/>});</span><br/><br/>In the above code we have a basic mocha test block with some nested <span class="attribute">describe()</span> methods and an <span class="attribute">it()</span> method that form the basis of the test.<br/>Within the block we make use of the global <span class="attribute">browser</span> variable that is provided by WebdriverI/O.<br/>The browser variable gives us access to the headless browser we are running in the background. With this we can simulate interactions with the website by calling different methods on the global <span class="attribute">browser</span> variable within the test.<br/>In the code above we do this by calling the <span class="attribute">.url()</span> method on it which simulates the user navigating to whatever url is passed into the method as its argument.<br/>In the test above we enter <span class="attribute">'/'</span> as the argument which would navigate to the root file of our project which would be something like <span class="code">index.html</span>, alternatively we could enter something like <span class="attribute">browser.url('https://www.google.com;)</span> and it would simulate navigation to google.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">assert.equal()</span> & <span class="attribute">browser.getText()</span></td>
+                            <td>Feature Test II : Testing</td>
+                            <td>The next part of our test is to include assertions from Chai to test that the behaviour we receive is the behaviour we are expecting.<br/><br/>We need to require in chai in the usual way;<br/><br/><span class="attribute">const { assert } = require('chai');</span><br/><br/> In the above we bring in the <span class="attribute">assert</span> method using destructured syntax.<br/><br/>Within our code body we can add in the behaviour test now using the assertion method from chai and a couple of helper methods from WebdriverI/O.<br/><br/><span class="attribute">describe('User visits root', () => {<br/>describe('without existing messages', () => {<br/>it('starts blank', () => {<br/>browser.url('/');<br/><br/>assert.equal(browser.getText('#messages'), '');<br/>});<br/>});<br/>});</span><br/><br/>In the above code we want to test that the messages section of the app is empty.<br/>We start off by using the <span class="attribute">assert</span> method and call the <span class="attribute">equal</span>  method from chai on it to ensure that whatever argument we put into this assertion is equal to the behaviour we expect. This way, if the app does what we put in as the argument, the test will pass, if not, then it will fail and we need to debug.<br/>This method expects 2 arguments, one to compare to the other to see if they're equal. It can have a 3rd argument which is optional but this is to provide a custom error message.<br/><br/>The next part of the code is the first argument.<br/>We use the <span class="attribute">browser</span> variable again to access parts of the headless browser. We then append the <span class="attribute">getText()</span> method from WebdriverI/O. This method simply fetches whatever text from the argument inserted into the parentheses.<br/>Lets say our messages item on our website is within a div that has the ID of 'messages'. We add the identifier for that as the argument (<span class="attribute">#messages</span>) and this method will then retrieve whatever text appears in that div.<br/><br/>The second argument is what we want to compare the first argument to. Our test is checking to see if the div is empty so our second argument is an empty string.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">browser.SetValue()</span> & <span class="attribute">browser.click()</span></td>
+                            <td>Feature Test III : Mimicking user input</td>
+                            <td>The tests we've explored so far are fairly simple, but we want to test user interactions.<br/>We can use additional methods from WebdriverI/O to simulate more complex user interactions.<br/><br/>Below is an example test showing how we can simulate a user filling in some text boxes and then clicking submit on a form;<br/><br/><span class="attribute">  describe('posting a message', () => {<br/>it('saves the message with the author information', () => {<br/>const message ='blah blah blah blah';<br/>const author = 'username';<br/><br/>browser.url('/');<br/>browser.setValue('input[id=author]', author);<br/>browser.setValue('textarea[id=message]', message);<br/>browser.click('input[type=submit]');<br/>});<br/>});</span><br/><br/>In the above test we start by assigning some user input into 2 different variables. These will be our simulated user typed input.<br/><br/>Underneath we have our actual simulation.<br/>We start off by navigating to the web page in the same way we did with the previous test (<span class="attribute">browser.url('/');</span>).<br/><br/>We then use a new method (<span class="attribute">.setValue()</span>). This method takes 2 arguments.<br/>The first is the CSS selector that references an HTML element and the second argument is the value we wish to assign to that element.<br/>So in our simulation we select an input box with the ID of 'author'.<br/>The second argument is what we want the simulator to set as the value, so here we use our variable to set the input to read 'username'.<br/><br/>We do the same thing again underneath this for the textarea box for the longer message.<br/><br/>Finally we use another method to simulate the user clicking the submit button by appending the <span class="attribute">.click()</span> method to the <span class="attribute">browser</span> variable.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Feature Test IV : Verifying input has worked</td>
+                            <td>The final portion of the test after mimicking user input is to verify that the process has worked as we expected.<br/>To do this we run an assertion from chai on the element that we expect our results to be in and compare our predefined variables against the result.<br/>This will let us know if the code for our website is performing the desired functions it should be performing.<br/><br/><span class="attribute">  describe('posting a message', () => {<br/>it('saves the message with the author information', () => {<br/><br/>const message ='blah blah blah blah';<br/>const author = 'username';<br/><br/>browser.url('/');<br/>browser.setValue('input[id=author]', author);<br/>browser.setValue('textarea[id=message]', message);<br/>browser.click('input[type=submit]');<br/><br/>assert.include(browser.getText('#messages'), author);<br/>assert.include(browser.getText('#messages'), message);<br/>});<br/>});</span><br/><br/>So in the above code we use 2 different assertions to test if the div that our messages should turn up in contains the expected text.<br/>We already have the expected text contained in the variables we wrote to perform the test so we can just reuse those within the assertion.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p>For additional tags and examples see the <a href="https://expressjs.com/en/5x/api.html" target="_blank">Express.js Website</a> for more info.</p>
         </div>
     </body>
