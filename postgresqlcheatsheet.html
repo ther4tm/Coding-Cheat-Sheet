@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PostgreSQL Cheat Sheet</title>
+        <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- this is a section of code from google fonts that imports the poppins font type for use on the page --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="dropdown">
+                    <button class="dropdownBtn">Front End</button>
+                    <div class="dropdownContent">
+                        <a href="./htmlcheatsheet.html">HTML</a>
+                        <a href="./csscheatsheet.html">CSS</a>
+                        <a href="./javascriptcheatsheet.html">JavaScript</a>
+                        <a href="./reactcheatsheet.html">React</a>
+                        <a href="./reduxcheatsheet.html">Redux</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdownBtn">Back End</button>
+                    <div class="dropdownContent">
+                        <a href="./nodecheatsheet.html">Node.js</a>
+                        <a href="./expresscheatsheet.html">Express.js</a>
+                        <a href="./postgresqlcheatsheet.html">PostgreSQL</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdownBtn">Other</button>
+                    <div class="dropdownContent">
+                        <a href="./commandlinecheatsheet.html">Command Line</a>
+                        <a href="./markdowncheatsheet.html">Markdown</a>
+                        <a href="./styleguide.html">Style Guide</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>PostgreSQL Cheat Sheet</h1>
+            <p>Below is a list of commands, methods and fundamental principles regarding the PostgreSQL and databases in general including a brief description of what they do and any notes on correct syntax.</p>
+            <div id="fundamentals">
+                <h2>Fundamentals</h2>
+                <p>This section describes some fundamental properties of the PostgreSQL database framework.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">express</span></td>
+                            <td>Express</td>
+                            <td>Express is a node module.<br/>It does not come pre-installed so we need to install it before use. We can do this using <span class="attribute">npm</span> in the terminal.<br/><br/>The correct syntax for this is shown below;<br/><br/><span class="attribute">npm i express</span><br/><br/>Once installed into the project file we can then require it in like any other non-global node module.<br/><br/><span class="attribute">const express = require('express');</span><br/><br/>Once required in we then need to invoke the express method within a variable to then be able to create a server.<br/><br/><span class="attribute">const app = express();</span><br/><br/>With that all now established we can start a server and specify server behavior.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>For additional tags and examples see the <a href="https://expressjs.com/en/5x/api.html" target="_blank">Express.js Website</a> for more info.</p>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
