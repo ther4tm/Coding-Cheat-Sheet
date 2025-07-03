@@ -43,7 +43,7 @@
             <p>Below is a list of commands, methods and fundamental principles regarding the PostgreSQL and databases in general including a brief description of what they do and any notes on correct syntax.</p>
             <div id="fundamentals">
                 <h2>Fundamentals</h2>
-                <p>This section describes some fundamental properties of the PostgreSQL database framework.</p>
+                <p>This section describes some fundamental properties of databases.</p>
                 <table>
                     <thead>
                         <tr>
@@ -54,9 +54,49 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="attribute">express</span></td>
-                            <td>Express</td>
-                            <td>Express is a node module.<br/>It does not come pre-installed so we need to install it before use. We can do this using <span class="attribute">npm</span> in the terminal.<br/><br/>The correct syntax for this is shown below;<br/><br/><span class="attribute">npm i express</span><br/><br/>Once installed into the project file we can then require it in like any other non-global node module.<br/><br/><span class="attribute">const express = require('express');</span><br/><br/>Once required in we then need to invoke the express method within a variable to then be able to create a server.<br/><br/><span class="attribute">const app = express();</span><br/><br/>With that all now established we can start a server and specify server behavior.</td>
+                            <td><span class="attribute"></span></td>
+                            <td>Relational databases</td>
+                            <td>A relational database is a database that organises information into one or more tables.<br/><br/>A table is a collection of data that is organised into columns and rows. Tables are often referred to as relations.<br/><br/>A column is a set of data values of a particular type such as <span class="attribute">id</span>, <span class="attribute">name</span> or <span class="attribute">age</span>.<br/><br/>A row is a single record in a table that would usually include all or some of the data to populate the columns such as and <span class="attribute">id</span> of <span class="attribute">1</span>, a <span class="attribute">name</span> of <span class="attribute">Jeremy</span> or an <span class="attribute">age</span> of <span class="attribute">36</span>.<br/><br/>All data stored in relational databases is of a certain data type.<br/>The most common data types are;<br/><br/><span class="attribute">INTEGER</span> - A Positive or negative whole number.<br/><span class="attribute">TEXT</span> - A text string.<br/><span class="attribute">DATE</span> - The date formatted as 'YYY-MM-DD'.<br/><span class="attribute">REAL</span> - A decimal value.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">CREATE TABLE</span></td>
+                            <td>Statements</td>
+                            <td>A statement is text that the database recognizes as a valid command. Statements always end in a semi colon much like JavaScript.<br/><br/><span class="attribute">CREATE TABLE table_name (<br/>column_1 data-type,<br/>column_2 data-type,<br/>column_3 data-type<br/>);</span><br/><br/>In the above code block <span class="attribute">CREATE TABLE</span> is a clause.<br/>Clauses perform specific tasks in SQL. The general convention is to write them in capitals. Clauses can also be referred to as commands.<br/><br/><span class="attribute">table_name</span>< refers to the name of the table that the command is applied to.<br/><br/><span class="attribute">column_1 data_type</span> is a parameter. A parameter is a list of columns, data types or values that are passed to a clause as an argument.<br/>In the example above the parameter is a list of column names and the associated data type.<br/><br/>Below is an example of a simple table being created using the correct syntax;<br/><br/><span class="attribute">CREATE TABLE users (<br/>id INTEGER,<br/>name TEXT,<br/>age INTEGER<br/>);</span><br/><br/>Notice how we make use of capitals to improve readability within our code.<br/>The code will work perfectly fine if everything was written in lowercase however when the code is written in this fashion it makes understanding what elements of the code are what much quicker and easier.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">INSERT INTO</span> & <span class="attribute">VALUES</span></td>
+                            <td>Adding records to a table</td>
+                            <td>Manually adding records into a table can be done with the following syntax;<br/><br/><span class="attribute">INSERT INTO users (id, name, age) <br/>VALUES (1, 'Jeremy', 36);</span><br/><br/>Lets explain the code above.<br/><span class="attribute">INSERT INTO</span> is a clause that adds the specified row or rows.<br/><span class="attribute">users</span> is the table we wish to add the row to.<br/><span class="attribute">(id, name, age)</span> is a parameter identifying the columns that data will be inserted into.<br/><span class="attribute">VALUES</span> is another clause that indicates the data being inserted.<br/><span class="attribute">(1, Jeremy, 36)</span> is a parameter identifying the values being inserted.<br/><br/>So as a result our table might look something like the following;<br/><br/><table><thead><tr><th>Id</th><th>Name</th><th>Age</th></tr></thead><tbody><tr><td>1</td><td>Jeremy</td><td>36</td></tr></tbody></table><br/><br/>Notice how our table now has a single row with all columns populated with the inserted values we defined.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">SELECT</span> & <span class="attribute">FROM</span></td>
+                            <td>Viewing elements from a table</td>
+                            <td><span class="attribute">SELECT</span> statements are used to fetch data from a database. We can use it fetch all data from a single column or even the entire database.<br/><br/><span class="attribute">SELECT age FROM users;</span><br/><br/>The above code fetches all data in the <span class="attribute">age</span> column from the <span class="attribute">users</span> table.<br/><br/>If we wanted to fetch all data from a table we could use the <span class="attribute">*</span> special character.<br/><br/><span class="attribute">SELECT * FROM users;</span><br/><br/>The above code would fetch all data from the <span class="attribute">users</span> table and return it.<br/><span class="attribute">SELECT</span> statements always return a new table called the result set.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">ALTER TABLE</span> & <span class="attribute">ADD COLUMN</span></td>
+                            <td>Adding columns to an existing table</td>
+                            <td>The <span class="attribute">ALTER TABLE</span> statement provides us with a way to add a new column to a table.<br/>Lets say we wish to add a country to our previous table, we could use the following code;<br/><br/><span class="attribute">ALTER TABLE users<br/>ADD COLUMN country TEXT;</span><br/><br/>In the above code we declare on the first line that we want to alter the <span class="attribute">users</span> table.<br/>On the second line we then declare we want to add a column by using the <span class="attribute">ADD COLUMN</span> command. We follow this up with the name of the column (<span class="attribute">country</span>) and the data type (<span class="attribute">TEXT</span>) we want this column to contain.<br/><br/>Once this has been done, the column will be added to the table and will be immediately populated with <span class="attribute">NULL</span> (<span class="attribute">∅</span>).<br/>This is a special value in SQL as it represents missing or unknown data.<br/><br/>Our updated table would look like the following;<br/><br/><table><thead><tr><th>Id</th><th>Name</th><th>Age</th><th>Country</th></tr></thead><tbody><tr><td>1</td><td>Jeremy</td><td>36</td><td>∅</td></tr></table><br/><br/>Notice that we now have a <span class="attribute">Country</span> column but it contains the <span class="attribute">NULL</span> (<span class="attribute">∅</span>) character indicating that there is no data in that column as yet.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">UPDATE</span>, <span class="attribute">SET</span> & <span class="attribute">WHERE</span></td>
+                            <td>Updating an existing table</td>
+                            <td>The <span class="attribute">UPDATE</span> statement provides us with a way to update an existing entry within a table.<br/>Lets say we wish to update the country column we just added in our previous table, we could use the following code;<br/><br/><span class="attribute">UPDATE users<br/>SET country = 'England'<br/>WHERE id = 1;</span><br/><br/>In the above code we declare that we want to <span class="attribute">UPDATE</span> the <span class="attribute">users</span> table.<br/>We then use the <span class="attribute">SET</span> clause to indicate which column we want to edit (<span class="attribute">country</span>) including the value we wish to have it updated to (<span class="attribute">'England'</span>).<br/>Finally we use the <span class="attribute">WHERE</span> clause to indicate that we want the row with a value of <span class="attribute">1</span> in the <span class="attribute">Id</span> column to be the target of the update.<br/><br/>Our new table would look like the following;<br/><br/><table><thead><tr><th>Id</th><th>Name</th><th>Age</th><th>Country</th></tr></thead><tbody><tr><td>1</td><td>Jeremy</td><td>36</td><td>England</td></tr></tbody></table><br/><br/>Notice that the <span class="attribute">Country</span> column has been updated to show the new string of <span class="attribute">England</span> as its value.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">DELETE</span></td>
+                            <td>Deleting an entry in an existing table</td>
+                            <td>The <span class="attribute">DELETE</span> statement provides us with a way to delete entire entries within a table based on specific criteria.<br/>Lets say we have a table with a few users, some of which do not contain any data within the <span class="attribute">country</span> column.<br/>It might look something like the following;<br/><br/><table><thead><tr><th>Id</th><th>Name</th><th>Age</th><th>Country</th></tr></thead><tbody><tr><td>1</td><td>Jeremy</td><td>36</td><td>England</td></tr><tr><td>2</td><td>Kelly</td><td>31</td><td>∅</td></tr><tr><td>3</td><td>Steve</td><td>19</td><td>∅</td></tr></tbody></table><br/><br/>We can use the following statement to delete all entries that do not contain any information in the <span class="attribute">country</span> column;<br/><br/><span class="attribute">DELETE FROM users<br/>WHERE country IS NULL;</span><br/><br/><span class="attribute">DELETE FROM</span> lets us delete rows from a table.<br/><span class="attribute">users</span> is the name of the table we want to target.<br/><span class="attribute">WHERE</span> provides the target for deletion whereby we add in the name of the column (<span class="attribute">country</span>) and the value we want to match to (<span class="attribute">NULL</span> or <span class="attribute">∅</span>). Anything that matches this criteria will be deleted.<br/><br/>Our new table would look like the following;<br/><br/><table><thead><tr><th>Id</th><th>Name</th><th>Age</th><th>Country</th></tr></thead><tbody><tr><td>1</td><td>Jeremy</td><td>36</td><td>England</td></tr></tbody></table><br/><br/>Notice how the entries for Kelly and Steve were deleted because they matched the criteria for deletion.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">PRIMARY KEY</span>, <span class="attribute">UNIQUE</span>, <span class="attribute">NOT NULL</span> & <span class="attribute">DEFAULT</span></td>
+                            <td>Placing constraints on a table</td>
+                            <td>In addition to adding data types into the creation of a table we can also provide constraints about how a column can be used.<br/>These help to tell the database what data is acceptable and what is not and needs to be rejected.<br/><br/>Below is an example of a table being created with these constraints;<br/>The constraint elements have been highlighted for clarity.<br/><br/><span class="code">CREATE TABLE users (<br/>id INTEGER </span><span class="attribute">PRIMARY KEY</span><span class="code">,<br/>username TEXT </span><span class="attribute">UNIQUE</span><span class="code">,<br/>date_of_birth TEXT </span><span class="attribute">NOT NULL</span><span class="code">,<br/>date_of_death TEXT </span><span class="attribute">DEFAULT 'Not Applicable'</span><span class="code"><br/>);</span><br/><br/><span class="attribute">PRIMARY KEY</span> columns can be used to uniquely identify the row. Attempts to insert a row with an identical value to a row already in the table will result in a constraint violation which will not allow you to insert a new row.<br/>Things like indexes are perfect for this as its likely that there will never be a duplicate index within a database.<br/><br/><span class="attribute">UNIQUE</span> columns have a different value for every row. This is similar to <span class="attribute">PRIMARY KEY</span> except that a table can have many different <span class="attribute">UNIQUE</span> columns.<br/>Things like usernames are also perfect for this as it is also likely you would never want 2 users to have the same username.<br/><br/><span class="attribute">NOT NULL</span> prevents columns from being defined without a value. Any attempts to insert a row without a value that has this constraint applied with result in a constraint violation and the new row will not be inserted.<br/><br/><span class="attribute">DEFAULT</span> columns take an additional argument that will be the default value applied to an inserted row if the new row does not specify a value for that column.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">ADD CONSTRAINT</span></td>
+                            <td>Adding constraints on an existing column in a table</td>
+                            <td>If we need to retroactively add a constraint to a column that already exists we can do so with the following code;<br/><br/><span class="attribute">ALTER TABLE table_name<br/>ADD CONSTRAINT constraint_name<br/>constraint_type (column_name)</span><br/><br/>The <span class="attribute">ADD CONSTRAINT</span> clause lets us define a constraint on an existing column. We define the constraint name, something short and descriptive of what the constraint is so its easy to pinpoint the issue in the event of an error.<br/>Then we define the constraint type, something like <span class="attribute">UNIQUE</span> in the event of an index or username.<br/>After this we have the column being targetted contained within parentheses.<br/><br/>A practical example is shown below;<br/><br/><span class="attribute">ALTER TABLE users<br/>ADD CONSTRAINT unique_username<br/>UNIQUE (username)</span><br/><br/>In the above example we add in a <span class="attribute">UNIQUE</span> constraint on the <span class="attribute">username</span> column to prevent new users from picking identical usernames.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -68,3 +108,41 @@
 
     </footer>
 </html>
+
+
+<!-- Template for nested tables in notes
+
+∅
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Jeremy</td>
+            <td>36</td>
+            <td>England</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Kelly</td>
+            <td>31</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Steve</td>
+            <td>19</td>
+            <td>∅</td>
+        </tr>
+    </tbody>
+</table>
+
+-->
