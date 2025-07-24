@@ -551,6 +551,36 @@
                     </tbody>
                 </table>
             </div>
+            <div id="indexes">
+                <h2>Indexes</h2>
+                <p>This section describes PostgreSQL indexes. There are general notes on principles and further detailed notes regarding syntax and coding patterns.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tag/Expression</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="attribute">EXPLAIN</span> & <span class="attribute">ANALYZE</span></td>
+                            <td>Investigating queries</td>
+                            <td>The clauses <span class="attribute">EXPLAIN</span> & <span class="attribute">ANALYZE</span> can be used before a query as an investigation method on a database. If you place both of these clauses in front of any query you will not get the results of a query returned, you will get an analysis of the query.<br/><br/>How is this useful?<br/>The returned information is a breakdown of how the query is performed. This can be helpful in identifying parts of the database that may need optimising in some way.<br/>For example if we run a query and its quite slow to return, we can run an <span class="attribute">EXPLAIN ANALYZE</span> statement on the same query to get a readout of what happened which might give us some clues on how the query is being handled.<br/><br/>A key thing to note here is that in the readout there are clues as to how the database is running the query.<br/><br/><span class="attribute">Seq Scan</span> is one potential readout that might be present. This particular term means that the query is searching every record to find the specific record your query is looking for.<br/>In smaller databases this is likely to be fine, however in very large databases, looking through every record is not the most efficient use of computing power.<br/><br/>Another readout might be <span class="attribute">Bitmap Index Scan</span>, this means the query is making use of indexes which can significantly cut down the amount of time the query needs to complete the search.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute"></span></td>
+                            <td>Binary trees (btree)</td>
+                            <td>Binary trees (btrees) are a method of organisation that PostgreSQL uses to structure indexed information to then allow for fast data retrieval.<br/>They allow for a quick breakdown of large amounts of information to drastically reduce query times.<br/><br/>Btrees organise the information based on the data type. So for text based data like <span class="attribute">varchar</span> it will organise based on alphabetical order and number based data like <span class="attribute">integer</span> it will organise based on numerical order.<br/><br/>The way that btrees work is simplistic in concept.<br/>The structure takes all of the information in an indexed column and evenly distributes it into a number of branches. These are aggregated so when a query is run it can very quickly narrow down the search and pinpoint the exact row through this structure.<br/><br/>Let's show an example using <span class="attribute">name</span> as the indexed column.<br/><br/><table><thead><tr><th>name<br/>(Indexed)</th><th>customer_id</th><th>age</th></tr></thead><tbody><tr><td>Alice</td><td>1</td><td>25</td></tr><tr><td>Amy</td><td>2</td><td>24</td></tr><tr><td>Ben</td><td>3</td><td>27</td></tr><tr><td>Carl</td><td>4</td><td>37</td></tr><tr><td>Chris</td><td>5</td><td>31</td></tr><tr><td>Dan</td><td>6</td><td>29</td></tr><tr><td>Frank</td><td>7</td><td>17</td></tr><tr><td>Emma</td><td>8</td><td>23</td></tr><tr><td>George</td><td>9</td><td>30</td></tr><tr><td>Harriet</td><td>10</td><td>21</td></tr><tr><td>Ian</td><td>11</td><td>35</td></tr></tbody></table><br/><br/>In our table we have an indexed column that holds many records of <span class="attribute">name</span>'s and we want to run a query that returns a specific name. Lets imagine that our database holds so many names that going through every single record is going to take too long so we implement an index and btree structure to find this quickly.<br/><br/>The btree will automatically organise the names into an aggregated structure that might look something like the following;<br/><br/><table><thead><tr><th>Carl</th><th>Carl, Frank</th><th>Frank</th></tr></thead><tbody><tr><td>Alice</td><td>Chris</td><td>George</td></tr><tr><td>Amy</td><td>Dan</td><td>Harriet</td></tr><tr><td>Ben</td><td>Emma</td><td>Ian</td></tr></tbody></table><br/><br/>Now when the query is run using this structure instead of searching the entire list it will use logic of the structure to determine the result much quicker.<br/>For example Let's say we run a query to find <span class="attribute">Emma</span>.<br/>The logic will start at the root of the structure which contains <span class="attribute">Carl</span> and <span class="attribute">Frank</span>, neither is a match so it will compare the search and say <span class="attribute">Emma</span> is higher than <span class="attribute">Carl</span> but less than <span class="attribute">Frank</span> so it needs to look in the middle branch.<br/>It will find the value in this branch.<br/><br/>While this btree is relatively simple, the branching and aggregating logic scales and will enable the query to determine the result a lot quicker than searching every single row of a large table.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="attribute">CREATE INDEX</span></td>
+                            <td>How to create an index</td>
+                            <td>An index is the underlying organisation structure of a btree.<br/>Defining an index allows us to organise our table in such a way that finding specific records is much faster than running through every record until a match is found.<br/>By default the structure divides the records in half then in half again and again and again until a match is found.<br/><br/>So how do we define an index?<br/>The syntax below describes the boilerplate for creating an index;<br/><br/><span class="attribute">CREATE INDEX &lt;index_name&gt; ON &lt;table_name&gt; (&lt;column_name&gt;);</span><br/><br/>So lets use this in a practical example;<br/><br/><span class="attribute">CREATE INDEX customer_user_name_idx ON customers (city);</span><br/><br/>The above statement creates and index named <span class="attribute">customer_user_name_idx</span> for the table <span class="attribute">customers</span> and the indexed column is the <span class="attribute">city</span> column.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <p>For additional clauses see the <a href="https://www.postgresql.org/docs/10/index.html" target="_blank">PostgreSQL documentation website</a> for more info.</p>
         </div>
     </body>
